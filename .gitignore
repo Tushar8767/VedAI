@@ -8,7 +8,6 @@ yarn-error.log*
 .env
 backend/.env
 #database
-docs/gitaData.json
 # Python
 __pycache__/
 *.pyc
