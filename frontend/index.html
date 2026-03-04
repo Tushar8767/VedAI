@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedAI - Emotional Wisdom System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="om">🕉</span>
+                <h1>VedAI</h1>
+            </div>
+            <p class="tagline">Ancient Wisdom for Modern Minds</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Share Your Thoughts</h2>
+                <p class="description">Express how you're feeling, and receive personalized guidance from the Bhagavad Gita.</p>
+                <div class="input-wrapper">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="I'm feeling anxious about my upcoming exams..."
+                        rows="4"
+                    ></textarea>
+                    <button id="submitBtn" class="submit-btn">
+                        <span class="btn-text">Get Guidance</span>
+                        <span class="btn-loader hidden"></span>
+                    </button>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="results-section hidden">
+                <div class="emotion-display">
+                    <h3>Detected Emotion</h3>
+                    <div class="emotion-badge" id="emotionBadge">
+                        <span class="emotion-icon" id="emotionIcon"></span>
+                        <span class="emotion-text" id="emotionText">--</span>
+                    </div>
+                    <p class="confidence">Confidence: <span id="confidence">--</span>%</p>
+                </div>
+
+                <div class="guidance-card">
+                    <div class="verse-section">
+                        <h3>🕉 Gita Verse</h3>
+                        <p class="verse" id="verse">--</p>
+                        <p class="verse-meaning" id="meaning">--</p>
+                    </div>
+                    <div class="explanation-section">
+                        <h3>💡 Explanation</h3>
+                        <p id="explanation">--</p>
+                    </div>
+                </div>
+
+                <div class="videos-section" id="videosSection">
+                    <h3>📺 Recommended Videos</h3>
+                    <div class="video-grid" id="videoGrid">
+                        <!-- Videos will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+        </main>
+
+        <footer>
+            <p>Powered by Ancient Wisdom & Modern AI</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

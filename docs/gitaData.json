@@ -1,0 +1,104 @@
+{
+  "fear": [
+    {
+      "verse": "क्लैब्यं मा स्म गमः पार्थ",
+      "meaning": "Do not give in to fear and weakness.",
+      "explanation": "Fear weakens the mind. Face challenges with courage and self-belief."
+    },
+    {
+      "verse": "न हि कल्याणकृत्कश्चिद् दुर्गतिं तात गच्छति",
+      "meaning": "One who does good never meets a bad end.",
+      "explanation": "Right actions protect you even in difficult situations."
+    },
+    {
+      "verse": "सुखदुःखे समे कृत्वा",
+      "meaning": "Treat happiness and sorrow equally.",
+      "explanation": "Fear reduces when you stop overthinking outcomes."
+    }
+  ],
+
+  "anxiety": [
+    {
+      "verse": "योगस्थः कुरु कर्माणि",
+      "meaning": "Remain balanced and focused while doing your duty.",
+      "explanation": "Anxiety comes from attachment to results. Focus on effort."
+    },
+    {
+      "verse": "कर्मण्येवाधिकारस्ते",
+      "meaning": "You have control over action, not the result.",
+      "explanation": "Let go of result-based stress and concentrate on present work."
+    },
+    {
+      "verse": "मात्रास्पर्शास्तु कौन्तेय",
+      "meaning": "Pleasure and pain are temporary sensations.",
+      "explanation": "Anxiety fades when you understand everything is temporary."
+    }
+  ],
+
+  "sadness": [
+    {
+      "verse": "न जायते म्रियते वा कदाचित्",
+      "meaning": "The soul is neither born nor does it die.",
+      "explanation": "Loss and sadness affect the body, not the eternal soul."
+    },
+    {
+      "verse": "अशोच्यानन्वशोचस्त्वं",
+      "meaning": "You grieve for what is not worth grieving.",
+      "explanation": "Understanding reality reduces emotional suffering."
+    },
+    {
+      "verse": "वासांसि जीर्णानि यथा विहाय",
+      "meaning": "Just as old clothes are replaced, the soul takes new forms.",
+      "explanation": "Change is natural. Accept it without despair."
+    }
+  ],
+
+  "anger": [
+    {
+      "verse": "क्रोधाद्भवति सम्मोहः",
+      "meaning": "Anger leads to confusion and loss of wisdom.",
+      "explanation": "Anger clouds judgment and leads to wrong decisions."
+    },
+    {
+      "verse": "रागद्वेषवियुक्तैस्तु",
+      "meaning": "Free yourself from attachment and hatred.",
+      "explanation": "Calm thinking prevents anger from controlling actions."
+    },
+    {
+      "verse": "शान्तिः शान्तिरिति",
+      "meaning": "Peace comes from self-control.",
+      "explanation": "Silence and patience dissolve anger."
+    }
+  ],
+
+  "happiness": [
+    {
+      "verse": "सन्तोषात् परमं सुखम्",
+      "meaning": "Contentment leads to the highest happiness.",
+      "explanation": "True happiness comes from inner satisfaction."
+    },
+    {
+      "verse": "आत्मौपम्येन सर्वत्र",
+      "meaning": "See yourself in all beings.",
+      "explanation": "Compassion increases lasting happiness."
+    },
+    {
+      "verse": "प्रसन्नात्मा न शोचति",
+      "meaning": "A joyful soul neither grieves nor desires.",
+      "explanation": "Balance keeps happiness stable."
+    }
+  ],
+
+  "neutral": [
+    {
+      "verse": "समः शत्रौ च मित्रे च",
+      "meaning": "Remain equal toward friend and enemy.",
+      "explanation": "Balance is the foundation of wisdom."
+    },
+    {
+      "verse": "युक्ताहारविहारस्य",
+      "meaning": "Moderation in life leads to harmony.",
+      "explanation": "Stable habits maintain mental clarity."
+    }
+  ]
+}

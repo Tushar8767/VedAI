@@ -1,0 +1,22 @@
+{
+  "name": "vedai-frontend",
+  "version": "1.0.0",
+  "description": "VedAI emotion-aware mental well-being support system frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/index.html",
+    "dev": "live-server --port=3000 --open=/index.html --watch=."
+  },
+  "keywords": [
+    "vedai",
+    "frontend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
