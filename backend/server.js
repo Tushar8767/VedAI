@@ -1,8 +1,11 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
+const fs = require("fs");
 const rateLimit = require("express-rate-limit");
 const config = require("./config/env");
 const { checkConnection, runMigrations, isConnected } = require("./database/db");
+
 
 const processRoutes = require("./routes/processRoutes");
 const authRoutes = require("./routes/authRoutes");
@@ -80,14 +83,34 @@ app.use("/api/v1/process", apiLimiter);
 app.use("/api/v1/chat", apiLimiter);
 
 
-// Root & Health
-app.get("/", (req, res) => {
+// Serve static frontend assets if available
+const frontendDir = path.join(__dirname, "../frontend");
+if (fs.existsSync(frontendDir)) {
+  app.use(express.static(frontendDir));
+}
+
+// API Root info
+app.get("/api", (req, res) => {
   res.json({
     name: "VedAI API",
     status: "running",
     version: "2.0.0"
   });
 });
+
+// Root & Health
+app.get("/", (req, res) => {
+  const indexHtml = path.join(frontendDir, "index.html");
+  if (fs.existsSync(indexHtml)) {
+    return res.sendFile(indexHtml);
+  }
+  res.json({
+    name: "VedAI API",
+    status: "running",
+    version: "2.0.0"
+  });
+});
+
 
 app.get("/health", (req, res) => {
   res.json({

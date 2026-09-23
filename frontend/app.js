@@ -1,6 +1,7 @@
 // VedAI — Production Frontend Application & Interface Engine
-const API_BASE_URL = window.VEDAI_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = window.VEDAI_API_BASE_URL || (typeof window !== "undefined" && window.location && window.location.protocol.startsWith("http") ? window.location.origin : "http://localhost:5000");
 const tokenStorageKey = 'vedai_auth_token';
+
 const userStorageKey = 'vedai_user';
 
 // State Management
