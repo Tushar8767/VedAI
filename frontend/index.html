@@ -1,78 +1,846 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VedAI - Emotional Wisdom System</title>
+    <title>VedAI — Sacred Intelligence & Emotional Equilibrium</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <span class="om">🕉</span>
-                <h1>VedAI</h1>
+    <!-- Ambient Background Lighting Canvas & Glow Orbs -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <div class="app-shell">
+        <!-- Modern App Navigation Dock (Top Floating Bar) -->
+        <header class="app-dock">
+            <div class="dock-left">
+                <div class="brand-crest">
+                    <span class="sacred-yantra">🕉</span>
+                    <div class="brand-headings">
+                        <span class="brand-name">VedAI</span>
+                        <span class="brand-edition">Sacred Intelligence</span>
+                    </div>
+                </div>
             </div>
-            <p class="tagline">Ancient Wisdom for Modern Minds</p>
+
+            <!-- Sliding Indicator Navigation Pill (Non-Linear Workflow) -->
+            <nav class="sliding-nav" id="slidingNav">
+                <div class="nav-indicator" id="navIndicator"></div>
+                <button class="nav-btn active" data-tab="dashboardPane" id="tabDashboard">
+                    <span class="btn-icon">🏛</span>
+                    <span class="btn-text">Home</span>
+                </button>
+                <button class="nav-btn" data-tab="reflectPane" id="tabReflect">
+                    <span class="btn-icon">✧</span>
+                    <span class="btn-text">Reflect</span>
+                </button>
+                <button class="nav-btn" data-tab="chatPane" id="tabChat">
+                    <span class="btn-icon">💬</span>
+                    <span class="btn-text">Chat</span>
+                </button>
+                <button class="nav-btn" data-tab="journalPane" id="tabJournal">
+                    <span class="btn-icon">📖</span>
+                    <span class="btn-text">Journal</span>
+                </button>
+                <button class="nav-btn" data-tab="insightsPane" id="tabInsights">
+                    <span class="btn-icon">📊</span>
+                    <span class="btn-text">Insights</span>
+                </button>
+            </nav>
+
+            <div class="dock-right">
+                <!-- Ambient Sound Synthesis Switch (432Hz Om / Tanpura) -->
+                <button class="ambient-sound-btn" id="ambientSoundBtn" title="Toggle 432Hz Sacred Resonance">
+                    <span class="sound-wave-icon">♪</span>
+                    <span class="sound-label">Ambient Om</span>
+                </button>
+
+                <div class="user-pill" id="userPill">
+                    <span class="status-dot"></span>
+                    <span class="user-name" id="dockUserName">Guest</span>
+                </div>
+                <button class="icon-btn" id="settingsBtn" title="Privacy Center & Settings">⚙️</button>
+                <button class="icon-btn" id="authBtn" title="Account / Authentication">👤</button>
+                <button class="icon-btn" id="drawerToggleBtn" title="About VedAI & Cognitive Architecture">☰</button>
+            </div>
         </header>
 
-        <main>
-            <section class="input-section">
-                <h2>Share Your Thoughts</h2>
-                <p class="description">Express how you're feeling, and receive personalized guidance from the Bhagavad Gita.</p>
-                <div class="input-wrapper">
-                    <textarea 
-                        id="userInput" 
-                        placeholder="I'm feeling anxious about my upcoming exams..."
-                        rows="4"
-                    ></textarea>
-                    <button id="submitBtn" class="submit-btn">
-                        <span class="btn-text">Get Guidance</span>
-                        <span class="btn-loader hidden"></span>
-                    </button>
-                </div>
-            </section>
+        <!-- Main Viewport Carousel with Horizontal Slide Transitions -->
+        <main class="viewport-stage" id="viewportStage">
+            <div class="viewport-track" id="viewportTrack">
 
-            <section id="resultsSection" class="results-section hidden">
-                <div class="emotion-display">
-                    <h3>Detected Emotion</h3>
-                    <div class="emotion-badge" id="emotionBadge">
-                        <span class="emotion-icon" id="emotionIcon"></span>
-                        <span class="emotion-text" id="emotionText">--</span>
-                    </div>
-                    <p class="confidence">Confidence: <span id="confidence">--</span>%</p>
-                </div>
+                <!-- SLIDE 0: HOME / TODAY SANCTUARY -->
+                <section class="viewport-slide active" id="dashboardPane">
+                    <div class="slide-content-wrapper">
+                        
+                        <!-- 1. Empathetic Welcome & Time-Aware Greeting Banner -->
+                        <div class="welcome-mentor-banner glass-panel">
+                            <div class="banner-avatar-ring">
+                                <span class="banner-yantra">🕉</span>
+                            </div>
+                            <div class="banner-body">
+                                <div class="banner-status-tag">
+                                    <span class="vault-indicator-dot"></span>
+                                    <span id="vaultStatusText">Private Sanctuary Mode Active</span>
+                                    <span class="tag-divider">·</span>
+                                    <span id="credSessionText">Guest Traveler Mode</span>
+                                </div>
+                                <h1 id="welcomeUserGreeting">Good Day, Traveler</h1>
+                                <p class="banner-sub" id="welcomeUserSub">What is on your mind today? Pause, take a grounding breath, and choose how you would like to begin.</p>
+                            </div>
+                            <div class="banner-action-box" id="bannerAuthActionBox">
+                                <button class="action-btn-gold" id="bannerSignInBtn">
+                                    <span class="btn-text">Sign In / Register</span>
+                                    <span class="btn-icon">➔</span>
+                                </button>
+                                <span class="auth-hint">Sync reflections across devices</span>
+                            </div>
+                        </div>
 
-                <div class="guidance-card">
-                    <div class="verse-section">
-                        <h3>🕉 Gita Verse</h3>
-                        <p class="verse" id="verse">--</p>
-                        <p class="verse-meaning" id="meaning">--</p>
-                    </div>
-                    <div class="explanation-section">
-                        <h3>💡 Explanation</h3>
-                        <p id="explanation">--</p>
-                    </div>
-                </div>
+                        <!-- 2. Three Primary Non-Linear Entry Gateways -->
+                        <div class="hub-section-block">
+                            <div class="section-divider-title">
+                                <span class="divider-icon">✨</span>
+                                <div>
+                                    <h3>Choose Your Path Forward</h3>
+                                    <p class="section-subtext">No forced sequence. Engage freely depending on what your heart needs right now.</p>
+                                </div>
+                            </div>
 
-                <div class="videos-section" id="videosSection">
-                    <h3>📺 Recommended Videos</h3>
-                    <div class="video-grid" id="videoGrid">
-                        <!-- Videos will be dynamically inserted here -->
-                    </div>
-                </div>
-            </section>
+                            <div class="home-gateways-grid">
+                                <!-- Gateway 1: Talk with VedAI -->
+                                <div class="gateway-card glass-panel">
+                                    <div class="gateway-icon-badge">💬</div>
+                                    <div class="gateway-body">
+                                        <h4>Talk with VedAI</h4>
+                                        <p>Open an unhurried, empathetic dialogue with Krishna AI counsel grounded in canonical Bhagavad Gita wisdom. Inquire freely about dilemmas, duties, or grief.</p>
+                                    </div>
+                                    <button class="action-btn-gold-sm" data-step-target="2">
+                                        <span>Open Guidance Chat</span>
+                                        <span class="arrow">➔</span>
+                                    </button>
+                                </div>
 
-            <div id="errorMessage" class="error-message hidden"></div>
+                                <!-- Gateway 2: Start Reflection -->
+                                <div class="gateway-card glass-panel featured-gateway">
+                                    <div class="gateway-icon-badge gold-glow">✧</div>
+                                    <div class="gateway-body">
+                                        <h4>Start Reflection</h4>
+                                        <p>Express what is troubling your peace. Receive an explainable emotional balance reading, a canonical Gita shloka, and 3 simple daily remedies.</p>
+                                    </div>
+                                    <button class="action-btn-gold-sm primary-glow" data-step-target="1">
+                                        <span>Begin Reflection</span>
+                                        <span class="arrow">➔</span>
+                                    </button>
+                                </div>
+
+                                <!-- Gateway 3: Quick Check-in -->
+                                <div class="gateway-card glass-panel">
+                                    <div class="gateway-icon-badge">⚡</div>
+                                    <div class="gateway-body">
+                                        <h4>Quick Check-in</h4>
+                                        <p>A 30-second pause to ground your breath with our rhythmic breathing circle and quickly log your present emotional state.</p>
+                                    </div>
+                                    <button class="action-btn-gold-sm" id="openQuickCheckinBtn">
+                                        <span>Take 30s Check-in</span>
+                                        <span class="arrow">➔</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Today's Wisdom Contemplation & Recent Activity Dual Shelf -->
+                        <div class="hub-dual-grid">
+                            <!-- Daily Shloka Insight Card -->
+                            <div class="daily-wisdom-card glass-panel">
+                                <div class="wisdom-header">
+                                    <span class="wisdom-badge">Daily Contemplation · Bhagavad Gita 2.47</span>
+                                    <span class="wisdom-yantra">☸</span>
+                                </div>
+                                <div class="wisdom-sanskrit">
+                                    कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।<br>
+                                    मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥
+                                </div>
+                                <p class="wisdom-translation">
+                                    "You have a right to perform your duty, but never to the fruits of action. Never let the outcome be your motive, nor be attached to inaction."
+                                </p>
+                                <div class="wisdom-takeaway">
+                                    <strong>Living Takeaway:</strong> When future uncertainty stirs anxiety, gently bring all attention back to the single, honorable effort right before you.
+                                </div>
+                                <div class="wisdom-actions">
+                                    <button class="action-btn-gold-sm" id="reflectDailyShlokaBtn">
+                                        <span>Reflect on this Shloka</span> ➔
+                                    </button>
+                                    <button class="action-btn-outline-sm" id="chatDailyShlokaBtn">
+                                        <span>Ask Krishna AI about this</span> ➔
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Recent Journey Card -->
+                            <div class="recent-shelf-card glass-panel">
+                                <div class="shelf-header">
+                                    <h3>Your Recent Journey</h3>
+                                    <span class="shelf-badge" id="homeRecentBadge">Active</span>
+                                </div>
+                                <div class="shelf-body" id="homeRecentContent">
+                                    <div class="recent-preview-item">
+                                        <span class="recent-preview-icon" id="homeRecentIcon">😌</span>
+                                        <div>
+                                            <div class="recent-preview-state" id="homeRecentState">Equanimity (Baseline)</div>
+                                            <div class="recent-preview-text" id="homeRecentText">"Ready for self-inquiry and mindful presence."</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shelf-footer">
+                                    <button class="action-btn-outline-sm" data-step-target="4">
+                                        <span>View Resilience Insights & Timeline</span> ➔
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Transparent AI Callout -->
+                        <div class="architecture-callout-banner glass-panel">
+                            <div class="callout-icon">💡</div>
+                            <div class="callout-text">
+                                <strong>Ethical, Explainable Multimodal AI:</strong>
+                                <span>VedAI pairs text NLP with optional facial sensing (camera frames transmitted transiently to ML microservice without persistent storage) grounded in 14 verified canonical Gita verses and semantic retrieval.</span>
+                            </div>
+                            <button class="action-btn-outline-sm" id="homeDrawerLinkBtn">
+                                <span>Inspect Architecture & Lexicon</span> ➔
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SLIDE 1: MULTIMODAL REFLECTION STUDIO -->
+                <section class="viewport-slide" id="reflectPane">
+                    <div class="slide-content-wrapper">
+                        <div class="pane-headline">
+                            <span class="headline-badge">Mindful Reflection Studio</span>
+                            <h1>What is on your heart right now?</h1>
+                            <p class="headline-sub">Type freely about whatever is disturbing your peace, causing worry, or bringing joy. VedAI listens deeply and brings you timeless Gita wisdom with simple, actionable remedies.</p>
+                        </div>
+
+                        <div class="studio-grid">
+                            <!-- Left Column: Contemplation Input & Psychological State -->
+                            <div class="studio-col-left">
+                                <div class="console-card glass-panel">
+                                    <div class="console-header">
+                                        <div class="console-title-row">
+                                            <span class="console-title">Contemplation Input</span>
+                                            <span class="console-badge">Sacred Reflection</span>
+                                        </div>
+                                        <div class="mood-chips-scroll">
+                                            <button class="prompt-chip" data-prompt="I am overwhelmed by dread regarding my impending career and exams.">Exam Dread</button>
+                                            <button class="prompt-chip" data-prompt="I cannot suppress the resentment and fury burning inside me.">Violent Anger</button>
+                                            <button class="prompt-chip" data-prompt="A profound loneliness and grief has settled over my heart.">Silent Grief</button>
+                                            <button class="prompt-chip" data-prompt="I have fulfilled my duty today and feel grounded in quiet peace.">Pure Equanimity</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="textarea-container">
+                                        <textarea 
+                                            id="userInput" 
+                                            placeholder="Exhale deeply and type freely. For example: 'A profound loneliness and grief has settled over my heart...'"
+                                            rows="5"
+                                        ></textarea>
+                                        <div class="textarea-footer">
+                                            <span class="char-counter" id="charCounter">0 characters</span>
+                                            <span class="shortcut-hint">Ctrl + Enter to Submit</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Camera Biometrics HUD Section -->
+                                    <div class="biometric-hud glass-inset">
+                                        <div class="hud-top">
+                                            <div class="hud-meta">
+                                                <label class="switch-control">
+                                                    <input type="checkbox" id="cameraToggle">
+                                                    <span class="switch-track"></span>
+                                                </label>
+                                                <span class="hud-label">Biometric Facial Emotion Sensing</span>
+                                            </div>
+                                            <span class="hud-privacy-badge">🔒 100% Client-Side RAM · Zero Video Stored</span>
+                                        </div>
+
+                                        <div class="camera-stage hidden" id="cameraStage">
+                                            <div class="camera-frame-wrapper">
+                                                <video id="cameraVideo" autoplay playsinline muted></video>
+                                                <canvas id="cameraCanvas" class="hidden"></canvas>
+                                                <!-- Futuristic HUD Overlays -->
+                                                <div class="hud-reticle">
+                                                    <div class="hud-corner top-left"></div>
+                                                    <div class="hud-corner top-right"></div>
+                                                    <div class="hud-corner bottom-left"></div>
+                                                    <div class="hud-corner bottom-right"></div>
+                                                    <div class="hud-scanner-bar"></div>
+                                                </div>
+                                                <div class="hud-telemetry">
+                                                    <span class="telemetry-item" id="hudStatus">READY</span>
+                                                    <span class="telemetry-item" id="hudFaceCount">FACE: SCANNING</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="submit-action-row">
+                                        <button class="action-btn-gold" id="submitBtn">
+                                            <span class="btn-text">Distill Sacred Guidance</span>
+                                            <span class="btn-icon">⚡</span>
+                                            <span class="btn-spinner hidden"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Psychological State Assessment (Appears under input upon submission) -->
+                                <div class="diagnostic-card glass-panel hidden" id="emotionDiagnosticCard">
+                                    <!-- User Echo / Active Listening -->
+                                    <div class="user-echo-card glass-inset" id="userEchoCard">
+                                        <span class="echo-label">What Resides In Your Consciousness</span>
+                                        <p class="echo-text" id="userEchoText">“...”</p>
+                                    </div>
+
+                                    <!-- Detected State & Confidence Gauge -->
+                                    <div class="result-header-card">
+                                        <div class="detected-state-box">
+                                            <span class="emotion-icon-large" id="emotionIcon">😌</span>
+                                            <div>
+                                                <div class="badge-sub">Dominant Psychological State</div>
+                                                <h2 class="detected-title" id="emotionText">Equanimity</h2>
+                                            </div>
+                                        </div>
+                                        <div class="confidence-gauge">
+                                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                                <path class="circle-fill" id="gaugeFill" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                                <text x="18" y="20.35" class="circle-percentage" id="confidenceValue">85%</text>
+                                            </svg>
+                                            <span class="gauge-label">Confidence</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Empathetic Note -->
+                                    <div class="empathy-summary-card" id="empathySummaryCard">
+                                        <p id="empathySummaryText">We hear what you are carrying. Take a gentle breath.</p>
+                                    </div>
+
+                                    <!-- Modality & Model Badges -->
+                                    <div class="fusion-tag-bar">
+                                        <span class="modality-pill" id="modalityPill">Text Stream Only</span>
+                                        <span class="model-pill" id="modelPill">DistilRoBERTa v2.0</span>
+                                    </div>
+
+                                    <!-- Explainability Box -->
+                                    <div class="explain-card">
+                                        <div class="explain-icon">💡</div>
+                                        <div class="explain-text">
+                                            <strong>Why VedAI estimated this:</strong>
+                                            <p id="explanationText">--</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Emotional Spectrum Breakdown -->
+                                    <div class="spectrum-section">
+                                        <h4>Emotional Spectrum Vectors</h4>
+                                        <div class="spectrum-bars-grid" id="spectrumBars"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Sacred Shloka + Tailored Remedies + YouTube Media + Next Steps -->
+                            <div class="studio-col-right" id="resultsSection">
+                                <!-- Empty Placeholder State -->
+                                <div class="revelation-card glass-panel empty-state" id="resultsPlaceholder">
+                                    <div class="sacred-geometry-orb">
+                                        <span class="orb-yantra">☸</span>
+                                    </div>
+                                    <h3>Awaiting Your Reflection</h3>
+                                    <p>Share what is on your heart. VedAI will synthesize psychological vectors, canonical Bhagavad Gita philosophy, targeted daily remedies, and curated contemplation media.</p>
+                                </div>
+
+                                <!-- Revealed Guidance Deck -->
+                                <div class="guidance-deck hidden" id="resultsContent">
+                                    <!-- 1. Canonical Bhagavad Gita Revelation Card -->
+                                    <div class="shloka-card-prominent glass-panel">
+                                        <div class="shloka-parchment">
+                                            <div class="parchment-border-top"></div>
+                                            <div class="shloka-citation-header">
+                                                <div class="shloka-badge-wrap">
+                                                    <span class="shloka-source-badge" id="shlokaSource">Bhagavad Gita 2.47</span>
+                                                </div>
+                                                <div class="shloka-action-btns">
+                                                    <button class="shloka-audio-btn" id="playShlokaAudioBtn" title="Listen to Sanskrit Verse">🔊 Listen / Chant</button>
+                                                    <button class="shloka-copy-btn" id="copyShlokaBtn" title="Copy Shloka">⎘ Copy Verse</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="sanskrit-typography" id="shlokaSanskrit">
+                                                कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+                                            </div>
+                                            <div class="transliteration-text" id="shlokaTranslit">
+                                                karmaṇy-evādhikāras te mā phaleṣu kadācana
+                                            </div>
+
+                                            <div class="shloka-divider">☸</div>
+
+                                            <div class="meaning-block">
+                                                <span class="block-label">English Translation</span>
+                                                <p id="shlokaMeaning">--</p>
+                                            </div>
+
+                                            <div class="application-block">
+                                                <span class="block-label">Practical Living Guidance</span>
+                                                <p id="shlokaGuidance">--</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2. Targeted Daily Remedies & Practices -->
+                                    <div class="practices-card-prominent glass-panel">
+                                        <div class="card-section-header">
+                                            <span class="card-header-icon">🌿</span>
+                                            <div>
+                                                <h4 class="card-header-title">Tailored Daily Remedies & Practices</h4>
+                                                <span class="card-header-subtitle">Targeted actions designed to re-center your state (<span id="remedyEmotionLabel">Sadness</span>)</span>
+                                            </div>
+                                        </div>
+                                        <div class="practices-grid" id="practicesGrid"></div>
+                                    </div>
+
+                                    <!-- 3. Curated YouTube Contemplation Media -->
+                                    <div class="video-card-prominent glass-panel">
+                                        <div class="card-section-header">
+                                            <span class="card-header-icon">▶</span>
+                                            <div>
+                                                <h4 class="card-header-title">Curated Contemplation Media</h4>
+                                                <span class="card-header-subtitle">Recommended spiritual discourses & guidance for <span id="videoEmotionLabel">Sadness</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="video-grid" id="videoGrid"></div>
+                                    </div>
+
+                                    <!-- 4. Next Steps Action Deck -->
+                                    <div class="sequential-handoff-deck glass-panel">
+                                        <div class="handoff-header">
+                                            <span class="handoff-badge">What would you like to do?</span>
+                                            <h4>Choose Your Next Step</h4>
+                                        </div>
+                                        <div class="handoff-button-row">
+                                            <button class="handoff-btn handoff-chat" id="handoffChatBtn" type="button">
+                                                <span class="handoff-btn-icon">💬</span>
+                                                <div class="handoff-btn-meta">
+                                                    <span class="handoff-btn-title">Talk with VedAI</span>
+                                                    <span class="handoff-btn-sub">Explore this in unhurried dialogue</span>
+                                                </div>
+                                                <span class="handoff-arrow">➔</span>
+                                            </button>
+                                            <button class="handoff-btn handoff-practice" id="handoffPracticeBtn" type="button">
+                                                <span class="handoff-btn-icon">🌬️</span>
+                                                <div class="handoff-btn-meta">
+                                                    <span class="handoff-btn-title">Grounding Practice</span>
+                                                    <span class="handoff-btn-sub">30-second breath anchoring</span>
+                                                </div>
+                                                <span class="handoff-arrow">➔</span>
+                                            </button>
+                                            <button class="handoff-btn handoff-journal" id="handoffJournalBtn" type="button">
+                                                <span class="handoff-btn-icon">📖</span>
+                                                <div class="handoff-btn-meta">
+                                                    <span class="handoff-btn-title">Record in Journal</span>
+                                                    <span class="handoff-btn-sub">Preserve reflection in your vault</span>
+                                                </div>
+                                                <span class="handoff-arrow">➔</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 2: INTERACTIVE AI GUIDANCE CHAT -->
+                <section class="viewport-slide" id="chatPane">
+                    <div class="slide-content-wrapper chat-max-wrapper">
+                        <div class="chat-stage-card glass-panel">
+                            <div class="chat-stage-header">
+                                <div class="chat-partner">
+                                    <span class="partner-avatar">🕉</span>
+                                    <div class="partner-info">
+                                        <h3>VedAI Spiritual Counsel</h3>
+                                        <span class="partner-status">Canonical Bhagavad Gita Wisdom · Contextual RAG</span>
+                                    </div>
+                                </div>
+                                <div class="chat-header-actions">
+                                    <button class="chat-clear-btn" id="clearChatBtn">Clear Conversation</button>
+                                </div>
+                            </div>
+
+                            <!-- Chat Message Stream -->
+                            <div class="chat-stream" id="chatStream">
+                                <div class="chat-bubble ai-bubble">
+                                    <div class="bubble-avatar">🕉</div>
+                                    <div class="bubble-body">
+                                        <p>Namaste. I am VedAI, your philosophical companion. Share whatever turbulence, dilemma, or doubt currently agitates your mind. How may the Gita illuminate your path today?</p>
+                                        <span class="bubble-time">Now</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chat Quick Prompts -->
+                            <div class="chat-quick-shelf">
+                                <button class="quick-prompt-btn" data-chat="How do I overcome crippling anxiety about future outcomes?">Overcoming Future Anxiety</button>
+                                <button class="quick-prompt-btn" data-chat="Why does anger destroy my wisdom, and how do I arrest it?">Controlling Rage & Anger</button>
+                                <button class="quick-prompt-btn" data-chat="How can I find peace when grieving a painful loss?">Healing Through Grief</button>
+                                <button class="quick-prompt-btn" data-chat="What does Krishna teach about duty when you feel like quitting?">Persevering in Duty</button>
+                            </div>
+
+                            <!-- Chat Input Bar -->
+                            <div class="chat-input-deck">
+                                <input type="text" id="chatInput" placeholder="Inquire of Krishna's teachings (e.g., 'How do I stop overthinking every decision?')..." autocomplete="off" />
+                                <button class="send-message-btn" id="sendChatBtn">
+                                    <span class="send-icon">➤</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- SLIDE 4: SACRED JOURNAL STUDIO -->
+                <section class="viewport-slide" id="journalPane">
+                    <div class="slide-content-wrapper">
+                        <div class="pane-headline">
+                            <span class="headline-badge">Private Sanctuary</span>
+                            <h1>Sacred Contemplation Journal</h1>
+                            <p class="headline-sub">Writing is mindful svadhyaya (self-study). Journal entries are privately stored with relational database integrity.</p>
+                        </div>
+
+                        <div class="journal-dual-stage">
+                            <!-- Left: Editor Studio -->
+                            <div class="journal-editor-card glass-panel">
+                                <h3>Compose Reflection</h3>
+                                <input type="text" id="journalTitleInput" class="journal-input" placeholder="Title your insight (e.g., Midnight Stillness on Duty)..." />
+                                <div class="journal-meta-row">
+                                    <select id="journalTagSelect" class="journal-select">
+                                        <option value="">Tag Emotional State (Optional)</option>
+                                        <option value="anxiety">Anxiety / Overthinking</option>
+                                        <option value="stress">Stress / Pressure</option>
+                                        <option value="fear">Fear / Paralysis</option>
+                                        <option value="sadness">Sadness / Loss</option>
+                                        <option value="anger">Anger / Impatience</option>
+                                        <option value="happiness">Joy / Contentment</option>
+                                        <option value="neutral">Equanimity / Stillness</option>
+                                    </select>
+                                    <span class="auto-save-pill" id="autoSaveIndicator">Ready</span>
+                                </div>
+                                <textarea id="journalBodyInput" class="journal-textarea" rows="8" placeholder="Allow your innermost truth to flow without censorship or self-judgment..."></textarea>
+                                <div class="journal-btn-row">
+                                    <button class="action-btn-gold" id="saveJournalBtn">Save Sacred Entry</button>
+                                </div>
+                            </div>
+
+                            <!-- Right: Saved Feed -->
+                            <div class="journal-feed-card glass-panel">
+                                <div class="journal-feed-header">
+                                    <h3>Preserved Entries</h3>
+                                    <input type="text" id="journalSearchInput" class="search-mini" placeholder="Search entries..." />
+                                </div>
+                                <div class="journal-scroll-stage" id="journalFeed">
+                                    <div class="journal-empty">No entries yet. Write your thoughts on the left.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+ 
+                <!-- SLIDE 4: RESILIENCE ANALYTICS & INSIGHTS -->
+                <section class="viewport-slide" id="insightsPane">
+                    <div class="slide-content-wrapper">
+                        <div class="pane-headline">
+                            <span class="headline-badge">Personal Equilibrium</span>
+                            <h1>Resilience Analytics & Journey</h1>
+                            <p class="headline-sub">Calibrated psychological equilibrium and longitudinal reflection timeline tracked across your journey.</p>
+                        </div>
+
+                        <!-- Metric KPI Cards Row -->
+                        <div class="dashboard-kpi-row">
+                            <div class="kpi-card glass-panel">
+                                <span class="kpi-label">Current State</span>
+                                <div class="kpi-value" id="dashEmotion">--</div>
+                                <span class="kpi-trend positive">Calibrated NLP Vector</span>
+                            </div>
+                            <div class="kpi-card glass-panel">
+                                <span class="kpi-label">Wellness Index</span>
+                                <div class="kpi-value-gold" id="dashWellness">50 <small>/ 100</small></div>
+                                <span class="kpi-trend" id="dashFormula">Baseline Equilibrium</span>
+                            </div>
+                            <div class="kpi-card glass-panel">
+                                <span class="kpi-label">Reflections Recorded</span>
+                                <div class="kpi-value" id="dashCount">0</div>
+                                <span class="kpi-trend" id="dashSyncStatus">Persisted in PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-visual-grid">
+                            <!-- Canvas Chart Card -->
+                            <div class="visual-card glass-panel">
+                                <div class="visual-card-header">
+                                    <h3>Emotion Distribution Spectrum</h3>
+                                    <button class="secondary-mini-btn" id="refreshDashBtn">Refresh</button>
+                                </div>
+                                <div class="chart-canvas-box">
+                                    <canvas id="emotionChart" width="460" height="240"></canvas>
+                                </div>
+                                <ul class="chart-legend" id="chartLegend"></ul>
+                            </div>
+
+                            <!-- Reflection Timeline Stream -->
+                            <div class="visual-card glass-panel">
+                                <div class="visual-card-header">
+                                    <h3>Reflection History Journey</h3>
+                                    <span class="timeline-count-badge" id="timelineBadge">0 Entries</span>
+                                </div>
+                                <div class="timeline-scroll-stage">
+                                    <ul class="timeline-list" id="timelineList">
+                                        <li class="timeline-empty">Sign in to view your persistent reflection timeline.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </main>
 
-        <footer>
-            <p>Powered by Ancient Wisdom & Modern AI</p>
+        <!-- Mobile Bottom Navigation Dock (Responsive for Handhelds) -->
+        <nav class="mobile-bottom-dock" id="mobileBottomDock">
+            <button class="mob-nav-btn active" data-step-target="0">
+                <span class="mob-icon">🏛</span>
+                <span class="mob-label">Home</span>
+            </button>
+            <button class="mob-nav-btn" data-step-target="1">
+                <span class="mob-icon">✧</span>
+                <span class="mob-label">Reflect</span>
+            </button>
+            <button class="mob-nav-btn" data-step-target="2">
+                <span class="mob-icon">💬</span>
+                <span class="mob-label">Chat</span>
+            </button>
+            <button class="mob-nav-btn" data-step-target="3">
+                <span class="mob-icon">📖</span>
+                <span class="mob-label">Journal</span>
+            </button>
+            <button class="mob-nav-btn" data-step-target="4">
+                <span class="mob-icon">📊</span>
+                <span class="mob-label">Insights</span>
+            </button>
+        </nav>
+
+        <!-- Sliding Right Drawer (Slide-Over Panel for Architecture & Scripture Deep Dive) -->
+        <aside class="slide-over-drawer" id="sideDrawer">
+            <div class="drawer-header">
+                <h3 id="drawerTitle">VedAI Architecture & Lexicon</h3>
+                <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+            </div>
+            <div class="drawer-body" id="drawerBody">
+                <!-- The Cognitive Architecture Pipeline -->
+                <div class="drawer-section">
+                    <h4>How VedAI Restores Inner Equilibrium</h4>
+                    <p class="drawer-sub">The transparent multi-tier AI pipeline transforming vulnerability into grounded action:</p>
+                    
+                    <div class="drawer-pipeline-list">
+                        <div class="drawer-pipe-item">
+                            <span class="pipe-num">01</span>
+                            <div>
+                                <strong>Mindful Expression:</strong>
+                                <p>Unfiltered contemplation through natural language or optional camera sensing. Camera frames are transmitted transiently to the ML service for facial emotion inference and are not permanently stored.</p>
+                            </div>
+                        </div>
+                        <div class="drawer-pipe-item">
+                            <span class="pipe-num">02</span>
+                            <div>
+                                <strong>Neural Sentiment Decomposition:</strong>
+                                <p>DistilRoBERTa NLP decomposes 7 psychological vectors, combined via weighted confidence late fusion when biometrics are active.</p>
+                            </div>
+                        </div>
+                        <div class="drawer-pipe-item">
+                            <span class="pipe-num">03</span>
+                            <div>
+                                <strong>14-Verse Canonical Gita RAG Grounding:</strong>
+                                <p>TF-IDF and cosine similarity retrieval queries our curated collection of 14 verified canonical verses of the Bhagavad Gita to find the exact philosophical grounding for your dilemma.</p>
+                            </div>
+                        </div>
+                        <div class="drawer-pipe-item">
+                            <span class="pipe-num">04</span>
+                            <div>
+                                <strong>Equilibrium & Svadhyaya:</strong>
+                                <p>3 actionable micro-remedies, dynamic multi-turn Krishna AI guidance, and private journaling saved with relational PostgreSQL integrity and AES-256-GCM encryption at rest.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drawer-card">
+                    <h4>Core Gita Philosophies</h4>
+                    <p><strong>Karma Yoga:</strong> Dedicated action without debilitating anxiety over the fruits (Chapter 2, Verse 47).</p>
+                    <p><strong>Titiksha:</strong> Patient endurance of temporary dualities like pleasure and pain (Chapter 2, Verse 14).</p>
+                    <p><strong>Samatvam:</strong> The golden poise of equal-mindedness in success and setback (Chapter 2, Verse 48).</p>
+                </div>
+
+                <div class="drawer-card">
+                    <h4>Privacy & Security Architecture</h4>
+                    <p>Camera frames are transmitted transiently to the ML service for facial emotion inference and are immediately freed upon calculation; zero frames are permanently stored. Sensitive journal reflections and chat messages are protected with authenticated AES-256-GCM encryption at rest.</p>
+                </div>
+
+            </div>
+        </aside>
+        <div class="drawer-backdrop hidden" id="drawerBackdrop"></div>
+
+        <!-- Quick 30-Second Check-in Modal -->
+        <div class="modal-backdrop hidden" id="quickCheckinModal">
+            <div class="modal-box glass-panel quick-checkin-box">
+                <div class="modal-top">
+                    <h3>30-Second Mindful Pause</h3>
+                    <button class="modal-close-btn" id="closeQuickCheckinBtn">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <p class="modal-desc">Follow the circle. Take a deep, slow breath to center your consciousness.</p>
+                    
+                    <div class="breathing-circle-stage">
+                        <div class="breathing-pulse-orb" id="breathingOrb">
+                            <span id="breathingText">Inhale...</span>
+                        </div>
+                    </div>
+
+                    <div class="checkin-mood-section">
+                        <label>How does your mind feel right now?</label>
+                        <div class="checkin-mood-chips">
+                            <button class="checkin-chip active" data-mood="neutral">😌 Steady</button>
+                            <button class="checkin-chip" data-mood="anxiety">😰 Overthinking</button>
+                            <button class="checkin-chip" data-mood="stress">🌪 Overwhelmed</button>
+                            <button class="checkin-chip" data-mood="sadness">🌧 Heavy</button>
+                            <button class="checkin-chip" data-mood="happiness">✨ Grateful</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-btn-stack">
+                        <button class="action-btn-gold" id="saveQuickCheckinBtn">Complete Check-in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings & Privacy Center Modal -->
+        <div class="modal-backdrop hidden" id="settingsModal">
+            <div class="modal-box glass-panel settings-box">
+                <div class="modal-top">
+                    <h3>Settings & Privacy Center</h3>
+                    <button class="modal-close-btn" id="closeSettingsBtn">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <div class="settings-section">
+                        <h4>Data Sovereignty & Portability</h4>
+                        <p class="settings-desc">Your inner reflections and journal entries belong entirely to you. You can export or purge them at any time.</p>
+                        <div class="settings-actions-stack">
+                            <button class="action-btn-outline-sm" id="exportDataBtn">
+                                <span>📥 Export All My Data (JSON)</span>
+                            </button>
+                            <button class="action-btn-danger-sm" id="clearLocalDataBtn">
+                                <span>🗑️ Clear Local History & Cache</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h4>Sensory & AI Preferences</h4>
+                        <div class="settings-toggle-row">
+                            <div>
+                                <strong>432Hz Om Drone Audio</strong>
+                                <p class="subtle-p">Ambient binaural resonance synthesizer for meditation</p>
+                            </div>
+                            <label class="switch-control">
+                                <input type="checkbox" id="settingsAudioToggle">
+                                <span class="switch-track"></span>
+                            </label>
+                        </div>
+                        <div class="settings-toggle-row">
+                            <div>
+                                <strong>Ephemeral Biometric Sensing</strong>
+                                <p class="subtle-p">Analyze facial expressions in volatile RAM with zero storage</p>
+                            </div>
+                            <label class="switch-control">
+                                <input type="checkbox" id="settingsCameraToggle">
+                                <span class="switch-track"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h4>Account & Session</h4>
+                        <p class="settings-desc" id="settingsSessionDesc">Operating in Guest Traveler Mode.</p>
+                        <div class="modal-btn-stack">
+                            <button class="action-btn-gold-sm" id="settingsAuthActionBtn">Sign In / Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auth Modal -->
+        <div class="modal-backdrop hidden" id="authModal">
+            <div class="modal-box glass-panel">
+                <div class="modal-top">
+                    <h3 id="authModalTitle">Access Your Journey</h3>
+                    <button class="modal-close-btn" id="closeAuthBtn">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <p class="modal-desc">Sign in to synchronize reflections, emotion history, and private journals with the PostgreSQL database.</p>
+                    <div class="form-field" id="nameField">
+                        <label>Your Name</label>
+                        <input type="text" id="authNameInput" placeholder="Arjuna" />
+                    </div>
+                    <div class="form-field">
+                        <label>Email</label>
+                        <input type="email" id="authEmailInput" placeholder="arjuna@kurukshetra.org" />
+                    </div>
+                    <div class="form-field">
+                        <label>Password (8+ chars)</label>
+                        <input type="password" id="authPasswordInput" placeholder="••••••••" />
+                    </div>
+                    <div class="modal-btn-stack">
+                        <button class="action-btn-gold" id="authSubmitBtn">Register Account</button>
+                        <button class="subtle-btn" id="authSwitchModeBtn">Already registered? Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Safety Toast -->
+        <div class="safety-toast hidden" id="safetyToast">
+            <span class="toast-icon">⚠️</span>
+            <div class="toast-body">
+                <strong>Compassionate Safety Notice:</strong>
+                <p id="safetyToastMsg">If you are experiencing immediate crisis, call or text 988 (U.S./Canada) or 112 (India). You are not alone.</p>
+            </div>
+            <button class="toast-close-btn" id="closeToastBtn">&times;</button>
+        </div>
+
+        <footer class="app-footer">
+            <span>VedAI Sanctuary · Grounded in Canonical Bhagavad Gita Wisdom</span>
+            <span>Reflective guidance only · Non-clinical mindfulness companion</span>
         </footer>
     </div>
 
     <script src="app.js"></script>
 </body>
 </html>
-

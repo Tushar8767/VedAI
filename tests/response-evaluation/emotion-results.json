@@ -1,0 +1,282 @@
+[
+  {
+    "test_id": "C-01",
+    "input": "I am feeling so happy and joyful today!",
+    "expected": "happiness",
+    "detected": "happiness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-02",
+    "input": "I feel deep sadness and grief in my heart.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6592659265926594,
+    "pass": true
+  },
+  {
+    "test_id": "C-03",
+    "input": "I am filled with anger and frustration at how they cheated me.",
+    "expected": "anger",
+    "detected": "anger",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-04",
+    "input": "I am anxious and terrified about the upcoming test results.",
+    "expected": "anxiety",
+    "detected": "anxiety",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-05",
+    "input": "I am completely stressed and overwhelmed by excessive deadlines.",
+    "expected": "stress",
+    "detected": "stress",
+    "confidence": 0.7517248275172483,
+    "pass": true
+  },
+  {
+    "test_id": "C-06",
+    "input": "I am scared of what is going to happen in the dark.",
+    "expected": "fear",
+    "detected": "fear",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-07",
+    "input": "I feel lonely and isolated from the world.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-08",
+    "input": "I am confused about what path to take.",
+    "expected": "anxiety",
+    "detected": "anxiety",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-09",
+    "input": "I am so excited and motivated for this new opportunity!",
+    "expected": "happiness",
+    "detected": "happiness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-10",
+    "input": "I feel calm, serene, and deeply centered right now.",
+    "expected": "happiness",
+    "detected": "happiness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-11",
+    "input": "I feel disappointed and let down by my recent performance.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-12",
+    "input": "I feel guilty about how I reacted yesterday.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.72,
+    "pass": true
+  },
+  {
+    "test_id": "C-13",
+    "input": "I feel hopeless and useless right now.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "C-14",
+    "input": "I am sitting quietly at my desk reading a book.",
+    "expected": "neutral",
+    "detected": "neutral",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "D-01",
+    "input": "i feel nourves about tomorrow",
+    "expected": "anxiety",
+    "detected": "anxiety",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "D-02",
+    "input": "i am streesed out from work",
+    "expected": "stress",
+    "detected": "stress",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "D-03",
+    "input": "severe anxity is keeping me awake",
+    "expected": "anxiety",
+    "detected": "anxiety",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "D-04",
+    "input": "im sad af today bro",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "D-05",
+    "input": "im tired bro and feeling drained",
+    "expected": "stress",
+    "detected": "stress",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "G-01",
+    "input": "I have extreme exam stress and my finals are next week.",
+    "expected": "stress / anxiety",
+    "detected": "stress",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "G-02",
+    "input": "Heavy assignment pressure and project deadlines are crushing me.",
+    "expected": "stress",
+    "detected": "stress",
+    "confidence": 0.6592659265926593,
+    "pass": true
+  },
+  {
+    "test_id": "G-03",
+    "input": "Placement anxiety is making me feel sick with fear of unemployment.",
+    "expected": "anxiety",
+    "detected": "anxiety",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "G-04",
+    "input": "Total career confusion and I do not know where to go.",
+    "expected": "anxiety",
+    "detected": "anxiety",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "G-05",
+    "input": "I failed my job interview and feel completely rejected.",
+    "expected": "sadness / anxiety",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "G-06",
+    "input": "College workload is too heavy and I cannot cope.",
+    "expected": "stress",
+    "detected": "stress",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "H-01",
+    "input": "I am having serious friendship problems and feel excluded.",
+    "expected": "sadness / anxiety",
+    "detected": "anxiety",
+    "confidence": 0.72,
+    "pass": true
+  },
+  {
+    "test_id": "H-02",
+    "input": "Going through a painful breakup and my heart is broken.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6592659265926594,
+    "pass": true
+  },
+  {
+    "test_id": "H-03",
+    "input": "Continuous family conflict and screaming matches at home.",
+    "expected": "anger",
+    "detected": "anger",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "H-04",
+    "input": "Feeling ignored and dismissed by everyone I love.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "I-01",
+    "input": "I feel useless and like a complete burden.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "I-02",
+    "input": "I failed again and feel like giving up.",
+    "expected": "sadness",
+    "detected": "sadness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "O-01",
+    "input": "I am happy today and life feels radiant.",
+    "expected": "happiness",
+    "detected": "happiness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "O-02",
+    "input": "I achieved my goal after months of persistent effort!",
+    "expected": "happiness",
+    "detected": "happiness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "O-03",
+    "input": "I feel peaceful and grounded within myself.",
+    "expected": "happiness",
+    "detected": "happiness",
+    "confidence": 0.6,
+    "pass": true
+  },
+  {
+    "test_id": "O-04",
+    "input": "I got selected for the dream job offer!",
+    "expected": "happiness",
+    "detected": "happiness",
+    "confidence": 0.6682668266826683,
+    "pass": true
+  }
+]

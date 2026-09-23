@@ -8,10 +8,12 @@ frontend/node_modules/
 #backend
 backend/node_modules/
 
-# Environment variables
+# Environment variables & local fallback DB
 .env
 backend/.env
-#database
+backend/data/*.json
+!backend/data/canonicalGitaData.json
+
 # Python
 __pycache__/
 *.pyc

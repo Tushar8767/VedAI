@@ -1,0 +1,237 @@
+[
+  {
+    "test_id": "C-01",
+    "user_input": "I am feeling so happy and joyful today!",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 5.24"
+    ],
+    "latency_ms": 410
+  },
+  {
+    "test_id": "C-02",
+    "user_input": "I feel deep sadness and grief in my heart.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.14"
+    ],
+    "latency_ms": 307
+  },
+  {
+    "test_id": "C-03",
+    "user_input": "I am filled with anger and frustration at how they cheated me.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.63"
+    ],
+    "latency_ms": 359
+  },
+  {
+    "test_id": "C-04",
+    "user_input": "I am anxious and terrified about the upcoming test results.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 6.5"
+    ],
+    "latency_ms": 40
+  },
+  {
+    "test_id": "C-05",
+    "user_input": "I am completely stressed and overwhelmed by excessive deadlines.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 6.26"
+    ],
+    "latency_ms": 3122
+  },
+  {
+    "test_id": "C-06",
+    "user_input": "I am scared of what is going to happen in the dark.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.47"
+    ],
+    "latency_ms": 855
+  },
+  {
+    "test_id": "C-07",
+    "user_input": "I feel lonely and isolated from the world.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.14"
+    ],
+    "latency_ms": 22
+  },
+  {
+    "test_id": "C-08",
+    "user_input": "I feel disappointed and let down by my recent performance.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.14"
+    ],
+    "latency_ms": 18
+  },
+  {
+    "test_id": "C-09",
+    "user_input": "I am sitting quietly at my desk reading a book.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.48"
+    ],
+    "latency_ms": 1096
+  },
+  {
+    "test_id": "D-01",
+    "user_input": "i feel nourves about tomorrow",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 6.5"
+    ],
+    "latency_ms": 33
+  },
+  {
+    "test_id": "D-02",
+    "user_input": "i am streesed out from work",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 6.26"
+    ],
+    "latency_ms": 22
+  },
+  {
+    "test_id": "D-03",
+    "user_input": "im sad af today bro",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.11"
+    ],
+    "latency_ms": 13
+  },
+  {
+    "test_id": "E-01",
+    "user_input": "mera mood kharab hai",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "BG 2.11",
+      "BG 2.20"
+    ],
+    "latency_ms": 134
+  },
+  {
+    "test_id": "E-02",
+    "user_input": "mujhe bahut stress ho raha hai",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "BG 6.16",
+      "BG 6.26"
+    ],
+    "latency_ms": 53
+  },
+  {
+    "test_id": "G-01",
+    "user_input": "I have extreme exam stress and my finals are next week.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 6.26"
+    ],
+    "latency_ms": 23
+  },
+  {
+    "test_id": "G-02",
+    "user_input": "Placement anxiety is making me feel sick with fear of unemployment.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 6.26"
+    ],
+    "latency_ms": 19
+  },
+  {
+    "test_id": "H-01",
+    "user_input": "Going through a painful breakup and my heart is broken.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.20"
+    ],
+    "latency_ms": 19
+  },
+  {
+    "test_id": "H-02",
+    "user_input": "Continuous family conflict and screaming matches at home.",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "Bhagavad Gita 2.63"
+    ],
+    "latency_ms": 28
+  },
+  {
+    "test_id": "L-01",
+    "user_input": "What is Bhagavad Gita?",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "BG 12.15",
+      "BG 2.48"
+    ],
+    "latency_ms": 45
+  },
+  {
+    "test_id": "L-02",
+    "user_input": "What does 2.47 mean?",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "BG 2.47"
+    ],
+    "latency_ms": 37
+  },
+  {
+    "test_id": "L-03",
+    "user_input": "Explain 2.62 and 2.63 on anger",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "BG 2.62"
+    ],
+    "latency_ms": 35
+  },
+  {
+    "test_id": "M-01",
+    "user_input": "I failed my exam and feel hopeless. What does Gita say?",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "BG 2.20",
+      "BG 2.11"
+    ],
+    "latency_ms": 62
+  },
+  {
+    "test_id": "M-02",
+    "user_input": "I am angry with someone. What can I learn from Gita?",
+    "expectedRag": "REQUIRED",
+    "actualRagUsed": true,
+    "citations": [
+      "BG 2.62",
+      "BG 2.63"
+    ],
+    "latency_ms": 47
+  }
+]

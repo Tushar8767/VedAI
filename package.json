@@ -9,7 +9,7 @@
     "start:frontend": "cd frontend && live-server --port=3000 --open=/index.html",
     "install:all": "npm install && cd frontend && npm install",
     "dev": "concurrently \"npm run start\" \"npm run start:ml\" \"npm run start:frontend\"",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "npm --prefix backend test"
   },
   "keywords": [
     "vedai",

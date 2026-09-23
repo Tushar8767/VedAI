@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test test/*.test.js",
+    "benchmark": "node test/load_benchmark.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -16,9 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "fastapi": "^0.0.8",
-    "torch": "^0.2.7",
-    "transformers": "^3.1.0",
-    "uvicorn": "^0.0.1-security"
+    "express-rate-limit": "^8.7.0",
+    "pg": "^8.23.0"
   }
 }

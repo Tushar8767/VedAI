@@ -5,6 +5,10 @@ VedAI is an emotion-aware mental well-being support system that combines modern 
 ## Features
 
 - **Emotion Detection**: Uses AI to analyze your text and detect emotions (fear, anxiety, sadness, anger, happiness, neutral)
+- **Local Prototype Accounts**: Register/login with hashed passwords and signed bearer tokens
+- **Saved Emotion History**: Authenticated reflections are persisted and used by the dashboard
+- **Dashboard**: Shows current emotional estimate, recent emotions, emotion distribution, and a transparent VedAI Wellness Index
+- **Journal**: Authenticated users can save private local journal entries
 - **Personalized Gita Guidance**: Provides relevant verses from the Bhagavad Gita based on your emotional state
 - **Video Recommendations**: Suggests helpful YouTube videos for your emotional needs
 - **Beautiful UI**: Clean, calming interface designed for mental well-being
@@ -24,6 +28,9 @@ VedAI/
 │   │   ├── emotionService.js     # Emotion detection
 │   │   ├── gitaService.js        # Gita verses
 │   │   └── youtubeService.js     # YouTube videos
+│   ├── data/                     # Local JSON prototype database, gitignored
+│   ├── middleware/               # Auth middleware
+│   ├── test/                     # Node test runner tests
 │   └── server.js                 # Express server
 ├── frontend/
 │   ├── index.html                # Main HTML
@@ -104,7 +111,28 @@ npm start
 
 ## API Endpoints
 
-### POST /process
+### POST /api/v1/auth/register
+Creates a local prototype account.
+
+### POST /api/v1/auth/login
+Returns a signed bearer token.
+
+### GET /api/v1/auth/me
+Returns the current authenticated user.
+
+### GET /api/v1/dashboard
+Returns saved emotion history, journal summary, recommendation summary, and VedAI Wellness Index for the authenticated user.
+
+### GET /api/v1/history
+Returns authenticated user emotion history.
+
+### GET /api/v1/journal
+Returns authenticated user journal entries.
+
+### POST /api/v1/journal
+Creates an authenticated user journal entry.
+
+### POST /api/v1/process
 Analyzes user text and returns emotion-based guidance.
 
 **Request:**
@@ -113,6 +141,8 @@ Analyzes user text and returns emotion-based guidance.
   "user_text": "I'm feeling anxious about my exams..."
 }
 ```
+
+When called with `Authorization: Bearer <token>`, the result is also saved to the user's local emotion history.
 
 **Response:**
 ```json
