@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node backend/server.js",
     "start:ml": "uvicorn ml_model.app:app --reload --port 8001",
-    "start:frontend": "cd frontend && live-server --port=3000 --open=/index.html",
+    "start:frontend": "cd frontend && live-server --port=3000 --proxy=/api:http://127.0.0.1:5000/api --open=/index.html",
     "install:all": "npm install && cd frontend && npm install",
     "dev": "concurrently \"npm run start\" \"npm run start:ml\" \"npm run start:frontend\"",
     "test": "npm --prefix backend test"
