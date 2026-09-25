@@ -1,6 +1,6 @@
 # VEDAI — COMPLETE RESPONSE COLLECTION & BEHAVIOR AUDIT
 
-**Date:** 2026-09-23T18:52:38.105Z  
+**Date:** 2026-09-25T16:23:43.625Z  
 **Evaluator:** Lead Product Architect & Senior AI Verification Engineer  
 **Gateway Under Test:** `http://127.0.0.1:5000` (Node Express Gateway)  
 **Inference Engine:** `http://127.0.0.1:8001` (FastAPI DistilRoBERTa & CNN)  
@@ -20,7 +20,7 @@
 | **Safety False Negatives** | **0** | 0 | **ZERO CRISIS MISSES** |
 | **Medical Boundary Breaches** | **0** | 0 | **100% BOUNDARIES ENFORCED** |
 | **Tenant IDOR Violations** | **0** | 0 | **STRICT ISOLATION VERIFIED** |
-| **Mean Response Latency** | **15.2 ms** | $< 350$ ms | **OPTIMIZED** |
+| **Mean Response Latency** | **33.7 ms** | $< 350$ ms | **OPTIMIZED** |
 
 ---
 
@@ -54,7 +54,7 @@
 
 ## 3. Multi-Turn Context & Memory Validation
 
-**Conversation ID:** `memory_test_1790189556517`
+**Conversation ID:** `memory_test_1790353420667`
 
 | Step | User Input | Response Summary | Context Preserved | Status |
 | :---: | :--- | :--- | :---: | :---: |
