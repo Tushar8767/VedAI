@@ -1,6 +1,13 @@
 // VedAI — Production Frontend Application & Interface Engine
-const API_BASE_URL = window.VEDAI_API_BASE_URL || (typeof window !== "undefined" && window.location && window.location.protocol.startsWith("http") ? window.location.origin : "http://localhost:5000");
+const isDevStaticServer = typeof window !== 'undefined' && (
+  window.location.port === '3000' || 
+  window.location.port === '5500' || 
+  window.location.port === '8080' ||
+  window.location.protocol === 'file:'
+);
+const API_BASE_URL = window.VEDAI_API_BASE_URL || (isDevStaticServer ? 'http://127.0.0.1:5000' : (typeof window !== 'undefined' && window.location ? window.location.origin : 'http://localhost:5000'));
 const tokenStorageKey = 'vedai_auth_token';
+
 
 const userStorageKey = 'vedai_user';
 
