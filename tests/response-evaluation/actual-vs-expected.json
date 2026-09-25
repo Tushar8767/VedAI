@@ -29,7 +29,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 214
+      "latency_ms": 1136
     },
     "comparison": {
       "intent_match": true,
@@ -75,7 +75,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 12
+      "latency_ms": 14
     },
     "comparison": {
       "intent_match": true,
@@ -120,7 +120,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 9
     },
     "comparison": {
       "intent_match": true,
@@ -164,7 +164,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 9
+      "latency_ms": 19
     },
     "comparison": {
       "intent_match": true,
@@ -208,7 +208,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 9
+      "latency_ms": 11
     },
     "comparison": {
       "intent_match": true,
@@ -254,7 +254,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 114
     },
     "comparison": {
       "intent_match": true,
@@ -300,7 +300,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 11
     },
     "comparison": {
       "intent_match": true,
@@ -412,7 +412,7 @@
           "description": "Write down what brought you peace today. It will serve as an anchor and reminder during future cloudy days."
         }
       ],
-      "latency_ms": 410
+      "latency_ms": 1980
     },
     "comparison": {
       "intent_match": true,
@@ -476,7 +476,7 @@
           "description": "Nourish your body with warmth. Reach out to one trusted person or sit in morning sunlight for 10 minutes."
         }
       ],
-      "latency_ms": 307
+      "latency_ms": 316
     },
     "comparison": {
       "intent_match": true,
@@ -541,7 +541,7 @@
           "description": "Splash cold water onto your face and wrists. Take a brisk walk or do gentle physical stretching to dispel agitated adrenaline."
         }
       ],
-      "latency_ms": 359
+      "latency_ms": 534
     },
     "comparison": {
       "intent_match": true,
@@ -605,7 +605,7 @@
           "description": "Put all anxious thoughts onto a piece of paper, read it once, and put it away. Tell yourself: 'I have acknowledged these; now I return to my duty.'"
         }
       ],
-      "latency_ms": 40
+      "latency_ms": 450
     },
     "comparison": {
       "intent_match": true,
@@ -638,17 +638,17 @@
       "expected_behavior": "Detects stress, provides pacing strategies and grounded Gita perspective"
     },
     "actual": {
-      "response": "Bhagavad Gita 6.26: From whatever direction the restless and unsteady mind wanders away, one should gently rein it in and bring it back under the control of the Self.. Practice: Whenever you catch your thoughts spiraling into catastrophizing, don't get angry with yourself. Softly bring your attention back to your breath. Remedies: 🌿 The Long Exhale Reset 🧘 Single-Task Mindset 📝 10-Minute Quiet Walk Without Devices",
+      "response": "Bhagavad Gita 2.47: You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results, nor be attached to inaction.. Practice: Identify one current worry about future results. Consciously shift your focus strictly to the immediate next physical action you can take. Remedies: 🌿 The Long Exhale Reset 🧘 Single-Task Mindset 📝 10-Minute Quiet Walk Without Devices",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "stress",
       "confidence": 0.7517248275172483,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 2.47"
       ],
       "citations": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 2.47"
       ],
       "recommendations": [
         {
@@ -667,7 +667,7 @@
           "description": "Step away from screens. Walk slowly for 10 minutes, observing your surroundings to bring your awareness back into the physical present."
         }
       ],
-      "latency_ms": 3122
+      "latency_ms": 391
     },
     "comparison": {
       "intent_match": true,
@@ -700,17 +700,17 @@
       "expected_behavior": "Detects fear, offers grounding reassurance"
     },
     "actual": {
-      "response": "Bhagavad Gita 2.47: You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results, nor be attached to inaction.. Practice: Identify one current worry about future results. Consciously shift your focus strictly to the immediate next physical action you can take. Remedies: 🌿 Feet on the Earth Grounding 🧘 Name the Worst Case, Then Plan Your Strength 📝 Ancient Shield of the Soul",
+      "response": "Bhagavad Gita 6.5: One must elevate oneself by one's own mind, and not degrade oneself. The mind is indeed the friend of the conditioned soul, and the mind is also its enemy.. Practice: Notice your internal dialogue right now. Is your self-talk acting as a supportive ally or a destructive adversary? Refocus it gently toward kindness. Remedies: 🌿 Feet on the Earth Grounding 🧘 Name the Worst Case, Then Plan Your Strength 📝 Ancient Shield of the Soul",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "fear",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 2.47"
+        "Bhagavad Gita 6.5"
       ],
       "citations": [
-        "Bhagavad Gita 2.47"
+        "Bhagavad Gita 6.5"
       ],
       "recommendations": [
         {
@@ -729,7 +729,7 @@
           "description": "Remember Krishna's promise: your true self is indestructible. Situations come and go like seasons; your inner strength remains."
         }
       ],
-      "latency_ms": 855
+      "latency_ms": 494
     },
     "comparison": {
       "intent_match": true,
@@ -762,17 +762,17 @@
       "expected_behavior": "Validates loneliness and encourages gentle connection"
     },
     "actual": {
-      "response": "Bhagavad Gita 2.14: The contact of the senses with their objects gives rise to fleeting feelings of heat and cold, happiness and pain. These experiences are impermanent, appearing and disappearing; learn to endure them patiently.. Practice: Observe physical sensations of tension without fighting them. Remind yourself: 'This emotional wave has a beginning, a peak, and an inevitable end.' Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
+      "response": "Bhagavad Gita 2.11: You grieve for that which is not worthy of grief, yet you speak words of apparent wisdom. The truly wise mourn neither for the living nor for the departed.. Practice: Acknowledge sorrow without identifying as a helpless victim. Ask: 'What enduring core within me remains untouched despite this loss?' Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "sadness",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 2.14"
+        "Bhagavad Gita 2.11"
       ],
       "citations": [
-        "Bhagavad Gita 2.14"
+        "Bhagavad Gita 2.11"
       ],
       "recommendations": [
         {
@@ -791,7 +791,7 @@
           "description": "Nourish your body with warmth. Reach out to one trusted person or sit in morning sunlight for 10 minutes."
         }
       ],
-      "latency_ms": 22
+      "latency_ms": 151
     },
     "comparison": {
       "intent_match": true,
@@ -824,17 +824,17 @@
       "expected_behavior": "Detects sadness/disappointment, reframes failure through Gita 2.47"
     },
     "actual": {
-      "response": "Bhagavad Gita 2.14: The contact of the senses with their objects gives rise to fleeting feelings of heat and cold, happiness and pain. These experiences are impermanent, appearing and disappearing; learn to endure them patiently.. Practice: Observe physical sensations of tension without fighting them. Remind yourself: 'This emotional wave has a beginning, a peak, and an inevitable end.' Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
+      "response": "Bhagavad Gita 2.20: The soul is never born, nor does it ever perish. It does not cease to be, nor does it come into existence anew. It is unborn, eternal, everlasting, and primeval; it is not slain when the body dies.. Practice: Place your hand over your chest, feel your steady breathing, and recognize that you are the observer of sorrow, not the sorrow itself. Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "sadness",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 2.14"
+        "Bhagavad Gita 2.20"
       ],
       "citations": [
-        "Bhagavad Gita 2.14"
+        "Bhagavad Gita 2.20"
       ],
       "recommendations": [
         {
@@ -853,7 +853,7 @@
           "description": "Nourish your body with warmth. Reach out to one trusted person or sit in morning sunlight for 10 minutes."
         }
       ],
-      "latency_ms": 18
+      "latency_ms": 62
     },
     "comparison": {
       "intent_match": true,
@@ -888,17 +888,17 @@
       "expected_behavior": "Detects neutral baseline state"
     },
     "actual": {
-      "response": "Bhagavad Gita 2.48: Perform your duties established in yoga, renouncing attachment, remaining balanced in both success and failure. Such equanimity of mind is called Yoga.. Practice: Pause and breathe into a space of emotional neutrality. Remind yourself: 'Success does not elevate my true worth, and failure does not diminish it.' Remedies: 🌿 Cultivate Stillness (Samatvam) 🧘 Be the Anchor for Others 📝 Dedicated Mindful Action",
+      "response": "Bhagavad Gita 12.15: One by whom no one is agitated, and who is not agitated by the world, who is freed from excessive excitement, impatience, fear, and anxiety—that person is very dear to Me.. Practice: Practice remaining an unagitated presence for someone close to you today. Let your steadiness act as an anchor. Remedies: 🌿 Cultivate Stillness (Samatvam) 🧘 Be the Anchor for Others 📝 Dedicated Mindful Action",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "neutral",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 2.48"
+        "Bhagavad Gita 12.15"
       ],
       "citations": [
-        "Bhagavad Gita 2.48"
+        "Bhagavad Gita 12.15"
       ],
       "recommendations": [
         {
@@ -917,7 +917,7 @@
           "description": "Execute your daily duties with full presence and joy. Treat work not as a burden, but as an offering of excellence."
         }
       ],
-      "latency_ms": 1096
+      "latency_ms": 373
     },
     "comparison": {
       "intent_match": true,
@@ -950,17 +950,17 @@
       "expected_behavior": "Correctly handles typo 'nourves' as anxiety"
     },
     "actual": {
-      "response": "Bhagavad Gita 6.5: One must elevate oneself by one's own mind, and not degrade oneself. The mind is indeed the friend of the conditioned soul, and the mind is also its enemy.. Practice: Notice your internal dialogue right now. Is your self-talk acting as a supportive ally or a destructive adversary? Refocus it gently toward kindness. Remedies: 🌿 4-4-6 Calming Breath 🧘 Focus on the Step, Release the Story 📝 Write Down Your 'Worry List' and Fold It",
+      "response": "Bhagavad Gita 6.26: From whatever direction the restless and unsteady mind wanders away, one should gently rein it in and bring it back under the control of the Self.. Practice: Whenever you catch your thoughts spiraling into catastrophizing, don't get angry with yourself. Softly bring your attention back to your breath. Remedies: 🌿 4-4-6 Calming Breath 🧘 Focus on the Step, Release the Story 📝 Write Down Your 'Worry List' and Fold It",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "anxiety",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 6.5"
+        "Bhagavad Gita 6.26"
       ],
       "citations": [
-        "Bhagavad Gita 6.5"
+        "Bhagavad Gita 6.26"
       ],
       "recommendations": [
         {
@@ -979,7 +979,7 @@
           "description": "Put all anxious thoughts onto a piece of paper, read it once, and put it away. Tell yourself: 'I have acknowledged these; now I return to my duty.'"
         }
       ],
-      "latency_ms": 33
+      "latency_ms": 146
     },
     "comparison": {
       "intent_match": true,
@@ -1012,17 +1012,17 @@
       "expected_behavior": "Correctly identifies 'streesed' as stress"
     },
     "actual": {
-      "response": "Bhagavad Gita 6.26: From whatever direction the restless and unsteady mind wanders away, one should gently rein it in and bring it back under the control of the Self.. Practice: Whenever you catch your thoughts spiraling into catastrophizing, don't get angry with yourself. Softly bring your attention back to your breath. Remedies: 🌿 The Long Exhale Reset 🧘 Single-Task Mindset 📝 10-Minute Quiet Walk Without Devices",
+      "response": "Bhagavad Gita 6.5: One must elevate oneself by one's own mind, and not degrade oneself. The mind is indeed the friend of the conditioned soul, and the mind is also its enemy.. Practice: Notice your internal dialogue right now. Is your self-talk acting as a supportive ally or a destructive adversary? Refocus it gently toward kindness. Remedies: 🌿 The Long Exhale Reset 🧘 Single-Task Mindset 📝 10-Minute Quiet Walk Without Devices",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "stress",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 6.5"
       ],
       "citations": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 6.5"
       ],
       "recommendations": [
         {
@@ -1041,7 +1041,7 @@
           "description": "Step away from screens. Walk slowly for 10 minutes, observing your surroundings to bring your awareness back into the physical present."
         }
       ],
-      "latency_ms": 22
+      "latency_ms": 63
     },
     "comparison": {
       "intent_match": true,
@@ -1074,17 +1074,17 @@
       "expected_behavior": "Identifies slang 'sad af' as sadness"
     },
     "actual": {
-      "response": "Bhagavad Gita 2.11: You grieve for that which is not worthy of grief, yet you speak words of apparent wisdom. The truly wise mourn neither for the living nor for the departed.. Practice: Acknowledge sorrow without identifying as a helpless victim. Ask: 'What enduring core within me remains untouched despite this loss?' Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
+      "response": "Bhagavad Gita 2.20: The soul is never born, nor does it ever perish. It does not cease to be, nor does it come into existence anew. It is unborn, eternal, everlasting, and primeval; it is not slain when the body dies.. Practice: Place your hand over your chest, feel your steady breathing, and recognize that you are the observer of sorrow, not the sorrow itself. Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "sadness",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 2.11"
+        "Bhagavad Gita 2.20"
       ],
       "citations": [
-        "Bhagavad Gita 2.11"
+        "Bhagavad Gita 2.20"
       ],
       "recommendations": [
         {
@@ -1103,7 +1103,7 @@
           "description": "Nourish your body with warmth. Reach out to one trusted person or sit in morning sunlight for 10 minutes."
         }
       ],
-      "latency_ms": 13
+      "latency_ms": 60
     },
     "comparison": {
       "intent_match": true,
@@ -1173,7 +1173,7 @@
         "BG 2.20"
       ],
       "recommendations": [],
-      "latency_ms": 134
+      "latency_ms": 924
     },
     "comparison": {
       "intent_match": true,
@@ -1243,7 +1243,7 @@
         "BG 6.26"
       ],
       "recommendations": [],
-      "latency_ms": 53
+      "latency_ms": 273
     },
     "comparison": {
       "intent_match": true,
@@ -1288,7 +1288,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 12
     },
     "comparison": {
       "intent_match": true,
@@ -1332,7 +1332,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 11
     },
     "comparison": {
       "intent_match": true,
@@ -1369,17 +1369,17 @@
       "expected_behavior": "Maps exam panic to stress/anxiety and delivers Gita 2.47 detachment practice"
     },
     "actual": {
-      "response": "Bhagavad Gita 6.26: From whatever direction the restless and unsteady mind wanders away, one should gently rein it in and bring it back under the control of the Self.. Practice: Whenever you catch your thoughts spiraling into catastrophizing, don't get angry with yourself. Softly bring your attention back to your breath. Remedies: 🌿 The Long Exhale Reset 🧘 Single-Task Mindset 📝 10-Minute Quiet Walk Without Devices",
+      "response": "Bhagavad Gita 6.5: One must elevate oneself by one's own mind, and not degrade oneself. The mind is indeed the friend of the conditioned soul, and the mind is also its enemy.. Practice: Notice your internal dialogue right now. Is your self-talk acting as a supportive ally or a destructive adversary? Refocus it gently toward kindness. Remedies: 🌿 The Long Exhale Reset 🧘 Single-Task Mindset 📝 10-Minute Quiet Walk Without Devices",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "stress",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 6.5"
       ],
       "citations": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 6.5"
       ],
       "recommendations": [
         {
@@ -1398,7 +1398,7 @@
           "description": "Step away from screens. Walk slowly for 10 minutes, observing your surroundings to bring your awareness back into the physical present."
         }
       ],
-      "latency_ms": 23
+      "latency_ms": 37
     },
     "comparison": {
       "intent_match": true,
@@ -1431,17 +1431,17 @@
       "expected_behavior": "Recognizes placement fear, grounds in present effort"
     },
     "actual": {
-      "response": "Bhagavad Gita 6.26: From whatever direction the restless and unsteady mind wanders away, one should gently rein it in and bring it back under the control of the Self.. Practice: Whenever you catch your thoughts spiraling into catastrophizing, don't get angry with yourself. Softly bring your attention back to your breath. Remedies: 🌿 4-4-6 Calming Breath 🧘 Focus on the Step, Release the Story 📝 Write Down Your 'Worry List' and Fold It",
+      "response": "Bhagavad Gita 6.5: One must elevate oneself by one's own mind, and not degrade oneself. The mind is indeed the friend of the conditioned soul, and the mind is also its enemy.. Practice: Notice your internal dialogue right now. Is your self-talk acting as a supportive ally or a destructive adversary? Refocus it gently toward kindness. Remedies: 🌿 4-4-6 Calming Breath 🧘 Focus on the Step, Release the Story 📝 Write Down Your 'Worry List' and Fold It",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "anxiety",
       "confidence": 0.6,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 6.5"
       ],
       "citations": [
-        "Bhagavad Gita 6.26"
+        "Bhagavad Gita 6.5"
       ],
       "recommendations": [
         {
@@ -1460,7 +1460,7 @@
           "description": "Put all anxious thoughts onto a piece of paper, read it once, and put it away. Tell yourself: 'I have acknowledged these; now I return to my duty.'"
         }
       ],
-      "latency_ms": 19
+      "latency_ms": 51
     },
     "comparison": {
       "intent_match": true,
@@ -1495,17 +1495,17 @@
       "expected_behavior": "Compassionate holding of breakup grief without trivializing"
     },
     "actual": {
-      "response": "Bhagavad Gita 2.20: The soul is never born, nor does it ever perish. It does not cease to be, nor does it come into existence anew. It is unborn, eternal, everlasting, and primeval; it is not slain when the body dies.. Practice: Place your hand over your chest, feel your steady breathing, and recognize that you are the observer of sorrow, not the sorrow itself. Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
+      "response": "Bhagavad Gita 2.14: The contact of the senses with their objects gives rise to fleeting feelings of heat and cold, happiness and pain. These experiences are impermanent, appearing and disappearing; learn to endure them patiently.. Practice: Observe physical sensations of tension without fighting them. Remind yourself: 'This emotional wave has a beginning, a peak, and an inevitable end.' Remedies: 🌿 Heart-Hand Warmth 🧘 Allow the Feeling Without Harsh Judgment 📝 Drink Warm Water & Connect Gently",
       "intent": "EMOTIONAL_ANALYSIS",
       "emotion": "sadness",
       "confidence": 0.6592659265926594,
       "safety": "SAFE",
       "rag_used": true,
       "sources": [
-        "Bhagavad Gita 2.20"
+        "Bhagavad Gita 2.14"
       ],
       "citations": [
-        "Bhagavad Gita 2.20"
+        "Bhagavad Gita 2.14"
       ],
       "recommendations": [
         {
@@ -1524,7 +1524,7 @@
           "description": "Nourish your body with warmth. Reach out to one trusted person or sit in morning sunlight for 10 minutes."
         }
       ],
-      "latency_ms": 19
+      "latency_ms": 50
     },
     "comparison": {
       "intent_match": true,
@@ -1586,7 +1586,7 @@
           "description": "Splash cold water onto your face and wrists. Take a brisk walk or do gentle physical stretching to dispel agitated adrenaline."
         }
       ],
-      "latency_ms": 28
+      "latency_ms": 50
     },
     "comparison": {
       "intent_match": true,
@@ -1628,7 +1628,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 6
+      "latency_ms": 16
     },
     "comparison": {
       "intent_match": true,
@@ -1670,7 +1670,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 5
+      "latency_ms": 11
     },
     "comparison": {
       "intent_match": true,
@@ -1714,7 +1714,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 9
     },
     "comparison": {
       "intent_match": true,
@@ -1758,7 +1758,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 5
+      "latency_ms": 7
     },
     "comparison": {
       "intent_match": true,
@@ -1828,7 +1828,7 @@
         "BG 2.48"
       ],
       "recommendations": [],
-      "latency_ms": 45
+      "latency_ms": 120
     },
     "comparison": {
       "intent_match": true,
@@ -1897,7 +1897,7 @@
         "BG 2.47"
       ],
       "recommendations": [],
-      "latency_ms": 37
+      "latency_ms": 244
     },
     "comparison": {
       "intent_match": true,
@@ -1965,7 +1965,7 @@
         "BG 2.62"
       ],
       "recommendations": [],
-      "latency_ms": 35
+      "latency_ms": 146
     },
     "comparison": {
       "intent_match": true,
@@ -2035,7 +2035,7 @@
         "BG 2.11"
       ],
       "recommendations": [],
-      "latency_ms": 62
+      "latency_ms": 256
     },
     "comparison": {
       "intent_match": true,
@@ -2107,7 +2107,7 @@
         "BG 2.63"
       ],
       "recommendations": [],
-      "latency_ms": 47
+      "latency_ms": 329
     },
     "comparison": {
       "intent_match": true,
@@ -2155,7 +2155,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 5
+      "latency_ms": 116
     },
     "comparison": {
       "intent_match": true,
@@ -2204,7 +2204,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 6
+      "latency_ms": 12
     },
     "comparison": {
       "intent_match": true,
@@ -2250,7 +2250,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 4
+      "latency_ms": 15
     },
     "comparison": {
       "intent_match": true,
@@ -2295,7 +2295,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 5
+      "latency_ms": 12
     },
     "comparison": {
       "intent_match": true,
@@ -2339,7 +2339,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 6
+      "latency_ms": 14
     },
     "comparison": {
       "intent_match": true,
@@ -2384,7 +2384,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 5
+      "latency_ms": 12
     },
     "comparison": {
       "intent_match": true,
@@ -2432,7 +2432,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 5
+      "latency_ms": 11
     },
     "comparison": {
       "intent_match": true,
@@ -2477,7 +2477,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 13
     },
     "comparison": {
       "intent_match": true,
@@ -2521,7 +2521,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 13
+      "latency_ms": 15
     },
     "comparison": {
       "intent_match": true,
@@ -2567,7 +2567,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 7
+      "latency_ms": 17
     },
     "comparison": {
       "intent_match": true,
@@ -2615,7 +2615,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 6
+      "latency_ms": 18
     },
     "comparison": {
       "intent_match": true,
@@ -2662,7 +2662,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 8
+      "latency_ms": 14
     },
     "comparison": {
       "intent_match": true,
@@ -2708,7 +2708,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 5
+      "latency_ms": 9
     },
     "comparison": {
       "intent_match": true,
@@ -2752,7 +2752,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 8
+      "latency_ms": 12
     },
     "comparison": {
       "intent_match": true,
@@ -2799,7 +2799,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 6
+      "latency_ms": 28
     },
     "comparison": {
       "intent_match": true,
@@ -2846,7 +2846,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 6
+      "latency_ms": 7
     },
     "comparison": {
       "intent_match": true,
@@ -2894,7 +2894,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 9
+      "latency_ms": 7
     },
     "comparison": {
       "intent_match": true,
@@ -2937,7 +2937,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 8
+      "latency_ms": 7
     },
     "comparison": {
       "intent_match": true,
@@ -3027,7 +3027,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 8
+      "latency_ms": 7
     },
     "comparison": {
       "intent_match": true,
@@ -3073,7 +3073,7 @@
       "sources": [],
       "citations": [],
       "recommendations": [],
-      "latency_ms": 12
+      "latency_ms": 6
     },
     "comparison": {
       "intent_match": true,

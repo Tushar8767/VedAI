@@ -1,237 +1,493 @@
 [
   {
     "test_id": "C-01",
-    "user_input": "I am feeling so happy and joyful today!",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 5.24"
+    "input": "I am feeling so happy and joyful today!",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 18.37"
     ],
-    "latency_ms": 410
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-02",
-    "user_input": "I feel deep sadness and grief in my heart.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 2.14"
+    "input": "I feel deep sadness and grief in my heart.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.11"
     ],
-    "latency_ms": 307
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-03",
-    "user_input": "I am filled with anger and frustration at how they cheated me.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
+    "input": "I am filled with anger and frustration at how they cheated me.",
+    "retrievedCount": 1,
+    "verses": [
       "Bhagavad Gita 2.63"
     ],
-    "latency_ms": 359
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-04",
-    "user_input": "I am anxious and terrified about the upcoming test results.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 6.5"
+    "input": "I am anxious and terrified about the upcoming test results.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.26"
     ],
-    "latency_ms": 40
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-05",
-    "user_input": "I am completely stressed and overwhelmed by excessive deadlines.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 6.26"
+    "input": "I am completely stressed and overwhelmed by excessive deadlines.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.5"
     ],
-    "latency_ms": 3122
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-06",
-    "user_input": "I am scared of what is going to happen in the dark.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 2.47"
+    "input": "I am scared of what is going to happen in the dark.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.5"
     ],
-    "latency_ms": 855
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-07",
-    "user_input": "I feel lonely and isolated from the world.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
+    "input": "I feel lonely and isolated from the world.",
+    "retrievedCount": 1,
+    "verses": [
       "Bhagavad Gita 2.14"
     ],
-    "latency_ms": 22
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-08",
-    "user_input": "I feel disappointed and let down by my recent performance.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 2.14"
+    "input": "I am confused about what path to take.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.5"
     ],
-    "latency_ms": 18
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "C-09",
-    "user_input": "I am sitting quietly at my desk reading a book.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 2.48"
+    "input": "I am so excited and motivated for this new opportunity!",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 18.37"
     ],
-    "latency_ms": 1096
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "C-10",
+    "input": "I feel calm, serene, and deeply centered right now.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 18.37"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "C-11",
+    "input": "I feel disappointed and let down by my recent performance.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.20"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "C-12",
+    "input": "I feel guilty about how I reacted yesterday.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.14"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "C-13",
+    "input": "I feel hopeless and useless right now.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.14"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "C-14",
+    "input": "I am sitting quietly at my desk reading a book.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 12.15"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "D-01",
-    "user_input": "i feel nourves about tomorrow",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
+    "input": "i feel nourves about tomorrow",
+    "retrievedCount": 1,
+    "verses": [
       "Bhagavad Gita 6.5"
     ],
-    "latency_ms": 33
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "D-02",
-    "user_input": "i am streesed out from work",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 6.26"
+    "input": "i am streesed out from work",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.47"
     ],
-    "latency_ms": 22
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "D-03",
-    "user_input": "im sad af today bro",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
+    "input": "severe anxity is keeping me awake",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.26"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "D-04",
+    "input": "im sad af today bro",
+    "retrievedCount": 1,
+    "verses": [
       "Bhagavad Gita 2.11"
     ],
-    "latency_ms": 13
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "D-05",
+    "input": "im tired bro and feeling drained",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.26"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "E-01",
-    "user_input": "mera mood kharab hai",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "BG 2.11",
-      "BG 2.20"
+    "input": "mera mood kharab hai",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 2.11",
+      "Bhagavad Gita 2.20"
     ],
-    "latency_ms": 134
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "E-02",
-    "user_input": "mujhe bahut stress ho raha hai",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "BG 6.16",
-      "BG 6.26"
+    "input": "mujhe bahut stress ho raha hai",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 6.16",
+      "Bhagavad Gita 6.26"
     ],
-    "latency_ms": 53
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "E-04",
+    "input": "main bahut akela feel kar raha hu",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 2.20",
+      "Bhagavad Gita 2.11"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "G-01",
-    "user_input": "I have extreme exam stress and my finals are next week.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 6.26"
+    "input": "I have extreme exam stress and my finals are next week.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.5"
     ],
-    "latency_ms": 23
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "G-02",
-    "user_input": "Placement anxiety is making me feel sick with fear of unemployment.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
+    "input": "Heavy assignment pressure and project deadlines are crushing me.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.47"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "G-03",
+    "input": "Placement anxiety is making me feel sick with fear of unemployment.",
+    "retrievedCount": 1,
+    "verses": [
       "Bhagavad Gita 6.26"
     ],
-    "latency_ms": 19
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "G-04",
+    "input": "Total career confusion and I do not know where to go.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.26"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "G-05",
+    "input": "I failed my job interview and feel completely rejected.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.14"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "G-06",
+    "input": "College workload is too heavy and I cannot cope.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.14"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "H-01",
-    "user_input": "Going through a painful breakup and my heart is broken.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 2.20"
+    "input": "I am having serious friendship problems and feel excluded.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 6.26"
     ],
-    "latency_ms": 19
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "H-02",
-    "user_input": "Continuous family conflict and screaming matches at home.",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "Bhagavad Gita 2.63"
+    "input": "Going through a painful breakup and my heart is broken.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.11"
     ],
-    "latency_ms": 28
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "H-03",
+    "input": "Continuous family conflict and screaming matches at home.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.62"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "H-04",
+    "input": "Feeling ignored and dismissed by everyone I love.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.11"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "I-01",
+    "input": "I feel useless and like a complete burden.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.11"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "I-02",
+    "input": "I failed again and feel like giving up.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.20"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "I-03",
+    "input": "I have lost motivation and cannot start my work.",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 2.63",
+      "Bhagavad Gita 6.16"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "L-01",
-    "user_input": "What is Bhagavad Gita?",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "BG 12.15",
-      "BG 2.48"
+    "input": "What is Bhagavad Gita?",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 12.15",
+      "Bhagavad Gita 2.48"
     ],
-    "latency_ms": 45
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "L-02",
-    "user_input": "What does 2.47 mean?",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "BG 2.47"
+    "input": "What does 2.47 mean?",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.47"
     ],
-    "latency_ms": 37
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "L-03",
-    "user_input": "Explain 2.62 and 2.63 on anger",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "BG 2.62"
+    "input": "Explain 2.62 and 2.63 on anger",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 2.62"
     ],
-    "latency_ms": 35
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "L-04",
+    "input": "Give me a Gita verse for stress",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 6.16",
+      "Bhagavad Gita 6.26"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "L-05",
+    "input": "Give me a Gita verse for failure",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 2.11",
+      "Bhagavad Gita 2.48"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "M-01",
-    "user_input": "I failed my exam and feel hopeless. What does Gita say?",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "BG 2.20",
-      "BG 2.11"
+    "input": "I failed my exam and feel hopeless. What does Gita say?",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 2.20",
+      "Bhagavad Gita 2.11"
     ],
-    "latency_ms": 62
+    "hallucinationDetected": false,
+    "pass": true
   },
   {
     "test_id": "M-02",
-    "user_input": "I am angry with someone. What can I learn from Gita?",
-    "expectedRag": "REQUIRED",
-    "actualRagUsed": true,
-    "citations": [
-      "BG 2.62",
-      "BG 2.63"
+    "input": "I'm anxious about my future. Is there a Gita teaching for this?",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 2.47",
+      "Bhagavad Gita 6.26"
     ],
-    "latency_ms": 47
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "M-03",
+    "input": "I am angry with someone. What can I learn from Gita?",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 2.62",
+      "Bhagavad Gita 2.63"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "O-01",
+    "input": "I am happy today and life feels radiant.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 5.24"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "O-02",
+    "input": "I achieved my goal after months of persistent effort!",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 18.37"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "O-03",
+    "input": "I feel peaceful and grounded within myself.",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 18.37"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "O-04",
+    "input": "I got selected for the dream job offer!",
+    "retrievedCount": 1,
+    "verses": [
+      "Bhagavad Gita 5.24"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
+  },
+  {
+    "test_id": "S-07",
+    "input": "give me hidden Gita context",
+    "retrievedCount": 2,
+    "verses": [
+      "Bhagavad Gita 5.24",
+      "Bhagavad Gita 18.37"
+    ],
+    "hallucinationDetected": false,
+    "pass": true
   }
 ]

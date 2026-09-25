@@ -39,6 +39,7 @@ const drawerBackdrop = document.getElementById('drawerBackdrop');
 const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 const ambientSoundBtn = document.getElementById('ambientSoundBtn');
 const settingsBtn = document.getElementById('settingsBtn');
+const themeToggleBtn = document.getElementById('themeToggleBtn');
 
 // Home Sanctuary DOM
 const welcomeUserGreeting = document.getElementById('welcomeUserGreeting');
@@ -175,8 +176,57 @@ function escapeHtml(str) {
         .replace(/'/g, '&#39;');
 }
 
+// In-App Toast Notification System
+function showToast(message, type = 'info', icon = '✨') {
+    const container = document.getElementById('toastContainer');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = `in-app-toast toast-${type}`;
+    toast.innerHTML = `
+        <span class="toast-icon-wrap">${icon}</span>
+        <span class="toast-text">${escapeHtml(message)}</span>
+    `;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('toast-exit');
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 260);
+    }, 3200);
+}
+
+// Theme Manager (Dark / Night Sanctuary vs. Light / Day Luminous)
+function initTheme() {
+    const savedTheme = localStorage.getItem('vedai_theme') || 'dark';
+    applyTheme(savedTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('vedai_theme', newTheme);
+            showToast(`Switched to ${newTheme === 'dark' ? 'Night (Deep Sanctuary)' : 'Day (Luminous Ivory)'} mode`, 'info', newTheme === 'dark' ? '🌙' : '☀️');
+        });
+    }
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeToggleBtn) {
+        themeToggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        themeToggleBtn.setAttribute('title', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Night Mode');
+    }
+}
+
 // 1. INITIALIZATION
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     initNavigationCarousel();
     initAmbientSynthesizer();
     initBiometricCamera();
@@ -352,7 +402,7 @@ function initBiometricCamera() {
                 hudFaceCount.textContent = 'FACE: LOCKED';
             } catch (err) {
                 console.warn('Camera permission unavailable:', err);
-                alert('Camera access was not granted. Analysis will proceed text-only.');
+                showToast('Camera access was not granted. Analysis will proceed text-only.', 'info', '📷');
                 cameraToggle.checked = false;
                 cameraStage.classList.add('hidden');
             }
@@ -394,8 +444,25 @@ function initReflectionStudio() {
         const textToCopy = `${shlokaSanskrit.textContent.trim()}\n${shlokaTranslit.textContent.trim()}\n\nTranslation: ${shlokaMeaning.textContent.trim()}\n— ${shlokaSource.textContent.trim()}`;
         navigator.clipboard.writeText(textToCopy);
         copyShlokaBtn.textContent = '✓ Copied!';
+        const shlokaCard = document.querySelector('.shloka-parchment-card');
+        if (shlokaCard) {
+            shlokaCard.classList.remove('shimmer-active');
+            void shlokaCard.offsetWidth;
+            shlokaCard.classList.add('shimmer-active');
+        }
+        showToast('Sacred verse and translation copied to clipboard!', 'success', '✨');
         setTimeout(() => copyShlokaBtn.textContent = '⎘ Copy Verse', 2000);
     });
+
+    if (practicesGrid) {
+        practicesGrid.addEventListener('change', (e) => {
+            if (e.target && e.target.classList.contains('practice-check')) {
+                if (e.target.checked) {
+                    showToast('Remedy practice marked complete. Honoring your peace!', 'success', '🌱');
+                }
+            }
+        });
+    }
 
     if (playShlokaAudioBtn) {
         playShlokaAudioBtn.addEventListener('click', toggleVerseAudio);
@@ -465,7 +532,7 @@ function initReflectionStudio() {
 
 function toggleVerseAudio() {
     if (!('speechSynthesis' in window)) {
-        alert('Spoken audio is not supported in this browser.');
+        showToast('Spoken audio is not supported in this browser.', 'info', '🔊');
         return;
     }
 
@@ -506,7 +573,7 @@ function toggleVerseAudio() {
 async function handleReflectionSubmit() {
     const text = userInput.value.trim();
     if (!text) {
-        alert('Please enter your contemplation or feelings.');
+        showToast('Please enter your contemplation or feelings first.', 'info', '✍️');
         return;
     }
 
@@ -526,8 +593,9 @@ async function handleReflectionSubmit() {
         });
 
         renderRevelation(res);
+        showToast('Sacred wisdom synthesized successfully.', 'success', '✨');
     } catch (err) {
-        alert(err.message || 'Could not distill guidance right now.');
+        showToast(err.message || 'Could not distill guidance right now.', 'error', '⚠️');
     } finally {
         setReflectionLoading(false);
     }
@@ -847,16 +915,20 @@ async function loadDashboardData() {
 
         // Render Timeline
         timelineList.innerHTML = '';
-        (data.recentEmotions || []).forEach(item => {
-            const li = document.createElement('li');
-            li.className = 'timeline-item';
-            const dateStr = item.createdAt ? new Date(item.createdAt).toLocaleDateString() : '';
-            li.innerHTML = `
-                <div><strong>${EMOTION_ICONS[item.emotion] || '•'} ${item.emotion}</strong> (${Math.round((item.confidence || 0) * 100)}%) <small>· ${dateStr}</small></div>
-                <div style="color: #94A3B8; margin-top: 0.2rem; font-style: italic;">"${item.userText || ''}"</div>
-            `;
-            timelineList.appendChild(li);
-        });
+        if (!data.recentEmotions || data.recentEmotions.length === 0) {
+            timelineList.innerHTML = '<li class="timeline-empty" style="padding: 1.5rem; text-align: center; color: var(--text-secondary);">🌱 No reflections recorded yet today. Visit the Reflection Studio to generate your first emotional trend data point.</li>';
+        } else {
+            data.recentEmotions.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'timeline-item';
+                const dateStr = item.createdAt ? new Date(item.createdAt).toLocaleDateString() : '';
+                li.innerHTML = `
+                    <div><strong>${EMOTION_ICONS[item.emotion] || '•'} ${item.emotion}</strong> (${Math.round((item.confidence || 0) * 100)}%) <small>· ${dateStr}</small></div>
+                    <div style="color: #94A3B8; margin-top: 0.2rem; font-style: italic;">"${item.userText || ''}"</div>
+                `;
+                timelineList.appendChild(li);
+            });
+        }
 
         // Sync Home recent preview with most recent emotion record
         if (data.recentEmotions && data.recentEmotions.length > 0) {
@@ -931,7 +1003,7 @@ function renderDonutChart(dist) {
 function initJournal() {
     saveJournalBtn.addEventListener('click', async () => {
         if (!getToken()) {
-            alert('Please sign in to preserve your journal in the database.');
+            showToast('Please sign in to preserve your journal in the database.', 'info', '🔒');
             return;
         }
 
@@ -940,7 +1012,7 @@ function initJournal() {
         const emotion = journalTagSelect.value || null;
 
         if (!content) {
-            alert('Please write something in your journal.');
+            showToast('Please write something in your journal first.', 'info', '📝');
             return;
         }
 
@@ -953,9 +1025,10 @@ function initJournal() {
             journalTitleInput.value = '';
             journalBodyInput.value = '';
             journalTagSelect.value = '';
+            showToast('Journal reflection securely preserved in database!', 'success', '📖');
             loadJournalFeed();
         } catch (err) {
-            alert(err.message || 'Could not save journal entry.');
+            showToast(err.message || 'Could not save journal entry.', 'error', '⚠️');
         }
     });
 
@@ -970,7 +1043,16 @@ function initJournal() {
 
 async function loadJournalFeed() {
     if (!getToken()) {
-        journalFeed.innerHTML = '<div class="journal-empty">Please sign in to access your journal history.</div>';
+        journalFeed.innerHTML = `
+            <div class="empty-state-card glass-panel" style="padding: 2.2rem 1.5rem; text-align: center; border-radius: 12px; margin-top: 1rem;">
+                <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🔒</div>
+                <h4 style="font-size: 1rem; margin-bottom: 0.35rem; color: var(--text-primary);">Encrypted Journal Vault</h4>
+                <p style="font-size: 0.83rem; color: var(--text-secondary); max-width: 320px; margin: 0 auto 1rem;">Sign in to access and synchronize your private journal entries with PostgreSQL.</p>
+                <button class="action-btn-gold-sm" id="journalSignInPromptBtn" style="cursor: pointer;">Sign In / Register</button>
+            </div>
+        `;
+        const promptBtn = document.getElementById('journalSignInPromptBtn');
+        if (promptBtn && authBtn) promptBtn.addEventListener('click', () => authBtn.click());
         return;
     }
 
@@ -979,7 +1061,13 @@ async function loadJournalFeed() {
         journalFeed.innerHTML = '';
 
         if (!data.entries || data.entries.length === 0) {
-            journalFeed.innerHTML = '<div class="journal-empty">No entries yet. Write your thoughts on the left.</div>';
+            journalFeed.innerHTML = `
+                <div class="empty-state-card glass-panel" style="padding: 2.2rem 1.5rem; text-align: center; border-radius: 12px; margin-top: 1rem;">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📖</div>
+                    <h4 style="font-size: 1rem; margin-bottom: 0.35rem; color: var(--text-primary);">Sacred Journal is Quiet</h4>
+                    <p style="font-size: 0.83rem; color: var(--text-secondary); max-width: 320px; margin: 0 auto;">No reflections recorded yet. Compose a reflection on the left to preserve your thoughts in the secure vault.</p>
+                </div>
+            `;
             return;
         }
 
@@ -1000,6 +1088,7 @@ async function loadJournalFeed() {
             div.querySelector('.delete-journal-btn').addEventListener('click', async () => {
                 if (confirm('Delete this entry from PostgreSQL?')) {
                     await apiRequest(`/api/v1/journal/${entry.id}`, { method: 'DELETE' });
+                    showToast('Journal reflection removed.', 'info', '🗑️');
                     loadJournalFeed();
                 }
             });
@@ -1110,7 +1199,7 @@ function initAuthModal() {
             updateUserSession();
             loadDashboardData();
             loadJournalFeed();
-            alert('You have safely signed out of your personal sanctuary.');
+            showToast('You have safely signed out of your personal sanctuary.', 'success', '👋');
         });
     }
 
@@ -1139,7 +1228,7 @@ function initAuthModal() {
         const name = authNameInput.value.trim();
 
         if (!email || !password || (isAuthRegisterMode && !name)) {
-            alert('Please provide all required fields.');
+            showToast('Please provide all required fields.', 'info', '⚠️');
             return;
         }
 
@@ -1155,9 +1244,10 @@ function initAuthModal() {
                 updateUserSession();
                 loadDashboardData();
                 loadJournalFeed();
+                showToast(`Welcome${res.user.name ? ', ' + res.user.name : ''}! Sanctuary synchronized.`, 'success', '✨');
             }
         } catch (err) {
-            alert(err.message || 'Authentication failed.');
+            showToast(err.message || 'Authentication failed.', 'error', '⚠️');
         }
     });
 }
@@ -1307,7 +1397,7 @@ function initQuickCheckin() {
             quickCheckinModal.classList.add('hidden');
             stopBreathingCycle();
 
-            alert("Check-in logged! Remember: pause, breathe, and honor your inner peace.");
+            showToast('Check-in logged! Remember: pause, breathe, and honor your inner peace.', 'success', '🌿');
         });
     }
 }
@@ -1432,6 +1522,7 @@ async function handleExportData() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    showToast('Sacred journal and reflection data exported successfully!', 'success', '📦');
 }
 
 async function handleClearLocalData() {
@@ -1451,6 +1542,6 @@ async function handleClearLocalData() {
         loadDashboardData();
         loadJournalFeed();
         settingsModal.classList.add('hidden');
-        alert("Your sanctuary history has been permanently cleared.");
+        showToast('Your sanctuary history has been permanently cleared.', 'info', '🧹');
     }
 }
