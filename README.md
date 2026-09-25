@@ -2,6 +2,8 @@
 
 VedAI is an emotion-aware mental well-being support system that combines modern AI with ancient Bhagavad Gita wisdom to provide personalized guidance based on your emotional state.
 
+🔗 **[Live Demo](https://vedai-7v9t.onrender.com/)** · **[GitHub Repository](https://github.com/Tushar8767/VedAI)**
+
 ## Features
 
 - **Emotion Detection**: Uses AI to analyze your text and detect emotions (fear, anxiety, sadness, anger, happiness, neutral)
