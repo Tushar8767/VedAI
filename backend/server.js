@@ -151,13 +151,13 @@ async function startServer() {
   try {
     const dbStatus = await checkConnection();
     if (dbStatus.ok) {
-      console.log("PostgreSQL connected successfully.");
+      console.log(`PostgreSQL connected successfully (DB: ${dbStatus.details?.db || "vedai"}).`);
       await runMigrations();
     } else {
-      console.warn("PostgreSQL connection notice:", dbStatus.error, "- using local resilience mode.");
+      console.warn(`PostgreSQL connection notice: ${dbStatus.error || "unavailable"} - using local resilience mode.`);
     }
   } catch (e) {
-    console.warn("PostgreSQL bootstrap notice:", e.message);
+    console.warn("PostgreSQL bootstrap notice:", e.message || String(e));
   }
 
   if (require.main === module) {
