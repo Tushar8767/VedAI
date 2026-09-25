@@ -30,7 +30,6 @@ ml_model/.env
 Thumbs.db
 
 # Audit & Generated Reports (Keep strictly local)
-FINAL_INVIGILATOR_REPORT.md
 docs/CAMERA_MULTIMODAL_VALIDATION.md
 docs/CONTROLLED_VALIDATION_MATRIX.md
 docs/FINAL_CLAIM_AUDIT.md
