@@ -912,6 +912,88 @@ input:checked + .switch-track:before {
     font-size: 0.75rem;
 }
 
+/* MULTIMODAL BREAKDOWN CARD */
+.multimodal-breakdown-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.breakdown-title {
+    color: var(--gold-primary);
+}
+
+.breakdown-ratio {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--gold-secondary);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+}
+
+.breakdown-signals-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+.signal-col {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 0.5rem 0.4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.signal-col.fused-highlight {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+.signal-label {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.signal-emotion {
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.fused-highlight .signal-emotion {
+    color: #6EE7B7;
+}
+
+.signal-conf {
+    font-size: 0.72rem;
+    color: var(--gold-primary);
+}
+
+.signal-divider {
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
 /* SPECTRUM BARS */
 .spectrum-section {
     margin-bottom: 1.5rem;

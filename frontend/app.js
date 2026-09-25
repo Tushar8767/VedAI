@@ -593,13 +593,34 @@ function renderRevelation(res) {
         text: userInput.value.trim()
     });
 
-    // Modality Pill
+    // Modality Pill & Multimodal Breakdown Telemetry
+    const multimodalBreakdownCard = document.getElementById('multimodalBreakdownCard');
+    const breakdownTextEmotion = document.getElementById('breakdownTextEmotion');
+    const breakdownTextConf = document.getElementById('breakdownTextConf');
+    const breakdownFaceEmotion = document.getElementById('breakdownFaceEmotion');
+    const breakdownFaceConf = document.getElementById('breakdownFaceConf');
+    const breakdownFusedEmotion = document.getElementById('breakdownFusedEmotion');
+    const breakdownFusedConf = document.getElementById('breakdownFusedConf');
+
     if (res.face_prediction?.face_detected) {
         modalityPill.textContent = 'Multimodal (Text 60% + Face 40%)';
         modalityPill.style.color = '#10B981';
+
+        if (multimodalBreakdownCard) {
+            multimodalBreakdownCard.classList.remove('hidden');
+            if (breakdownTextEmotion) breakdownTextEmotion.textContent = (res.text_prediction?.emotion || 'neutral').toUpperCase();
+            if (breakdownTextConf) breakdownTextConf.textContent = `${Math.round((res.text_prediction?.confidence || 0) * 100)}% Conf`;
+            if (breakdownFaceEmotion) breakdownFaceEmotion.textContent = (res.face_prediction?.emotion || 'neutral').toUpperCase();
+            if (breakdownFaceConf) breakdownFaceConf.textContent = `${Math.round((res.face_prediction?.confidence || 0) * 100)}% Conf`;
+            if (breakdownFusedEmotion) breakdownFusedEmotion.textContent = (res.emotion || 'neutral').toUpperCase();
+            if (breakdownFusedConf) breakdownFusedConf.textContent = `${Math.round((res.confidence || 0) * 100)}% Conf`;
+        }
     } else {
         modalityPill.textContent = 'Text Stream Only';
         modalityPill.style.color = '#60A5FA';
+        if (multimodalBreakdownCard) {
+            multimodalBreakdownCard.classList.add('hidden');
+        }
     }
     modelPill.textContent = res.model || 'DistilRoBERTa v2.0';
 
@@ -1050,20 +1071,48 @@ function updateUserSession() {
 }
 
 function initAuthModal() {
+    const userProfileModal = document.getElementById('userProfileModal');
+    const closeProfileBtn = document.getElementById('closeProfileBtn');
+    const profileNameDisplay = document.getElementById('profileNameDisplay');
+    const profileEmailDisplay = document.getElementById('profileEmailDisplay');
+    const profileOpenSettingsBtn = document.getElementById('profileOpenSettingsBtn');
+    const profileSignOutBtn = document.getElementById('profileSignOutBtn');
+
     authBtn.addEventListener('click', () => {
         const user = getStoredUser();
         if (user && getToken()) {
-            if (confirm(`Currently signed in as ${user.email}. Do you wish to sign out?`)) {
-                localStorage.removeItem(tokenStorageKey);
-                localStorage.removeItem(userStorageKey);
-                updateUserSession();
-                loadDashboardData();
-                loadJournalFeed();
-            }
+            if (profileNameDisplay) profileNameDisplay.textContent = user.name || 'Traveler';
+            if (profileEmailDisplay) profileEmailDisplay.textContent = user.email || '';
+            if (userProfileModal) userProfileModal.classList.remove('hidden');
         } else {
             authModal.classList.remove('hidden');
         }
     });
+
+    if (closeProfileBtn && userProfileModal) {
+        closeProfileBtn.addEventListener('click', () => {
+            userProfileModal.classList.add('hidden');
+        });
+    }
+
+    if (profileOpenSettingsBtn && userProfileModal) {
+        profileOpenSettingsBtn.addEventListener('click', () => {
+            userProfileModal.classList.add('hidden');
+            settingsBtn.click();
+        });
+    }
+
+    if (profileSignOutBtn && userProfileModal) {
+        profileSignOutBtn.addEventListener('click', () => {
+            userProfileModal.classList.add('hidden');
+            localStorage.removeItem(tokenStorageKey);
+            localStorage.removeItem(userStorageKey);
+            updateUserSession();
+            loadDashboardData();
+            loadJournalFeed();
+            alert('You have safely signed out of your personal sanctuary.');
+        });
+    }
 
     closeAuthBtn.addEventListener('click', () => {
         authModal.classList.add('hidden');
@@ -1242,6 +1291,18 @@ function initQuickCheckin() {
                 confidence: 0.9,
                 text: "Quick 30-second breath & grounding check-in completed."
             });
+
+            // Persist to PostgreSQL if authenticated
+            if (getToken()) {
+                apiRequest('/api/v1/process', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        user_text: `Quick 30-second breath & grounding check-in: feeling ${selectedMood}.`
+                    })
+                }).then(() => {
+                    loadDashboardData();
+                }).catch(e => console.warn('Could not sync quick check-in to database:', e));
+            }
 
             quickCheckinModal.classList.add('hidden');
             stopBreathingCycle();

@@ -268,7 +268,7 @@
                                                 </label>
                                                 <span class="hud-label">Biometric Facial Emotion Sensing</span>
                                             </div>
-                                            <span class="hud-privacy-badge">🔒 100% Client-Side RAM · Zero Video Stored</span>
+                                            <span class="hud-privacy-badge">🔒 Ephemeral In-Memory Analysis · Zero Video Saved</span>
                                         </div>
 
                                         <div class="camera-stage hidden" id="cameraStage">
@@ -336,6 +336,33 @@
                                     <div class="fusion-tag-bar">
                                         <span class="modality-pill" id="modalityPill">Text Stream Only</span>
                                         <span class="model-pill" id="modelPill">DistilRoBERTa v2.0</span>
+                                    </div>
+
+                                    <!-- Multimodal Biometric Decomposition Telemetry Card -->
+                                    <div class="multimodal-breakdown-card glass-panel hidden" id="multimodalBreakdownCard">
+                                        <div class="breakdown-header">
+                                            <span class="breakdown-title">🔬 Multimodal Signal Telemetry</span>
+                                            <span class="breakdown-ratio">0.6 Text + 0.4 Face</span>
+                                        </div>
+                                        <div class="breakdown-signals-grid">
+                                            <div class="signal-col">
+                                                <span class="signal-label">Text NLP</span>
+                                                <strong class="signal-emotion" id="breakdownTextEmotion">--</strong>
+                                                <span class="signal-conf" id="breakdownTextConf">--</span>
+                                            </div>
+                                            <div class="signal-divider">+</div>
+                                            <div class="signal-col">
+                                                <span class="signal-label">Facial CNN</span>
+                                                <strong class="signal-emotion" id="breakdownFaceEmotion">--</strong>
+                                                <span class="signal-conf" id="breakdownFaceConf">--</span>
+                                            </div>
+                                            <div class="signal-divider">=</div>
+                                            <div class="signal-col fused-highlight">
+                                                <span class="signal-label">Fused State</span>
+                                                <strong class="signal-emotion" id="breakdownFusedEmotion">--</strong>
+                                                <span class="signal-conf" id="breakdownFusedConf">--</span>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <!-- Explainability Box -->
@@ -820,6 +847,40 @@
                     <div class="modal-btn-stack">
                         <button class="action-btn-gold" id="authSubmitBtn">Register Account</button>
                         <button class="subtle-btn" id="authSwitchModeBtn">Already registered? Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Profile Modal -->
+        <div class="modal-backdrop hidden" id="userProfileModal">
+            <div class="modal-box glass-panel">
+                <div class="modal-top">
+                    <h3>Account Profile</h3>
+                    <button class="modal-close-btn" id="closeProfileBtn">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <div class="profile-card-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                        <div class="profile-avatar-crest" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, rgba(217, 119, 6, 0.3), rgba(245, 158, 11, 0.1)); border: 1px solid var(--gold-primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👤</div>
+                        <div class="profile-details-stack">
+                            <h4 id="profileNameDisplay" style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.2rem;">User Name</h4>
+                            <p id="profileEmailDisplay" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;">user@example.com</p>
+                            <span class="profile-status-badge" style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #6EE7B7; padding: 2px 8px; border-radius: 12px; display: inline-block;">✓ Protected Personal Vault Active</span>
+                        </div>
+                    </div>
+                    <div class="profile-meta-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+                        <div class="profile-meta-item" style="background: rgba(255,255,255,0.03); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <span class="meta-label" style="display: block; font-size: 0.75rem; color: var(--text-muted);">Storage Engine</span>
+                            <span class="meta-val" style="font-size: 0.9rem; font-weight: 600; color: var(--gold-primary);">PostgreSQL 17</span>
+                        </div>
+                        <div class="profile-meta-item" style="background: rgba(255,255,255,0.03); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <span class="meta-label" style="display: block; font-size: 0.75rem; color: var(--text-muted);">Journal Vault</span>
+                            <span class="meta-val" style="font-size: 0.9rem; font-weight: 600; color: #10B981;">AES-256-GCM</span>
+                        </div>
+                    </div>
+                    <div class="modal-btn-stack" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <button class="subtle-btn" id="profileOpenSettingsBtn">⚙️ Open Privacy Center & Settings</button>
+                        <button id="profileSignOutBtn" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #FCA5A5; padding: 0.65rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-family: inherit;">Sign Out of Sanctuary</button>
                     </div>
                 </div>
             </div>
