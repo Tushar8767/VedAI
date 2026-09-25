@@ -185,7 +185,7 @@ In the meantime, I am here to help you gently reflect on your feelings, practice
 
 Here is what I can do with you:
 • **Emotional Reflection**: Analyze the tone of your thoughts (and optional facial cues) using explainable AI to help you understand your emotional state.
-• **Grounded Gita Wisdom**: Connect what you are experiencing to canonical Bhagavad Gita verses (curated from 14 verified canonical verses) and living principles—never hallucinated scripture.
+• **Grounded Gita Wisdom**: Connect what you are experiencing to canonical Bhagavad Gita verses (curated from 54 verified canonical verses) and living principles—never hallucinated scripture.
 • **Tailored Daily Remedies**: Offer practical micro-practices, 432Hz grounding breath check-ins, and curated contemplative guidance.
 • **Private Sacred Journaling**: Give you an unhurried, private space to write, reflect, and track your emotional journey with full data sovereignty.
 
@@ -418,16 +418,25 @@ ${primaryVerse.explanation || 'When we attach our sense of peace to uncontrollab
 ${primaryVerse.practical_guidance || 'Identify one immediate step you can take today without fixating on the outcome.'}`;
   } else {
     // EMOTIONAL_DISTRESS
-    const emotionCounsel = {
-      anxiety: `It sounds like you are carrying anticipatory worry about what lies ahead. In ${verseRef}, we are reminded: "${primaryVerse.meaning || 'Focus on your present effort rather than obsessing over the outcome.'}" When anxiety rises, it is usually our mind trying to control things beyond our immediate reach. What is one small, manageable step you can take right now?`,
-      stress: `I understand that you are feeling overwhelmed by current demands. The Gita teaches in ${verseRef}: "${primaryVerse.meaning || 'Equanimity is the true essence of harmony.'}" Moderation and calm pacing are not signs of weakness, but foundations of endurance. Take a slow, grounding breath.`,
-      fear: `Fear can make us feel isolated and uncertain, but your inner strength remains intact. In ${verseRef}, Krishna reminds Arjuna: "${primaryVerse.meaning || 'Do not yield to weakness of heart; awaken your courage.'}" What is the single step right before you?`,
-      sadness: `I hear the depth of what you are moving through. Sorrow is a natural human experience, yet your core consciousness remains eternal and whole, as reflected in ${verseRef}: "${primaryVerse.meaning || 'The inner spirit is untouched by fleeting loss.'}" Allow yourself space to breathe gently.`,
-      anger: `It is completely valid to notice frustration, but anger can cloud our ability to see clearly. As taught in ${verseRef}: "${primaryVerse.meaning || 'Anger leads to delusion and loss of judgment.'}" Pausing before taking action preserves your personal peace and power.`,
-      happiness: `It is wonderful that you are experiencing this joy. In ${verseRef}, the Gita notes: "${primaryVerse.meaning || 'Inner contentment brings enduring peace.'}" Savor this sense of gratitude and let it nourish your steadiness.`,
-      neutral: `Thank you for sharing your thoughts. In ${verseRef}, we find the reminder: "${primaryVerse.meaning || 'Remain balanced and steady in all states.'}" How can I best support your reflection today?`
-    };
-    replyText = emotionCounsel[emotionResult.emotion] || emotionCounsel.neutral;
+    const isDevanagari = /[\u0900-\u097F]/.test(trimmed);
+    const isHinglishLow = /\b(thod(a|i)?\s+low|low\s+feel|feel(ing)?\s+low|krtoy|vatatay|watatay)\b/i.test(trimmed);
+
+    if (isDevanagari) {
+      replyText = `मैं समझ सकता हूँ कि आप इस समय मन में उदासी या अशांति महसूस कर रहे हैं। जीवन में ऐसे क्षण आते हैं जब भावनाएँ भारी हो जाती हैं, लेकिन आप अकेले नहीं हैं। श्रीमद्भगवद्गीता (${verseRef}) हमें याद दिलाती है: "${primaryVerse.meaning || 'आंतरिक चेतना कभी क्षीण नहीं होती।'}" हर भावना एक बहती नदी की तरह है जो समय के साथ शांत हो जाती है। एक गहरी, धीमी साँस लें। क्या आप बताना चाहेंगे कि इस समय मन पर क्या बोझ है?`;
+    } else if (isHinglishLow) {
+      replyText = `I hear you completely. Feeling low or emotionally depleted is a deeply human experience, and you do not have to carry or fix everything all at once. In ${verseRef}, the Gita reminds us: "${primaryVerse.meaning || 'Your inner strength remains whole even through transient storms.'}" Be gentle with yourself right now. Would you like to share what has been weighing on your mind, or would you prefer a simple 1-minute calming breathing practice?`;
+    } else {
+      const emotionCounsel = {
+        anxiety: `It sounds like you are carrying anticipatory worry about what lies ahead. In ${verseRef}, we are reminded: "${primaryVerse.meaning || 'Focus on your present effort rather than obsessing over the outcome.'}" When anxiety rises, it is usually our mind trying to control things beyond our immediate reach. What is one small, manageable step you can take right now?`,
+        stress: `I understand that you are feeling overwhelmed by current demands. The Gita teaches in ${verseRef}: "${primaryVerse.meaning || 'Equanimity is the true essence of harmony.'}" Moderation and calm pacing are not signs of weakness, but foundations of endurance. Take a slow, grounding breath.`,
+        fear: `Fear can make us feel isolated and uncertain, but your inner strength remains intact. In ${verseRef}, Krishna reminds Arjuna: "${primaryVerse.meaning || 'Do not yield to weakness of heart; awaken your courage.'}" What is the single step right before you?`,
+        sadness: `I hear the depth of what you are moving through. Sorrow is a natural human experience, yet your core consciousness remains eternal and whole, as reflected in ${verseRef}: "${primaryVerse.meaning || 'The inner spirit is untouched by fleeting loss.'}" Allow yourself space to breathe gently.`,
+        anger: `It is completely valid to notice frustration, but anger can cloud our ability to see clearly. As taught in ${verseRef}: "${primaryVerse.meaning || 'Anger leads to delusion and loss of judgment.'}" Pausing before taking action preserves your personal peace and power.`,
+        happiness: `It is wonderful that you are experiencing this joy. In ${verseRef}, the Gita notes: "${primaryVerse.meaning || 'Inner contentment brings enduring peace.'}" Savor this sense of gratitude and let it nourish your steadiness.`,
+        neutral: `Thank you for sharing your thoughts. In ${verseRef}, we find the reminder: "${primaryVerse.meaning || 'Remain balanced and steady in all states.'}" How can I best support your reflection today?`
+      };
+      replyText = emotionCounsel[emotionResult.emotion] || emotionCounsel.neutral;
+    }
   }
 
   // Persist

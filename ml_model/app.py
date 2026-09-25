@@ -187,12 +187,12 @@ def predict_emotion(data: TextInput):
         }
         
         SEMANTIC_LEXICON = {
-            "anxiety": ["anxious", "anxiety", "anxity", "worry", "worried", "nervous", "nourves", "norvous", "dread", "overthink", "exam", "career", "future", "uncertain", "doubt", "panic", "restless", "ghabrahat", "bechaini", "placement", "interview", "confusion", "confused"],
-            "stress": ["stress", "streesed", "stressed", "overwhelm", "pressure", "deadline", "tired", "exhaust", "burden", "workload", "burnout", "hurried", "strain", "tension", "pareshaan", "assignment"],
-            "anger": ["angry", "anger", "mad", "fury", "hate", "furious", "resentment", "frustrat", "irritat", "bitter", "rage", "infuriat", "gussa", "conflict", "screaming", "quarrel", "fight", "fighting", "clash", "argument"],
-            "fear": ["afraid", "scared", "fear", "terrified", "horror", "vulnerable", "defenseless", "paralyz", "dar"],
-            "sadness": ["sad", "sadness", "depressed", "lonely", "grief", "loss", "empty", "cry", "weep", "sorrow", "heartbreak", "hopeless", "mourn", "akela", "akeli", "kharab", "dukhi", "useless", "breakup", "broken", "painful", "ignored", "dismissed", "failed", "failing", "failure", "rejected", "rejection", "disappointed", "disappointment"],
-            "happiness": ["happy", "happiness", "joy", "peace", "grateful", "gratitude", "serene", "calm", "blessed", "fulfill", "content", "stillness", "equanimity", "khush", "excited", "motivated", "achieved", "achievement", "goal", "success", "successful", "selected", "dream", "offer", "win", "winning"]
+            "anxiety": ["anxious", "anxiety", "anxity", "worry", "worried", "nervous", "nourves", "norvous", "dread", "overthink", "exam", "career", "future", "uncertain", "doubt", "panic", "restless", "ghabrahat", "bechaini", "placement", "interview", "confusion", "confused", "चिंता", "घबराहट", "बेचैनी", "संदेह"],
+            "stress": ["stress", "streesed", "stressed", "overwhelm", "pressure", "deadline", "tired", "exhaust", "burden", "workload", "burnout", "hurried", "strain", "tension", "pareshaan", "assignment", "तनाव", "दबाव", "थकान", "परेशान"],
+            "anger": ["angry", "anger", "mad", "fury", "hate", "furious", "resentment", "frustrat", "irritat", "bitter", "rage", "infuriat", "gussa", "conflict", "screaming", "quarrel", "fight", "fighting", "clash", "argument", "क्रोध", "गुस्सा", "कोप", "राग"],
+            "fear": ["afraid", "scared", "fear", "terrified", "horror", "vulnerable", "defenseless", "paralyz", "dar", "डर", "भय", "भीती", "आशंका"],
+            "sadness": ["sad", "sadness", "depressed", "lonely", "grief", "loss", "empty", "cry", "weep", "sorrow", "heartbreak", "hopeless", "mourn", "akela", "akeli", "kharab", "dukhi", "useless", "breakup", "broken", "painful", "ignored", "dismissed", "failed", "failing", "failure", "rejected", "rejection", "disappointed", "disappointment", "low", "feel low", "feeling low", "krtoy", "vatatay", "watatay", "bechain", "udaas", "udasi", "mood off", "उदासी", "उदास", "दुःख", "दुखी", "कष्ट", "दर्द", "अकेलापन", "अकेला"],
+            "happiness": ["happy", "happiness", "joy", "peace", "grateful", "gratitude", "serene", "calm", "blessed", "fulfill", "content", "stillness", "equanimity", "khush", "excited", "motivated", "achieved", "achievement", "goal", "success", "successful", "selected", "dream", "offer", "win", "winning", "प्रसन्न", "खुश", "आनंद", "सुख", "उल्लास"]
         }
         
         STOPWORDS = {
@@ -211,7 +211,7 @@ def predict_emotion(data: TextInput):
         }
         
         import re, difflib
-        tokens = [t for t in re.findall(r'[a-z]+', lowered) if t not in STOPWORDS]
+        tokens = [t for t in re.findall(r'[\w]+', lowered) if t not in STOPWORDS]
 
         detected_hit = False
         for emotion_key, keywords in SEMANTIC_LEXICON.items():
@@ -269,16 +269,25 @@ def predict_face_emotion(data: FaceInput):
     if len(faces) == 0:
         return {
             "face_detected": False,
-            "emotion": "neutral",
-            "confidence": 0.5,
-            "probabilities": {label: (1.0 / len(CANONICAL_LABELS)) for label in CANONICAL_LABELS},
+            "number_of_faces": 0,
+            "detection_status": "no_face_detected",
+            "reason": "No human face was identified in the captured frame.",
+            "emotion": None,
+            "confidence": 0.0,
+            "probabilities": {},
             "model": "FaceEmotionCNN-Haar",
             "model_version": "2.0"
         }
 
+    num_faces = len(faces)
     # Pick largest face
     x, y, w, h = max(faces, key=lambda f: f[2] * f[3])
     face_roi = gray[y:y+h, x:x+w]
+
+    # Evaluate image quality / lighting
+    mean_brightness = float(np.mean(face_roi))
+    quality_status = "good" if (40.0 <= mean_brightness <= 220.0) else ("poor_lighting" if mean_brightness < 40.0 else "overexposed")
+
     face_resized = cv2.resize(face_roi, (48, 48))
     face_norm = face_resized.astype(np.float32) / 255.0
     tensor = torch.tensor(face_norm).unsqueeze(0).unsqueeze(0)  # Shape: (1, 1, 48, 48)
@@ -293,6 +302,9 @@ def predict_face_emotion(data: FaceInput):
 
     return {
         "face_detected": True,
+        "number_of_faces": int(num_faces),
+        "detection_status": "face_detected",
+        "quality_status": quality_status,
         "bounding_box": {"x": int(x), "y": int(y), "w": int(w), "h": int(h)},
         "emotion": best_emotion,
         "confidence": float(best_conf),
@@ -311,8 +323,16 @@ def predict_multimodal(data: MultimodalInput):
     if data.image:
         try:
             face_res = predict_face_emotion(FaceInput(image=data.image))
-        except Exception:
-            face_res = None
+        except Exception as e:
+            face_res = {
+                "face_detected": False,
+                "number_of_faces": 0,
+                "detection_status": "error",
+                "reason": f"Face parsing error: {str(e)}",
+                "emotion": None,
+                "confidence": 0.0,
+                "probabilities": {}
+            }
 
     if not face_res or not face_res.get("face_detected", False):
         return {
@@ -320,24 +340,41 @@ def predict_multimodal(data: MultimodalInput):
             "confidence": text_res["confidence"],
             "probabilities": text_res["probabilities"],
             "fusion_method": "text_only",
+            "weights": {"text": 1.0, "face": 0.0},
             "text_prediction": text_res,
-            "face_prediction": face_res
+            "face_prediction": face_res or {
+                "face_detected": False,
+                "number_of_faces": 0,
+                "detection_status": "camera_inactive",
+                "reason": "Camera not enabled (text stream only).",
+                "emotion": None,
+                "confidence": 0.0,
+                "probabilities": {}
+            },
+            "agreement": None
         }
 
-    # Confidence-weighted late fusion
-    w_t = data.text_weight or 0.6
-    w_f = data.face_weight or 0.4
+    # Calibrated late fusion: 65% text, 35% face
+    w_t = data.text_weight if data.text_weight is not None else 0.65
+    w_f = data.face_weight if data.face_weight is not None else 0.35
     total_w = w_t + w_f
-    w_t /= total_w
-    w_f /= total_w
+    w_t = round(w_t / total_w, 4)
+    w_f = round(w_f / total_w, 4)
 
     fused_probs = {}
+    text_contrib = {}
+    face_contrib = {}
     for label in CANONICAL_LABELS:
-        fused_probs[label] = (w_t * text_res["probabilities"].get(label, 0.0)) + (w_f * face_res["probabilities"].get(label, 0.0))
+        t_val = text_res["probabilities"].get(label, 0.0)
+        f_val = face_res["probabilities"].get(label, 0.0)
+        text_contrib[label] = round(w_t * t_val, 4)
+        face_contrib[label] = round(w_f * f_val, 4)
+        fused_probs[label] = text_contrib[label] + face_contrib[label]
 
     total = sum(fused_probs.values()) or 1.0
     fused_probs = {k: round(v / total, 4) for k, v in fused_probs.items()}
     final_emotion, final_conf = max(fused_probs.items(), key=lambda item: item[1])
+    is_agreement = (text_res["emotion"] == face_res["emotion"])
 
     return {
         "final_emotion": final_emotion,
@@ -345,6 +382,9 @@ def predict_multimodal(data: MultimodalInput):
         "probabilities": fused_probs,
         "fusion_method": "confidence_weighted_late_fusion",
         "weights": {"text": w_t, "face": w_f},
+        "text_contribution": text_contrib,
+        "face_contribution": face_contrib,
+        "agreement": is_agreement,
         "text_prediction": text_res,
         "face_prediction": face_res
     }

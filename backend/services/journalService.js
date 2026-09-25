@@ -8,19 +8,25 @@ const journalRepository = require("../repositories/journalRepository");
 const { isConnected } = require("../database/db");
 
 async function listJournalEntries(userId, { limit = 50, offset = 0 } = {}) {
+  let dbRows = null;
   if (isConnected()) {
     try {
-      return await journalRepository.listJournalEntries(userId, { limit, offset });
+      dbRows = await journalRepository.listJournalEntries(userId, { limit, offset });
+      if (dbRows && dbRows.length > 0) {
+        return dbRows;
+      }
     } catch (err) {
       console.warn("PostgreSQL listJournalEntries fallback to file:", err.message);
     }
   }
 
   const db = readDatabase();
-  return db.journalEntries
+  const fileEntries = db.journalEntries
     .filter((entry) => entry.userId === userId)
     .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
     .slice(offset, offset + limit);
+
+  return (dbRows && dbRows.length > 0) ? dbRows : fileEntries;
 }
 
 function escapeHtml(str) {

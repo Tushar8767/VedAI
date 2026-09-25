@@ -63,7 +63,8 @@ const SEMANTIC_LEXICON = {
     "hopeless", "mourn", "empty", "heartbroken", "akela", "akeli", "kharab",
     "mood kharab", "dukhi", "useless", "alone", "breakup", "broken", "painful",
     "ignored", "dismissed", "failed", "failing", "failure", "rejected", "rejection",
-    "disappointed", "disappointment"
+    "disappointed", "disappointment", "low", "feel low", "feeling low", "krtoy", "vatatay",
+    "watatay", "bechain", "udaas", "udasi", "mood off"
   ],
   anger: [
     "angry", "anger", "mad", "fury", "furious", "hate", "frustrated",
@@ -78,8 +79,19 @@ const SEMANTIC_LEXICON = {
   ]
 };
 
+const DEVANAGARI_LEXICON = {
+  sadness: ["उदासी", "उदास", "दुःख", "दुखी", "कष्ट", "दर्द", "अकेलापन", "अकेला"],
+  anxiety: ["चिंता", "घबराहट", "बेचैनी", "संदेह", "संशय"],
+  fear: ["डर", "भय", "भीती", "आशंका"],
+  anger: ["क्रोध", "गुस्सा", "कोप", "राग"],
+  happiness: ["प्रसन्न", "खुश", "आनंद", "सुख", "उल्लास"],
+  stress: ["तनाव", "दबाव", "थकान", "परेशान"],
+  neutral: ["शांत", "स्थिर", "समतोल", "समत्व"]
+};
+
 function matchSemanticEmotion(text = "") {
-  const cleaned = text.toLowerCase().replace(/[^a-z0-9\s]/g, " ");
+  const lowered = text.toLowerCase();
+  const cleaned = lowered.replace(/[^a-z0-9\s]/g, " ");
   const tokens = cleaned.split(/\s+/).filter(Boolean);
 
   const scores = {
@@ -94,9 +106,23 @@ function matchSemanticEmotion(text = "") {
 
   let totalHits = 0;
 
+  // 1. Check Devanagari dictionary
+  for (const [emotion, keywords] of Object.entries(DEVANAGARI_LEXICON)) {
+    for (const kw of keywords) {
+      if (text.includes(kw)) {
+        scores[emotion] += 3.0;
+        totalHits += 3.0;
+      }
+    }
+  }
+
+  // 2. Check Romanized lexicon
   for (const [emotion, keywords] of Object.entries(SEMANTIC_LEXICON)) {
     let hits = 0;
     for (const kw of keywords) {
+      if (kw.includes(" ") && lowered.includes(kw)) {
+        hits += 2.0;
+      }
       for (const token of tokens) {
         if (token === kw) {
           hits += 1.8;
@@ -225,20 +251,49 @@ async function analyzeFaceEmotion(imageBase64) {
       timeout: config.MODEL_TIMEOUT_MS
     });
 
-    const probabilities = normalizeProbabilities(response.data.probabilities);
+    const data = response.data || {};
+    if (data.face_detected === false) {
+      return {
+        face_detected: false,
+        number_of_faces: 0,
+        detection_status: data.detection_status || "no_face_detected",
+        reason: data.reason || "No face detected in video frame.",
+        emotion: null,
+        confidence: 0.0,
+        probabilities: {},
+        model: data.model || "FaceEmotionCNN-Haar",
+        model_version: data.model_version || "2.0"
+      };
+    }
+
+    const probabilities = normalizeProbabilities(data.probabilities);
     const [emotion, confidence] = topEmotion(probabilities);
 
     return {
+      face_detected: true,
+      number_of_faces: data.number_of_faces || 1,
+      detection_status: data.detection_status || "face_detected",
+      quality_status: data.quality_status || "good",
+      bounding_box: data.bounding_box || null,
       emotion,
-      confidence,
+      confidence: Number(confidence.toFixed(4)),
       probabilities,
-      face_detected: response.data.face_detected !== false,
-      model: response.data.model || "facial-emotion-service",
-      model_version: response.data.model_version || "1.0"
+      model: data.model || "FaceEmotionCNN-Haar",
+      model_version: data.model_version || "2.0"
     };
   } catch (error) {
     console.warn("MODEL WARNING (Face):", error.message);
-    return null;
+    return {
+      face_detected: false,
+      number_of_faces: 0,
+      detection_status: "service_unavailable",
+      reason: "Facial emotion ML service offline or unreachable.",
+      emotion: null,
+      confidence: 0.0,
+      probabilities: {},
+      model: "FaceEmotionCNN-Haar",
+      model_version: "2.0"
+    };
   }
 }
 

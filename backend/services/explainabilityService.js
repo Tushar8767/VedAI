@@ -22,9 +22,12 @@ function buildExplanation({ text, emotionResult, fusionResult, safety }) {
   const insight = EMOTION_INSIGHTS[emotion] || EMOTION_INSIGHTS.neutral;
   const isMultimodal = Boolean(fusionResult?.face_prediction?.face_detected);
 
+  const textWeightPct = Math.round((fusionResult?.weights?.text || 0.65) * 100);
+  const faceWeightPct = Math.round((fusionResult?.weights?.face || 0.35) * 100);
+
   const modalityNote = isMultimodal
-    ? "Fusing your written words (60%) with client-side facial sensing (40%)."
-    : "Estimated from the emotional tone and semantic balance of your reflection.";
+    ? `Fusing your written words (${textWeightPct}%) with facial expression cues (${faceWeightPct}%). ${fusionResult?.modality_comparison?.comparison_summary || ''}`
+    : "Estimated from the emotional tone and semantic balance of your reflection (single-modality text inference).";
 
   return {
     summary: `${insight} (${modalityNote})`,

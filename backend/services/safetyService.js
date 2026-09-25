@@ -48,7 +48,7 @@ const LAYER_3_HINGLISH = [
 
 // Layer 4: Marathi crisis expressions
 const LAYER_4_MARATHI = [
-  /\b(mala jagaycha nahiye|jagaychi iccha nahi|jagaycha nahi)\b/i,
+  /\b(mala\s+(ata|aata|ab\s*)?jagaycha\s+nahi(ye)?|jagaychi\s+iccha\s+nahi|jagaycha\s+nahi)\b/i,
   /\b(mala marun jaavas vatta|marun jaavasa vatatay|marava vatata)\b/i,
   /\b(jeevan sampvaycha|aayushya sampvun takaycha)\b/i,
   /\b(aatmhatya karaychi|jiv dyaavasa vatto)\b/i

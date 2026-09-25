@@ -211,7 +211,7 @@
                             <div class="callout-icon">💡</div>
                             <div class="callout-text">
                                 <strong>Ethical, Explainable Multimodal AI:</strong>
-                                <span>VedAI pairs text NLP with optional facial sensing (camera frames transmitted transiently to ML microservice without persistent storage) grounded in 14 verified canonical Gita verses and semantic retrieval.</span>
+                                <span>VedAI pairs text NLP with optional facial sensing (camera frames transmitted transiently to ML microservice without persistent storage) grounded in 54 verified canonical Gita verses and semantic retrieval.</span>
                             </div>
                             <button class="action-btn-outline-sm" id="homeDrawerLinkBtn">
                                 <span>Inspect Architecture & Lexicon</span> ➔
@@ -339,30 +339,110 @@
                                         <span class="model-pill" id="modelPill">DistilRoBERTa v2.0</span>
                                     </div>
 
-                                    <!-- Multimodal Biometric Decomposition Telemetry Card -->
-                                    <div class="multimodal-breakdown-card glass-panel hidden" id="multimodalBreakdownCard">
-                                        <div class="breakdown-header">
-                                            <span class="breakdown-title">🔬 Multimodal Signal Telemetry</span>
-                                            <span class="breakdown-ratio">0.6 Text + 0.4 Face</span>
+                                    <!-- Multimodal Biometric Decomposition Telemetry Panel (Phase 1 & Phase 2) -->
+                                    <div class="multimodal-telemetry-panel glass-panel" id="multimodalBreakdownCard">
+                                        <div class="telemetry-header-row">
+                                            <div class="telemetry-title-group">
+                                                <span class="telemetry-icon">🔬</span>
+                                                <span class="telemetry-title">How VedAI Reached This Result (Multimodal Transparency)</span>
+                                            </div>
+                                            <span class="telemetry-ratio-pill" id="telemetryRatioPill">Text: 65% · Face: 35%</span>
                                         </div>
-                                        <div class="breakdown-signals-grid">
-                                            <div class="signal-col">
-                                                <span class="signal-label">Text NLP</span>
-                                                <strong class="signal-emotion" id="breakdownTextEmotion">--</strong>
-                                                <span class="signal-conf" id="breakdownTextConf">--</span>
+
+                                        <!-- 3-Column Pipeline: Text -> Face -> Fused -->
+                                        <div class="telemetry-pipeline-grid">
+                                            <!-- Stage 1: Text NLP -->
+                                            <div class="pipeline-card" id="cardTextStage">
+                                                <div class="pipeline-card-header">
+                                                    <span class="stage-num-badge">1</span>
+                                                    <span class="stage-name">Text NLP Model</span>
+                                                </div>
+                                                <div class="pipeline-body">
+                                                    <div class="stage-metric-row">
+                                                        <span class="stage-emotion-val" id="breakdownTextEmotion">--</span>
+                                                        <span class="stage-conf-val" id="breakdownTextConf">--</span>
+                                                    </div>
+                                                    <div class="stage-subtext" id="breakdownTextModel">DistilRoBERTa-v2.0</div>
+                                                    <div class="stage-probs-box" id="breakdownTextProbs"></div>
+                                                </div>
+                                                <div class="pipeline-card-footer">
+                                                    <span>Weight: <strong id="breakdownTextWeight">65%</strong></span>
+                                                </div>
                                             </div>
-                                            <div class="signal-divider">+</div>
-                                            <div class="signal-col">
-                                                <span class="signal-label">Facial CNN</span>
-                                                <strong class="signal-emotion" id="breakdownFaceEmotion">--</strong>
-                                                <span class="signal-conf" id="breakdownFaceConf">--</span>
+
+                                            <div class="pipeline-op-col">
+                                                <span class="pipeline-op-symbol">+</span>
                                             </div>
-                                            <div class="signal-divider">=</div>
-                                            <div class="signal-col fused-highlight">
-                                                <span class="signal-label">Fused State</span>
-                                                <strong class="signal-emotion" id="breakdownFusedEmotion">--</strong>
-                                                <span class="signal-conf" id="breakdownFusedConf">--</span>
+
+                                            <!-- Stage 2: Facial Emotion CNN -->
+                                            <div class="pipeline-card" id="cardFaceStage">
+                                                <div class="pipeline-card-header">
+                                                    <span class="stage-num-badge">2</span>
+                                                    <span class="stage-name">Facial Emotion CNN</span>
+                                                </div>
+                                                <div class="pipeline-body">
+                                                    <!-- If Face Detected -->
+                                                    <div id="faceActiveContent">
+                                                        <div class="stage-metric-row">
+                                                            <span class="stage-emotion-val" id="breakdownFaceEmotion">--</span>
+                                                            <span class="stage-conf-val" id="breakdownFaceConf">--</span>
+                                                        </div>
+                                                        <div class="stage-meta-row" id="breakdownFaceMeta">
+                                                            <span class="meta-tag" id="faceDetectStatus">Face: Detected</span>
+                                                            <span class="meta-tag" id="faceCountTag">Faces: 1</span>
+                                                            <span class="meta-tag" id="faceQualityTag">Quality: Good</span>
+                                                        </div>
+                                                        <div class="stage-probs-box" id="breakdownFaceProbs"></div>
+                                                    </div>
+                                                    <!-- If Face Not Detected / Unavailable -->
+                                                    <div id="faceFallbackContent" class="face-fallback-view hidden">
+                                                        <div class="fallback-status-badge">FACE NOT AVAILABLE</div>
+                                                        <div class="fallback-reason-text" id="breakdownFaceReason">Reason: Camera not enabled or face not detected in frame.</div>
+                                                        <div class="fallback-action-badge">TEXT-ONLY FALLBACK ACTIVE</div>
+                                                    </div>
+                                                </div>
+                                                <div class="pipeline-card-footer">
+                                                    <span>Weight: <strong id="breakdownFaceWeight">35%</strong></span>
+                                                </div>
                                             </div>
+
+                                            <div class="pipeline-op-col">
+                                                <span class="pipeline-op-symbol">=</span>
+                                            </div>
+
+                                            <!-- Stage 3: Fused Decision -->
+                                            <div class="pipeline-card fused-card" id="cardFusedStage">
+                                                <div class="pipeline-card-header">
+                                                    <span class="stage-num-badge fused-badge">3</span>
+                                                    <span class="stage-name">Fused Decision</span>
+                                                </div>
+                                                <div class="pipeline-body">
+                                                    <div class="stage-metric-row">
+                                                        <span class="stage-emotion-val fused-highlight" id="breakdownFusedEmotion">--</span>
+                                                        <span class="stage-conf-val" id="breakdownFusedConf">--</span>
+                                                    </div>
+                                                    <div class="stage-meta-row">
+                                                        <span class="meta-tag" id="breakdownAgreementTag">Agreement: --</span>
+                                                    </div>
+                                                    <div class="stage-summary-text" id="breakdownFusionSummary">Late fusion combining text semantics and transient facial vectors.</div>
+                                                </div>
+                                                <div class="pipeline-card-footer">
+                                                    <span>Modality: <strong id="breakdownModalityMode">Weighted Late Fusion (65/35)</strong></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Modality Comparison Bar -->
+                                        <div class="modality-comparison-panel glass-inset" id="modalityComparisonPanel">
+                                            <div class="comparison-header">
+                                                <strong>Modality Comparison:</strong>
+                                            </div>
+                                            <div class="comparison-grid">
+                                                <div class="comp-item"><span>Text Model:</span> <strong id="compTextVal">--</strong></div>
+                                                <div class="comp-item"><span>Face Model:</span> <strong id="compFaceVal">--</strong></div>
+                                                <div class="comp-item"><span>Modality Agreement:</span> <strong id="compAgreementVal">--</strong></div>
+                                            </div>
+                                            <div class="comparison-desc" id="compExplanationVal">--</div>
                                         </div>
                                     </div>
 
@@ -405,7 +485,7 @@
                                                     <span class="shloka-source-badge" id="shlokaSource">Bhagavad Gita 2.47</span>
                                                 </div>
                                                 <div class="shloka-action-btns">
-                                                    <button class="shloka-audio-btn" id="playShlokaAudioBtn" title="Listen to Sanskrit Verse">🔊 Listen / Chant</button>
+                                                    <button class="shloka-audio-btn" id="playShlokaAudioBtn" title="Text-to-Speech Pronunciation of Sanskrit Verse">🔊 Text-to-Speech Pronunciation</button>
                                                     <button class="shloka-copy-btn" id="copyShlokaBtn" title="Copy Shloka">⎘ Copy Verse</button>
                                                 </div>
                                             </div>
@@ -704,8 +784,8 @@
                         <div class="drawer-pipe-item">
                             <span class="pipe-num">03</span>
                             <div>
-                                <strong>14-Verse Canonical Gita RAG Grounding:</strong>
-                                <p>TF-IDF and cosine similarity retrieval queries our curated collection of 14 verified canonical verses of the Bhagavad Gita to find the exact philosophical grounding for your dilemma.</p>
+                                <strong>54-Verse Canonical Gita RAG Grounding:</strong>
+                                <p>TF-IDF and cosine similarity retrieval queries our curated collection of 54 verified canonical verses of the Bhagavad Gita to find the exact philosophical grounding for your dilemma.</p>
                             </div>
                         </div>
                         <div class="drawer-pipe-item">

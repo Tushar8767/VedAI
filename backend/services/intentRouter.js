@@ -22,7 +22,7 @@ const INTENTS = {
   OUT_OF_SCOPE: "OUT_OF_SCOPE"
 };
 
-const GREETING_REGEX = /^(hi|hey|hello|namaste|good\s+(morning|afternoon|evening|day|night)|howdy|greetings|how\s+are\s+you|what's\s+up|sup|thanks|thank\s+you|thx|goodbye|bye|see\s+you)(\s+(vedai|there|everyone|all|friend))?[\s!.]*$/i;
+const GREETING_REGEX = /^(hi|hey|hello|namaste|good\s+(morning|afternoon|evening|day|night)|howdy|greetings|how\s+are\s+you|what's\s+up|sup|thanks|thank\s+you|thx|goodbye|bye|see\s+you)(\s+(ved\s*ai|vedai|there|everyone|all|friend))?[\s!.]*$/i;
 
 const CLINICAL_BOUNDARY_REGEX = /\b(do i have (depression|anxiety|bipolar|adhd|ptsd|schizophrenia)|am i (bipolar|depressed|schizophrenic)|diagnose (my|me)|what medication|which medication|what pills|prescribe|do i need a psychiatrist|need a psychiatrist|should i see a psychiatrist|should i see a doctor|clinical diagnosis|medical diagnosis)\b/i;
 
@@ -38,16 +38,18 @@ const PRACTICE_REQUEST_REGEX = /\b(breath|breathing|meditat|pranayama|mindful|ex
 
 const JOURNAL_REQUEST_REGEX = /\b(journal|save\s+(this|my|note)|write\s+(down|about|today's\s+reflection)|record\s+this|log\s+this|summarize\s+my\s+day)\b/i;
 
-const PRACTICAL_GUIDANCE_REGEX = /\b(what\s+(should|can)\s+i\s+do|what\s+to\s+do|how\s+(can|do)\s+i|how\s+to\s+(stop|handle|solve|become|stay|manage|deal|prioritize|focus|study|sleep|stop\s+procrastinating|build\s+a\s+habit)|should\s+i|help\s+me\s+(focus|decide|choose|study|organize|restart)|too\s+many\s+things|samajh\s+nahi\s+aa\s+raha|kya\s+karu|kaise\s+karu)\b/i;
+const PRACTICAL_GUIDANCE_REGEX = /\b(what\s+(should|can)\s+i\s+do|what\s+to\s+do|how\s+(can|do)\s+i|how\s+to\s+(stop|handle|solve|become|stay|manage|deal|prioritize|focus|study|sleep|stop\s+procrastinating|build\s+a\s+habit)|should\s+i|help\s+me\s+(focus|decide|choose|study|organize|restart)|too\s+many\s+things|samajh\s+nahi\s+aa\s+raha|kya\s+karu|kaise\s+karu|decision\s+to\s+make|important\s+decision|don't\s+know\s+what\s+to\s+(choose|do)|confused\s+between|which\s+path\s+to\s+take|dilemma|how\s+should\s+i\s+choose)\b/i;
 
-const EMOTIONAL_DISTRESS_REGEX = /\b(overwhelm(ed|ing)?|overthink(ing)?|lonel(y|iness)|anxious|anxiety|anxity|nervous|nourves|scared|afraid|fear(ful)?|panic|ang(ry|er)|mad|frustrat(ed|ion|ing)?|sad(ness)?|depress(ed|ion|ing)?|grief|heartbreak|fail(ing|ure|ed)|hate\s+myself|hopeless|stress(ed|ful)?|streesed|pressure|im\s+tired|i'm\s+tired|sad\s+af|lost\s+motivation|feel\s+useless|mera\s+mood\s+kharab|stress\s+ho\s+raha|akela|pareshaan|tension)\b/i;
+const EMOTIONAL_DISTRESS_REGEX = /\b(overwhelm(ed|ing)?|overthink(ing)?|lonel(y|iness)|anxious|anxiety|anxity|nervous|nourves|scared|afraid|fear(ful)?|panic|ang(ry|er)|mad|frustrat(ed|ion|ing)?|sad(ness)?|depress(ed|ion|ing)?|grief|heartbreak|fail(ing|ure|ed)|hate\s+myself|hopeless|stress(ed|ful)?|streesed|pressure|im\s+tired|i'm\s+tired|sad\s+af|lost\s+motivation|feel\s+useless|mera\s+mood\s+kharab|stress\s+ho\s+raha|akela|pareshaan|tension|low\s+feel|feel(ing)?\s+low|thod(a|i)?\s+low|feel\s+krtoy|vatatay|watatay|bechain(i)?|ghabrahat|udaas(i)?|mood\s+off)\b|[\u0900-\u097F]*(उदासी|उदास|दुःख|दुखी|कष्ट|दर्द|तनाव|दबाव|थकान|परेशान|चिंता|घबराहट|डर|भय|क्रोध|गुस्सा|अकेलापन)[\u0900-\u097F]*/i;
 
 const GENERAL_CONV_REGEX = /\b(just\s+want\s+to\s+talk|can\s+i\s+tell\s+you|don't\s+know\s+what\s+i'm\s+feeling|feel\s+strange|listen\s+to\s+me|someone\s+to\s+talk)\b/i;
 
-const OUT_OF_SCOPE_REGEX = /\b(python|javascript|java\s+program|c\+\+|coding|write\s+a\s+program|html|css|sql\s+query|capital\s+of|weather\s+in|recipe\s+for|stock\s+price|cybersecurity|election|politics|who\s+won\s+the\s+match|solve\s+this\s+equation|calculus|mathematics)\b/i;
+const OUT_OF_SCOPE_REGEX = /\b(python|javascript|java\s+program|c\+\+|coding|write\s+a\s+program|html|css|sql\s+query|capital\s+of|weather\s+in|recipe\s+for|stock\s+price|cybersecurity|election|politics|who\s+won\s+the\s+match|solve\s+this\s+equation|calculus|mathematics|binary\s+search)\b/i;
 
 function routeIntent(message = "", conversationHistory = []) {
-  const trimmed = String(message || "").trim();
+  let trimmed = String(message || "").trim();
+  // Normalize run-together words (e.g. "overwhelmedI have" -> "overwhelmed I have")
+  trimmed = trimmed.replace(/([a-z])([A-Z])/g, '$1 $2');
 
   // 1. Safety check
   const safety = assessSafety(trimmed);

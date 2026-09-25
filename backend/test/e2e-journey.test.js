@@ -2,7 +2,32 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const http = require("http");
 
-const BASE_URL = "http://127.0.0.1:5000";
+let server = null;
+let BASE_URL = "http://127.0.0.1:5000";
+
+const { checkConnection } = require("../database/db");
+
+test.before(async () => {
+  const app = require("../server");
+  try {
+    await checkConnection();
+  } catch (e) {
+    // resilience mode
+  }
+  await new Promise((resolve) => {
+    server = app.listen(0, "127.0.0.1", () => {
+      const port = server.address().port;
+      BASE_URL = `http://127.0.0.1:${port}`;
+      resolve();
+    });
+  });
+});
+
+test.after(async () => {
+  if (server) {
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
 
 function apiRequest(path, { method = "GET", token = null, body = null } = {}) {
   return new Promise((resolve, reject) => {

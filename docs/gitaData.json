@@ -1,104 +1,556 @@
 {
   "fear": [
     {
-      "verse": "क्लैब्यं मा स्म गमः पार्थ",
-      "meaning": "Do not give in to fear and weakness.",
-      "explanation": "Fear weakens the mind. Face challenges with courage and self-belief."
+      "chapter": 2,
+      "verse_number": 3,
+      "verse": "क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते। क्षुद्रं हृदयदौर्बल्यं त्यक्त्वोत्तिष्ठ परन्तप॥",
+      "transliteration": "klaibyaṁ mā sma gamaḥ pārtha naitat tvayy upapadyate | kṣudraṁ hṛdaya-daurbalyaṁ tyaktvottiṣṭha parantapa",
+      "meaning": "Do not yield to unmanliness and paralysis, O son of Pritha; it is unworthy of you. Shake off this trivial weakness of heart and stand up, O scorcher of foes!",
+      "explanation": "Fear seeks to paralyze us by magnifying our vulnerabilities. Krishna commands Arjuna not to deny fear, but to rise above the paralysis by remembering his innate strength.",
+      "practical_guidance": "Stand up straight, take three deep diaphragmatic breaths, and take the single most courageous action you have been avoiding today.",
+      "source": "Bhagavad Gita 2.3"
     },
     {
-      "verse": "न हि कल्याणकृत्कश्चिद् दुर्गतिं तात गच्छति",
-      "meaning": "One who does good never meets a bad end.",
-      "explanation": "Right actions protect you even in difficult situations."
+      "chapter": 6,
+      "verse_number": 5,
+      "verse": "उद्धरेदात्मनात्मानं नात्मानमवसादयेत्। आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः॥",
+      "transliteration": "uddhared ātmanātmānaṁ nātmānam avasādayet | ātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ",
+      "meaning": "One must elevate oneself by one's own mind, and not degrade oneself. The mind is indeed the friend of the conditioned soul, and the mind is also its enemy.",
+      "explanation": "Your own mind has the power either to torment you with self-doubt and fear, or to guide you as a compassionate friend. Reclaiming control of inner dialogue is your sacred duty.",
+      "practical_guidance": "Notice your internal dialogue right now. Is your self-talk acting as a supportive ally or a destructive adversary? Refocus it gently toward kindness.",
+      "source": "Bhagavad Gita 6.5"
     },
     {
-      "verse": "सुखदुःखे समे कृत्वा",
-      "meaning": "Treat happiness and sorrow equally.",
-      "explanation": "Fear reduces when you stop overthinking outcomes."
+      "chapter": 4,
+      "verse_number": 10,
+      "verse": "वीतरागभयक्रोधा मन्मया मामुपाश्रिताः। बहवो ज्ञानतपसा पूता मद्भावमागताः॥",
+      "transliteration": "vīta-rāga-bhaya-krodhā man-mayā mām upāśritāḥ | bahavo jñāna-tapasā pūtā mad-bhāvam āgatāḥ",
+      "meaning": "Freed from attachment, fear, and anger, absorbed in truth and taking refuge in higher awareness, purified by wisdom, many have attained supreme tranquility.",
+      "explanation": "Fear and anger are ancient human companions, but through self-inquiry and mindful discipline, generations before us have transformed them into fearless calm.",
+      "practical_guidance": "Allow the fire of understanding to burn away irrational fears; trust that courage grows when rooted in higher values.",
+      "source": "Bhagavad Gita 4.10"
+    },
+    {
+      "chapter": 5,
+      "verse_number": 26,
+      "verse": "कामक्रोधवियुक्तानां यतीनां यतचेतसाम्। अभितो ब्रह्मनिर्वाणं वर्तते विदितात्मनाम्॥",
+      "transliteration": "kāma-krodha-viyuktānāṁ yatīnāṁ yata-cetasām | abhito brahma-nirvāṇaṁ vartate viditātmanām",
+      "meaning": "For those who are free from anger and selfish desire, whose minds are disciplined, and who know the Self, divine liberation and peace exist here and everywhere.",
+      "explanation": "Liberation is not a distant post-mortem promise; it is the immediate lightness experienced whenever anger and clutching are laid down.",
+      "practical_guidance": "Remind yourself that anger and fear are external weather patterns; your inner stillness remains ever-present.",
+      "source": "Bhagavad Gita 5.26"
+    },
+    {
+      "chapter": 18,
+      "verse_number": 66,
+      "verse": "सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज। अहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः॥",
+      "transliteration": "sarva-dharmān parityajya mām ekaṁ śaraṇaṁ vraja | ahaṁ tvāṁ sarva-pāpebhyo mokṣayiṣyāmi mā śucaḥ",
+      "meaning": "Abandoning all varieties of anxiety and rigid dogma, simply surrender unto Me alone. I shall liberate you from all distress; do not despair.",
+      "explanation": "The ultimate antidote to existential terror, guilt, and helplessness is surrender to divine grace: 'Mā śucaḥ'—do not grieve or fear, you are eternally protected.",
+      "practical_guidance": "When all human strategies feel exhausted, release the burden to the universe and repeat: 'I do not despair; I am held in safety.'",
+      "source": "Bhagavad Gita 18.66"
     }
   ],
-
   "anxiety": [
     {
-      "verse": "योगस्थः कुरु कर्माणि",
-      "meaning": "Remain balanced and focused while doing your duty.",
-      "explanation": "Anxiety comes from attachment to results. Focus on effort."
+      "chapter": 2,
+      "verse_number": 47,
+      "verse": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
+      "transliteration": "karmaṇy-evādhikāras te mā phaleṣu kadācana | mā karma-phala-hetur bhūr mā te saṅgo 'stvakarmaṇi",
+      "meaning": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results, nor be attached to inaction.",
+      "explanation": "Anxiety is born from anticipating outcomes we cannot control. When you dedicate your attention purely to the present effort rather than obsessing over success or failure, mental turmoil dissolves.",
+      "practical_guidance": "Identify one current worry about future results. Consciously shift your focus strictly to the immediate next physical action you can take.",
+      "source": "Bhagavad Gita 2.47"
     },
     {
-      "verse": "कर्मण्येवाधिकारस्ते",
-      "meaning": "You have control over action, not the result.",
-      "explanation": "Let go of result-based stress and concentrate on present work."
+      "chapter": 2,
+      "verse_number": 14,
+      "verse": "मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदुःखदाः। आगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत॥",
+      "transliteration": "mātrā-sparśās tu kaunteya śītoṣṇa-sukha-duḥkha-dāḥ | āgamāpāyino 'nityās tāṁs titikṣasva bhārata",
+      "meaning": "The contact of the senses with their objects gives rise to fleeting feelings of heat and cold, happiness and pain. These experiences are impermanent, appearing and disappearing; learn to endure them patiently.",
+      "explanation": "Intense emotions like anxiety and distress feel permanent in the moment, but they are transient waves of experience. Practicing emotional patience (titiksha) allows storms to pass without consuming you.",
+      "practical_guidance": "Observe physical sensations of tension without fighting them. Remind yourself: 'This emotional wave has a beginning, a peak, and an inevitable end.'",
+      "source": "Bhagavad Gita 2.14"
     },
     {
-      "verse": "मात्रास्पर्शास्तु कौन्तेय",
-      "meaning": "Pleasure and pain are temporary sensations.",
-      "explanation": "Anxiety fades when you understand everything is temporary."
+      "chapter": 2,
+      "verse_number": 38,
+      "verse": "सुखदुःखे समे कृत्वा लाभालाभौ जयाजयौ। ततो युद्धाय युज्यस्व नैवं पापमवाप्स्यसि॥",
+      "transliteration": "sukha-duḥkhe same kṛtvā lābhālābhau jayājayau | tato yuddhāya yujyasva naivaṁ pāpam avāpsyasi",
+      "meaning": "Treating pleasure and pain, gain and loss, victory and defeat alike, engage in battle; thus you shall incur no fault.",
+      "explanation": "Fear of failure vanishes when we stop conditioning our peace upon winning. Acting with equal regard for praise or blame protects against performance anxiety.",
+      "practical_guidance": "Enter your daily tasks with equal readiness for success or setback; focus on doing the task honorably.",
+      "source": "Bhagavad Gita 2.38"
+    },
+    {
+      "chapter": 3,
+      "verse_number": 19,
+      "verse": "तस्मादसक्तः सततं कार्यं कर्म समाचर। असक्तो ह्याचरन्कर्म परमाप्नोति पूरुषः॥",
+      "transliteration": "tasmād asaktaḥ satataṁ kāryaṁ karma samācara | asakto hy ācaran karma param āpnoti pūruṣaḥ",
+      "meaning": "Therefore, unattached, always perform the action that must be done; for performing action without selfish attachment, a person attains the highest.",
+      "explanation": "Dedication without desperation is the essence of karma yoga. Give full craftsmanship to your duty while letting go of neurotic fixation on outcomes.",
+      "practical_guidance": "Give your best effort to what is currently on your desk, releasing anxiety about personal accolades or criticisms.",
+      "source": "Bhagavad Gita 3.19"
+    },
+    {
+      "chapter": 4,
+      "verse_number": 39,
+      "verse": "श्रद्धावाँल्लभते ज्ञानं तत्परः संयतेन्द्रियः। ज्ञानं लब्ध्वा परां शान्तिमचिरेणाधिगच्छति॥",
+      "transliteration": "śraddhāvāl labhate jñānaṁ tat-paraḥ saṁyatendriyaḥ | jñānaṁ labdhvā parāṁ śāntim acireṇādhigacchati",
+      "meaning": "The person who has faith, who is devoted to truth, and who has restrained the senses attains knowledge. Having gained knowledge, one swiftly attains supreme peace.",
+      "explanation": "Chronic doubt and cynical hyper-vigilance keep our nervous system in perpetual tension. Gentle faith in truth leads directly to swift inner peace.",
+      "practical_guidance": "Replace chronic second-guessing with steady trust in your disciplined preparation; trust yields immediate peace.",
+      "source": "Bhagavad Gita 4.39"
+    },
+    {
+      "chapter": 5,
+      "verse_number": 10,
+      "verse": "ब्रह्मण्याधाय कर्माणि सङ्गं त्यक्त्वा करोति यः। लिप्यते न स पापेन पद्मपत्रमिवाम्भसा॥",
+      "transliteration": "brahmaṇy ādhāya karmāṇi saṅgaṁ tyaktvā karoti yaḥ | lipyate na sa pāpena padma-patram ivāmbhasā",
+      "meaning": "One who acts offering all duties to the divine, renouncing clinging attachment, is unaffected by taint, just as a lotus leaf is untouched by water.",
+      "explanation": "Live like the lotus petal in muddy water: participate fully in messy realities while retaining an inner surface where negativity cannot adhere.",
+      "practical_guidance": "Picture yourself like a lotus petal: engage fully in life's currents while allowing worldly drama to roll off harmlessly.",
+      "source": "Bhagavad Gita 5.10"
+    },
+    {
+      "chapter": 9,
+      "verse_number": 22,
+      "verse": "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते। तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम्॥",
+      "transliteration": "ananyāś cintayanto māṁ ye janāḥ paryupāsate | teṣāṁ nityābhiyuktānāṁ yoga-kṣemaṁ vahāmy aham",
+      "meaning": "For those who revere Me with unwavering devotion, meditating on Me alone, to those constantly steadfast, I personally provide what they lack and preserve what they have.",
+      "explanation": "When existential dread over security and provision looms, remember that sincere dedication to righteousness attracts natural support.",
+      "practical_guidance": "When worried about future provisions or security, do your honorable duty and trust that what is needed will be provided.",
+      "source": "Bhagavad Gita 9.22"
+    },
+    {
+      "chapter": 9,
+      "verse_number": 27,
+      "verse": "यत्करोषि यदश्नासि यज्जुहोषि ददासि यत्। यत्तपस्यसि कौन्तेय तत्कुरुष्व मदर्पणम्॥",
+      "transliteration": "yat karoṣi yad aśnāsi yaj juhoṣi dadāsi yat | yat tapasyasi kaunteya tat kuruṣva mad-arpaṇam",
+      "meaning": "Whatever you do, whatever you eat, whatever you offer or give away, and whatever austerities you perform, O son of Kunti, do that as an offering to the Divine.",
+      "explanation": "Infusing ordinary everyday chores with dedication transforms monotonous labor into uplifting, joyful meditation.",
+      "practical_guidance": "Transform tedious mundane duties into meaningful service by dedicating your daily work to the benefit of others.",
+      "source": "Bhagavad Gita 9.27"
     }
   ],
-
-  "sadness": [
-    {
-      "verse": "न जायते म्रियते वा कदाचित्",
-      "meaning": "The soul is neither born nor does it die.",
-      "explanation": "Loss and sadness affect the body, not the eternal soul."
-    },
-    {
-      "verse": "अशोच्यानन्वशोचस्त्वं",
-      "meaning": "You grieve for what is not worth grieving.",
-      "explanation": "Understanding reality reduces emotional suffering."
-    },
-    {
-      "verse": "वासांसि जीर्णानि यथा विहाय",
-      "meaning": "Just as old clothes are replaced, the soul takes new forms.",
-      "explanation": "Change is natural. Accept it without despair."
-    }
-  ],
-
   "anger": [
     {
-      "verse": "क्रोधाद्भवति सम्मोहः",
-      "meaning": "Anger leads to confusion and loss of wisdom.",
-      "explanation": "Anger clouds judgment and leads to wrong decisions."
+      "chapter": 2,
+      "verse_number": 62,
+      "verse": "ध्यायतो विषयान्पुंसः सङ्गस्तेषूपजायते। सङ्गात्सञ्जायते कामः कामात्क्रोधोऽभिजायते॥",
+      "transliteration": "dhyāyato viṣayān puṁsaḥ saṅgas teṣūpajāyate | saṅgāt sañjāyate kāmaḥ kāmāt krodho 'bhijāyate",
+      "meaning": "While contemplating the objects of the senses, a person develops attachment to them. From attachment arises craving, and from unfulfilled craving, anger is born.",
+      "explanation": "Anger rarely occurs in isolation; it is almost always the grief of a blocked expectation or desire. Tracing anger back to what you were expecting gives you clarity and control.",
+      "practical_guidance": "Ask yourself: 'What expectation did I hold that was just violated?' Disarm the anger by accepting the reality of the moment before reacting.",
+      "source": "Bhagavad Gita 2.62"
     },
     {
-      "verse": "रागद्वेषवियुक्तैस्तु",
-      "meaning": "Free yourself from attachment and hatred.",
-      "explanation": "Calm thinking prevents anger from controlling actions."
+      "chapter": 2,
+      "verse_number": 63,
+      "verse": "क्रोधाद्भवति सम्मोहः सम्मोहात्स्मृतिविभ्रमः। स्मृतिभ्रंशाद् बुद्धिनाशो बुद्धिनाशात्प्रणश्यति॥",
+      "transliteration": "krodhād bhavati sammohaḥ sammohāt smṛti-vibhramaḥ | smṛti-bhraṁśād buddhi-nāśo buddhi-nāśāt praṇaśyati",
+      "meaning": "From anger arises delusion, from delusion comes loss of memory and grounding. When memory is lost, intellect and reason are destroyed; and when reason is lost, a person falls.",
+      "explanation": "Anger acts as an emotional blindfold that hijacks cognitive clarity. Acknowledging that anger destroys wisdom prompts us to pause before speaking or deciding in heat.",
+      "practical_guidance": "Implement a mandatory 10-breath pause or physically step away when anger flares before writing an email or engaging in argument.",
+      "source": "Bhagavad Gita 2.63"
     },
     {
-      "verse": "शान्तिः शान्तिरिति",
-      "meaning": "Peace comes from self-control.",
-      "explanation": "Silence and patience dissolve anger."
+      "chapter": 3,
+      "verse_number": 27,
+      "verse": "प्रकृतेः क्रियमाणानि गुणैः कर्माणि सर्वशः। अहङ्कारविमूढात्मा कर्ताहमिति मन्यते॥",
+      "transliteration": "prakṛteḥ kriyamāṇāni guṇaiḥ karmāṇi sarvaśaḥ | ahaṅkāra-vimūḍhātmā kartāham iti manyate",
+      "meaning": "All actions are performed by the modes of material nature, but the one bewildered by false ego thinks: 'I am the sole doer.'",
+      "explanation": "We often burn out because we believe we must single-handedly carry the weight of every outcome. Recognizing shared interdependence relieves crushing burdens.",
+      "practical_guidance": "Realize that complex outcomes involve countless converging factors. Humility dissolves the frustration of unmet expectations.",
+      "source": "Bhagavad Gita 3.27"
+    },
+    {
+      "chapter": 3,
+      "verse_number": 37,
+      "verse": "काम एष क्रोध एष रजोगुणसमुद्भवः। महाशनो महापाप्मा विद्ध्येनमिह वैरिणम्॥",
+      "transliteration": "kāma eṣa krodha eṣa rajo-guṇa-samudbhavaḥ | mahāśano mahā-pāpmā viddhy enam iha vairiṇam",
+      "meaning": "It is desire, it is anger, born of the mode of passion; it is voracious and highly destructive. Know this to be your greatest adversary in this world.",
+      "explanation": "Anger and insatiable craving are not personal flaws to despise, but energetic storms born of passion. Recognize them as external adversaries rather than your true identity.",
+      "practical_guidance": "When anger flares, label it clearly: 'This is passion blinding my clarity.' Do not feed the fire with spiteful words.",
+      "source": "Bhagavad Gita 3.37"
+    },
+    {
+      "chapter": 5,
+      "verse_number": 23,
+      "verse": "शक्नोतीहैव यः सोढुं प्राक्शरीरविमोक्षणात्। कामक्रोधोद्भवं वेगं स युक्तः स सुखी नरः॥",
+      "transliteration": "śaknotīhaiva yaḥ soḍhuṁ prāk śarīra-vimokṣaṇāt | kāma-krodhodbhavaṁ vegaṁ sa yuktaḥ sa sukhī naraḥ",
+      "meaning": "One who is able to withstand the turbulent urges of desire and anger here in this very body before departure—that person is integrated and truly happy.",
+      "explanation": "Urges of wrath and desire are somatic surges. When we learn to endure and observe the physiological surge without acting it out, genuine happiness is born.",
+      "practical_guidance": "When anger or impulsive cravings surge, recognize them as physical waves of sensation. Ride the wave for 90 seconds without reacting.",
+      "source": "Bhagavad Gita 5.23"
+    },
+    {
+      "chapter": 16,
+      "verse_number": 21,
+      "verse": "त्रिविधं नरकस्येदं द्वारं नाशनमात्मनः। कामः क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत्॥",
+      "transliteration": "tri-vidhaṁ narakasyedaṁ dvāraṁ nāśanam ātmanaḥ | kāmaḥ krodhas tathā lobhas tasmād etat trayaṁ tyajet",
+      "meaning": "There are three gates leading to self-destruction and darkness: lust, anger, and greed. Therefore, one must abandon these three.",
+      "explanation": "Unchecked anger and frantic greed are not badges of ambition; they are traps that erode health, judgment, and close relationships.",
+      "practical_guidance": "Identify which of these three—craving, anger, or possessiveness—is clouding your judgment right now, and step back.",
+      "source": "Bhagavad Gita 16.21"
+    },
+    {
+      "chapter": 17,
+      "verse_number": 15,
+      "verse": "अनुद्वेगकरं वाक्यं सत्यं प्रियहितं च यत्। स्वाध्यायाभ्यसनं चैव वाङ्मयं तप उच्यते॥",
+      "transliteration": "anudvega-karaṁ vākyaṁ satyaṁ priya-hitaṁ ca yat | svādhyāyābhyasanaṁ caiva vāṅ-mayaṁ tapa ucyate",
+      "meaning": "Speech that causes no agitation, that is truthful, pleasant, and beneficial, and the regular study of sacred literature—this is declared to be the austerity of speech.",
+      "explanation": "Mastering our words prevents conflicts before they ignite. Speaking words that are gentle, truthful, and helpful transforms relationships.",
+      "practical_guidance": "Before speaking or sending a message, apply the three filters: Is it gentle? Is it true? Is it beneficial?",
+      "source": "Bhagavad Gita 17.15"
     }
   ],
-
+  "sadness": [
+    {
+      "chapter": 2,
+      "verse_number": 11,
+      "verse": "अशोच्यानन्वशोचस्त्वं प्रज्ञावादांश्च भाषसे। गतासूनगतासूंश्च नानुशोचन्ति पण्डिताः॥",
+      "transliteration": "aśocyān anvaśocas tvaṁ prajñā-vādāṁś ca bhāṣase | gatāsūn agatāsūṁś ca nānuśocanti paṇḍitāḥ",
+      "meaning": "You grieve for that which is not worthy of grief, yet you speak words of apparent wisdom. The truly wise mourn neither for the living nor for the departed.",
+      "explanation": "Deep sadness often stems from clutching onto things, roles, or relationships whose essential nature is change. Realizing that the inner self is beyond destruction relieves sorrow.",
+      "practical_guidance": "Acknowledge sorrow without identifying as a helpless victim. Ask: 'What enduring core within me remains untouched despite this loss?'",
+      "source": "Bhagavad Gita 2.11"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 20,
+      "verse": "न जायते म्रियते वा कदाचिन्नायं भूत्वा भविता वा न भूयः। अजो नित्यः शाश्वतोऽयं पुराणो न हन्यते हन्यमाने शरीरे॥",
+      "transliteration": "na jāyate mriyate vā kadācin nāyaṁ bhūtvā bhavitā vā na bhūyaḥ | ajo nityaḥ śāśvato 'yaṁ purāṇo na hanyate hanyamāne śarīre",
+      "meaning": "The soul is never born, nor does it ever perish. It does not cease to be, nor does it come into existence anew. It is unborn, eternal, everlasting, and primeval; it is not slain when the body dies.",
+      "explanation": "In times of existential loneliness, despair, or grief, remember that your essential consciousness is invulnerable to external wounds and failures.",
+      "practical_guidance": "Place your hand over your chest, feel your steady breathing, and recognize that you are the observer of sorrow, not the sorrow itself.",
+      "source": "Bhagavad Gita 2.20"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 7,
+      "verse": "कार्पण्यदोषोपहतस्वभावः पृच्छामि त्वां धर्मसंम्मूढचेताः। यच्छ्रेयः स्यान्निश्चितं ब्रूहि तन्मे शिष्यस्तेऽहं शाधि मां त्वां प्रपन्नम्॥",
+      "transliteration": "kārpaṇya-doṣopahata-svabhāvaḥ pṛcchāmi tvāṁ dharma-sammūḍha-cetāḥ | yac chreyaḥ syān niścitaṁ brūhi tan me śiṣyas te 'haṁ śādhi māṁ tvāṁ prapannam",
+      "meaning": "My heart is overpowered by grief and weakness; my mind is confused about my duty. I ask You to tell me decisively what is best for me. I am Your disciple, surrendered to You; please instruct me.",
+      "explanation": "When acute distress and grief cloud our ability to choose rightly, acknowledging our vulnerability and seeking grounded wisdom is the first step toward clarity.",
+      "practical_guidance": "When overwhelmed by doubt, pause and seek wise counsel rather than acting impulsively in distress.",
+      "source": "Bhagavad Gita 2.7"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 13,
+      "verse": "देहिनोऽस्मिन्यथा देहे कौमारं यौवनं जरा। तथा देहान्तरप्राप्तिर्धीरस्तत्र न मुह्यति॥",
+      "transliteration": "dehino 'smin yathā dehe kaumāraṁ yauvanaṁ jarā | tathā dehāntara-prāptir dhīras tatra na muhyati",
+      "meaning": "Just as the embodied soul passes continuously in this body from childhood to youth to old age, so does it pass into another body at death. The calm and wise are not bewildered by such changes.",
+      "explanation": "Grief over transitions and aging loses its paralyzing sting when we understand that constant change is the law of bodily existence, while consciousness itself remains continuous.",
+      "practical_guidance": "Recognize that all physical and situational stages are transient transitions; anchor in your enduring core.",
+      "source": "Bhagavad Gita 2.13"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 22,
+      "verse": "वासांसि जीर्णानि यथा विहाय नवानि गृह्णाति नरोऽपराणि। तथा शरीराणि विहाय जीर्ण्यान्यन्यानि संयाति नवानि देही॥",
+      "transliteration": "vāsāṁsi jīrṇāni yathā vihāya navāni gṛhṇāti naro 'parāṇi | tathā śarīrāṇi vihāya jīrṇāny anyāni saṁyāti navāni dehī",
+      "meaning": "As a person sheds worn-out garments and puts on new ones, so does the embodied soul cast off worn-out bodies and enters new ones.",
+      "explanation": "When mourning the end of a relationship, career chapter, or life phase, take solace in knowing that consciousness sheds worn forms only to embark upon renewed expression.",
+      "practical_guidance": "When confronting endings, view them as the soul shedding outworn circumstances to make room for renewal.",
+      "source": "Bhagavad Gita 2.22"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 27,
+      "verse": "जातस्य हि ध्रुवो मृत्युर्ध्रुवं जन्म मृतस्य च। तस्मादपरिहार्येऽर्थे न त्वं शोचितुमर्हसि॥",
+      "transliteration": "jātasya hi dhruvo mṛtyur dhruvaṁ janma mṛtasya ca | tasmād aparihārye 'rthe na tvaṁ śocitum arhasi",
+      "meaning": "For that which is born, death is certain; and for that which dies, birth is certain. Therefore, over what is inevitable, you should not grieve.",
+      "explanation": "Dwelling in sorrow over inevitable events depletes your vital strength. Differentiating between what can be shaped and what must be accepted brings deep solace.",
+      "practical_guidance": "Differentiate between what is within your power to change and what is an inevitable law of life. Accept the inevitable with poise.",
+      "source": "Bhagavad Gita 2.27"
+    }
+  ],
   "happiness": [
     {
-      "verse": "सन्तोषात् परमं सुखम्",
-      "meaning": "Contentment leads to the highest happiness.",
-      "explanation": "True happiness comes from inner satisfaction."
+      "chapter": 5,
+      "verse_number": 24,
+      "verse": "योऽन्तःसुखोऽन्तरारामस्तथान्तर्ज्योतिरेव यः। स योगी ब्रह्मनिर्वाणं ब्रह्मभूतोऽधिगच्छति॥",
+      "transliteration": "yo 'ntaḥ-sukho 'ntar-ārāmas tathāntar-jyotir eva yaḥ | sa yogī brahma-nirvāṇaṁ brahma-bhūto 'dhigacchati",
+      "meaning": "One whose happiness is within, who delights within, and whose light shines from within—such a yogi attains liberation in the supreme, being attuned to all existence.",
+      "explanation": "External conditions will forever oscillate between favorable and difficult. Anchoring your joy in inner contentment liberates you from reliance on external validation.",
+      "practical_guidance": "List three simple blessings or qualities within yourself right now that do not depend on external praise or outcomes.",
+      "source": "Bhagavad Gita 5.24"
     },
     {
-      "verse": "आत्मौपम्येन सर्वत्र",
-      "meaning": "See yourself in all beings.",
-      "explanation": "Compassion increases lasting happiness."
+      "chapter": 18,
+      "verse_number": 37,
+      "verse": "यत्तदग्रे विषमिव परिणामेऽमृतोपमम्। तत्सुखं सात्त्विकं प्रोक्तमात्मबुद्धिप्रसादजम्॥",
+      "transliteration": "yat tad agre viṣam iva pariṇāme 'mṛtopamam | tat sukhaṁ sāttvikaṁ proktam ātma-buddhi-prasāda-jam",
+      "meaning": "That happiness which in the beginning feels like poison, but in the end tastes like nectar, is called Sattvic (pure), born of the serene awakening of self-realization.",
+      "explanation": "True and enduring peace often demands self-discipline and confronting uncomfortable truths upfront. Fleeting pleasure tastes sweet first and turns bitter; lasting joy starts with quiet effort.",
+      "practical_guidance": "Celebrate the quiet satisfaction of having completed a difficult duty or practice today, rather than chasing quick temporary distractions.",
+      "source": "Bhagavad Gita 18.37"
     },
     {
-      "verse": "प्रसन्नात्मा न शोचति",
-      "meaning": "A joyful soul neither grieves nor desires.",
-      "explanation": "Balance keeps happiness stable."
+      "chapter": 2,
+      "verse_number": 55,
+      "verse": "प्रजहाति यदा कामान् सर्वान् पार्थ मनोगतान्। आत्मन्येवात्मना तुष्टः स्थितप्रज्ञस्तदोच्यते॥",
+      "transliteration": "prajahāti yadā kāmān sarvān pārtha mano-gatān | ātmany evātmanā tuṣṭaḥ sthita-prajñas tadocyate",
+      "meaning": "When a person renounces all cravings of the mind, and finds contentment within the Self alone, that person is called one of steady wisdom.",
+      "explanation": "True joy is not imported from the outside; it is uncovered within when we quiet the continuous demands of the desiring mind.",
+      "practical_guidance": "Disconnect your sense of joy from external validation. Rejoice in simple presence and internal quietude.",
+      "source": "Bhagavad Gita 2.55"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 65,
+      "verse": "प्रसादे सर्वदुःखानां हानिरस्योपजायते। प्रसन्नचेतसो ह्याशु बुद्धिः पर्यवतिष्ठते॥",
+      "transliteration": "prasāde sarva-duḥkhānāṁ hānir asyopajāyate | prasanna-cetaso hy āśu buddhiḥ paryavatiṣṭhate",
+      "meaning": "In serene tranquility, all sorrows come to an end; for the intellect of one with a peaceful heart soon becomes firmly grounded.",
+      "explanation": "Tranquility is not merely an absence of problems; it is the fertile state in which clear thinking naturally dissolves sorrow.",
+      "practical_guidance": "Cultivate inner tranquility through deep breathing and calm reflection; clear discernment emerges naturally from calm.",
+      "source": "Bhagavad Gita 2.65"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 71,
+      "verse": "विहाय कामान्यः सर्वान्पुमांश्चरति निःस्पृहः। निर्ममो निरहङ्कारः स शान्तिमधिगच्छति॥",
+      "transliteration": "vihāya kāmān yaḥ sarvān pumāṁś carati niḥspṛhaḥ | nirmamo nirahaṅkāraḥ sa śāntim adhigacchati",
+      "meaning": "That person who, abandoning all cravings, moves about free from longing, without the sense of 'mine', and devoid of egoism, attains lasting peace.",
+      "explanation": "Anxiety and resentment thrive on territorial egoism and obsessive attachment. Letting go of claiming ownership brings profound liberation.",
+      "practical_guidance": "Release the need to claim total possession or credit; lightness of being arrives when the ego steps aside.",
+      "source": "Bhagavad Gita 2.71"
+    },
+    {
+      "chapter": 4,
+      "verse_number": 38,
+      "verse": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते। तत्स्वयं योगसंसिद्धः कालेनात्मनि विन्दति॥",
+      "transliteration": "na hi jñānena sadṛśaṁ pavitram iha vidyate | tat svayaṁ yoga-saṁsiddhaḥ kālenātmani vindati",
+      "meaning": "In this world, there is nothing so purifying as spiritual knowledge and truth. One who is perfected in yoga finds this wisdom within the Self in due course of time.",
+      "explanation": "Truth and knowledge possess an innate purifying power that dissolves guilt, confusion, and fear far more effectively than self-punishment.",
+      "practical_guidance": "Dedicate time today to genuine learning and contemplation; authentic knowledge cleanses the mind of confusion.",
+      "source": "Bhagavad Gita 4.38"
+    },
+    {
+      "chapter": 18,
+      "verse_number": 54,
+      "verse": "ब्रह्मभूतः प्रसन्नात्मा न शोचति न काङ्क्षति। समः सर्वेषु भूतेषु मद्भक्तिं लभते पराम्॥",
+      "transliteration": "brahma-bhūtaḥ prasannātmā na śocati na kāṅkṣati | samaḥ sarveṣu bhūteṣu mad-bhaktiṁ labhate parām",
+      "meaning": "Having realized the spiritual reality and possessing a joyful mind, one neither grieves nor craves. Viewing all beings equally, one attains supreme love and peace.",
+      "explanation": "When anchored in our true spiritual self, chronic grief over past losses and anxious craving for future status both evaporate into serene presence.",
+      "practical_guidance": "Rest in the awareness that your essential nature is already complete; you lack nothing in this sacred moment.",
+      "source": "Bhagavad Gita 18.54"
     }
   ],
-
-  "neutral": [
+  "stress": [
     {
-      "verse": "समः शत्रौ च मित्रे च",
-      "meaning": "Remain equal toward friend and enemy.",
-      "explanation": "Balance is the foundation of wisdom."
+      "chapter": 6,
+      "verse_number": 26,
+      "verse": "यतो यतो निश्चरति मनश्चञ्चलमस्थिरम्। ततस्ततो नियम्यैतदात्मन्येव वशं नयेत्॥",
+      "transliteration": "yato yato niścarati manaś cañcalam asthiram | tatas tato niyamyaitad ātmany eva vaśaṁ nayet",
+      "meaning": "From whatever direction the restless and unsteady mind wanders away, one should gently rein it in and bring it back under the control of the Self.",
+      "explanation": "A wandering, anxious mind is natural. Meditation and peace do not mean having zero distracting thoughts; they mean patient, non-judgmental redirection back to the center.",
+      "practical_guidance": "Whenever you catch your thoughts spiraling into catastrophizing, don't get angry with yourself. Softly bring your attention back to your breath.",
+      "source": "Bhagavad Gita 6.26"
     },
     {
-      "verse": "युक्ताहारविहारस्य",
-      "meaning": "Moderation in life leads to harmony.",
-      "explanation": "Stable habits maintain mental clarity."
+      "chapter": 6,
+      "verse_number": 16,
+      "verse": "नात्यश्नतस्तु योगोऽस्ति न चैकान्तमनश्नतः। न चातिस्वप्नशीलस्य जाग्रतो नैव चार्जुन॥",
+      "transliteration": "nāty-aśnatas tu yogo 'sti na caikāntam anaśnataḥ | na cāti-svapna-śīlasya jāgrato naiva cārjuna",
+      "meaning": "Yoga is not possible for one who eats too much, nor for one who eats too little; nor for one who sleeps too much or one who stays awake excessively.",
+      "explanation": "Well-being thrives on the golden mean of moderation. Extreme lifestyle swings exacerbate anxiety and deplete resilience.",
+      "practical_guidance": "Review your baseline physical inputs today: have you had adequate water, nourishing food, and sufficient sleep? Steady the body to steady the mind.",
+      "source": "Bhagavad Gita 6.16"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 64,
+      "verse": "रागद्वेषवियुक्तैस्तु विषयानिन्द्रियैश्चरन्। आत्मवश्यैर्विधेयात्मा प्रसादमधिगच्छति॥",
+      "transliteration": "rāga-dveṣa-viyuktais tu viṣayān indriyaiś caran | ātma-vaśyair vidheyātmā prasādam adhigacchati",
+      "meaning": "Moving among sense objects with senses disciplined, free from attraction and aversion, one under self-control attains serene purity.",
+      "explanation": "Sensory overload and impulse-driven living cause severe mental strain. Exercising gentle mastery over our attention restores profound clarity.",
+      "practical_guidance": "Take conscious control of digital notifications and sensory overload; step back into calm self-command.",
+      "source": "Bhagavad Gita 2.64"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 66,
+      "verse": "नास्ति बुद्धिरयुक्तस्य न चायुक्तस्य भावना। न चाभावयतः शान्तिरशान्तस्य कुतः सुखम्॥",
+      "transliteration": "nāsti buddhir ayuktasya na cāyuktasya bhāvanā | na cābhāvayataḥ śāntir aśāntasya kutaḥ sukham",
+      "meaning": "One who is undisciplined has neither wisdom nor meditation; without meditation there is no peace, and without peace, where can there be happiness?",
+      "explanation": "Chasing superficial pleasures without inner stillness is a treadmill. Happiness is the natural bloom of an unhurried, peaceful mind.",
+      "practical_guidance": "Recognize that continuous multitasking and mental scatteredness destroy happiness. Grant yourself unhurried pauses.",
+      "source": "Bhagavad Gita 2.66"
+    },
+    {
+      "chapter": 3,
+      "verse_number": 8,
+      "verse": "नियतं कुरु कर्म त्वं कर्म ज्यायो ह्यकर्मणः। शरीरयात्रापि च ते न प्रसिद्ध्येदकर्मणः॥",
+      "transliteration": "niyataṁ kuru karma tvaṁ karma jyāyo hy akarmaṇaḥ | śarīra-yātrāpi ca te na prasiddhyed akarmaṇaḥ",
+      "meaning": "Perform your prescribed duty, for action is better than inaction; even the simple maintenance of your physical body would be impossible without action.",
+      "explanation": "Paralysis by analysis exacerbates anxiety. Action creates momentum, clears mental fog, and restores bodily vitality.",
+      "practical_guidance": "When frozen by overwhelm, take any constructive physical action, no matter how small, to break mental inertia.",
+      "source": "Bhagavad Gita 3.8"
+    },
+    {
+      "chapter": 5,
+      "verse_number": 12,
+      "verse": "युक्तः कर्मफलं त्यक्त्वा शान्तिमाप्नोति नैष्ठिकीम्। अयुक्तः कामकारेण फले सक्तो निबध्यते॥",
+      "transliteration": "yuktaḥ karma-phalaṁ tyaktvā śāntim āpnoti naiṣṭhikīm | ayuktaḥ kāma-kāreṇa phale sakto nibadhyate",
+      "meaning": "The steady and disciplined soul, relinquishing the fruits of action, attains everlasting peace; while the undisciplined, driven by craving and attached to results, remains bound.",
+      "explanation": "Attachment to specific outcomes is the primary architect of anxiety and mental fatigue. Releasing demands on how the world must respond yields instant peace.",
+      "practical_guidance": "Notice where you are clutching tightly to a specific timeline or outcome. Consciously surrender the result to find instant ease.",
+      "source": "Bhagavad Gita 5.12"
+    },
+    {
+      "chapter": 6,
+      "verse_number": 6,
+      "verse": "बन्धुरात्मात्मनस्तस्य येनात्मैवात्मना जितः। अनात्मनस्तु शत्रुत्वे वर्तेतात्मैव शत्रुवत्॥",
+      "transliteration": "bandhur ātmātmanas tasya yenātmaivātmanā jitaḥ | anātmanas tu śatrutve vartetātmaiva śatru-vat",
+      "meaning": "For one who has conquered the lower mind by the higher Self, the mind is the dearest friend. But for one who has failed to do so, the mind remains an enemy, acting maliciously.",
+      "explanation": "Negative self-talk turns the mind into our fiercest tormentor. Befriending our own consciousness through self-compassion brings unshakable inner support.",
+      "practical_guidance": "Train your mind to be your trusted confidant through constructive self-talk and daily patience.",
+      "source": "Bhagavad Gita 6.6"
+    },
+    {
+      "chapter": 6,
+      "verse_number": 17,
+      "verse": "युक्ताहारविहारस्य युक्तचेष्टस्य कर्मसु। युक्तस्वप्नावबोधस्य योगो भवति दुःखहा॥",
+      "transliteration": "yuktāhāra-vihārasya yukta-ceṣṭasya karmasu | yukta-svapnāvabodhasya yogo bhavati duḥkha-hā",
+      "meaning": "For one who is moderate in eating and recreation, regulated in working habits, and disciplined in sleep and waking, yoga becomes the destroyer of all sorrow.",
+      "explanation": "Holistic wellness rests on rhythm. Chronic emotional turbulence is often fueled by disrupted sleep, irregular nourishment, and erratic pacing.",
+      "practical_guidance": "Calibrate your life rhythm: establish regular sleep hours and mindful nutrition to restore emotional equilibrium.",
+      "source": "Bhagavad Gita 6.17"
+    },
+    {
+      "chapter": 6,
+      "verse_number": 34,
+      "verse": "चञ्चलं हि मनः कृष्ण प्रमाथि बलवद्दृढम्। तस्याहं निग्रहं मन्ये वायोरिव सुदुष्करम्॥",
+      "transliteration": "cañcalaṁ hi manaḥ kṛṣṇa pramāthi balavad dṛḍham | tasyāhaṁ nigrahaṁ manye vāyor iva su-duṣkaram",
+      "meaning": "The mind is very restless, turbulent, powerful, and obstinate, O Krishna; I consider controlling it to be as difficult as subduing the roaring wind.",
+      "explanation": "Do not be disheartened when your mind wanders during meditation or work; even Arjuna acknowledged that governing the mind feels like catching the wind.",
+      "practical_guidance": "Validate your struggle: it is completely normal that controlling the mind feels difficult. Acknowledge the storm without giving up.",
+      "source": "Bhagavad Gita 6.34"
+    },
+    {
+      "chapter": 6,
+      "verse_number": 35,
+      "verse": "असंशयं महाबाहो मनो दुर्निग्रहं चलम्। अभ्यासेन तु कौन्तेय वैराग्येण च गृह्यते॥",
+      "transliteration": "asaṁśayaṁ mahā-bāho mano durnigrahaṁ calam | abhyāsena tu kaunteya vairāgyeṇa ca gṛhyate",
+      "meaning": "Without doubt, O mighty-armed, the mind is restless and difficult to curb; but by persistent practice (abhyasa) and healthy detachment (vairagya), it can be mastered.",
+      "explanation": "Mental focus is not an inborn gene but a learned muscle. Continuous gentle redirection (abhyasa) combined with loosening neurotic grip (vairagya) tames the mind.",
+      "practical_guidance": "Master your focus through repeated gentle returns: whenever the mind wanders, bring it back without scolding yourself.",
+      "source": "Bhagavad Gita 6.35"
+    }
+  ],
+  "neutral": [
+    {
+      "chapter": 2,
+      "verse_number": 48,
+      "verse": "योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय। सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते॥",
+      "transliteration": "yoga-sthaḥ kuru karmāṇi saṅgaṁ tyaktvā dhanañjaya | siddhy-asiddhyoḥ samo bhūtvā samatvaṁ yoga ucyate",
+      "meaning": "Perform your duties established in yoga, renouncing attachment, remaining balanced in both success and failure. Such equanimity of mind is called Yoga.",
+      "explanation": "Equanimity (samatvam) is the supreme definition of spiritual practice. When you treat wins and losses with the same calm poise, life loses its power to destabilize you.",
+      "practical_guidance": "Pause and breathe into a space of emotional neutrality. Remind yourself: 'Success does not elevate my true worth, and failure does not diminish it.'",
+      "source": "Bhagavad Gita 2.48"
+    },
+    {
+      "chapter": 12,
+      "verse_number": 15,
+      "verse": "यस्मान्नोद्विजते लोको लोकान्नोद्विजते च यः। हर्षामर्षभयोद्वेगैर्मुक्तो यः स च मे प्रियः॥",
+      "transliteration": "yasmān nodvijate loko lokān nodvijate ca yaḥ | harṣāmarṣa-bhayodvegair mukto yaḥ sa ca me priyaḥ",
+      "meaning": "One by whom no one is agitated, and who is not agitated by the world, who is freed from excessive excitement, impatience, fear, and anxiety—that person is very dear to Me.",
+      "explanation": "Emotional mastery is a double pledge: neither perturbing those around you nor allowing the turbulence of the world to shatter your inner equilibrium.",
+      "practical_guidance": "Practice remaining an unagitated presence for someone close to you today. Let your steadiness act as an anchor.",
+      "source": "Bhagavad Gita 12.15"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 56,
+      "verse": "दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः। वीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते॥",
+      "transliteration": "duḥkheṣv anudvigna-manāḥ sukheṣu vigata-spṛhaḥ | vīta-rāga-bhaya-krodhaḥ sthita-dhīr munir ucyate",
+      "meaning": "One whose mind is unperturbed in sorrows, who is without craving amid pleasures, and who is free from attachment, fear, and anger, is said to be a sage of steady intellect.",
+      "explanation": "Equanimity is the balance point between turbulent sorrow and greedy craving. An unperturbed mind retains clear perspective in all circumstances.",
+      "practical_guidance": "Notice when your emotional pendulum swings too far into agitation or craving. Gently guide it back to the serene midpoint.",
+      "source": "Bhagavad Gita 2.56"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 57,
+      "verse": "यः सर्वत्रानभिस्नेहस्तत्तत्प्राप्य शुभाशुभम्। नाभिनन्दति न द्वेष्टि तस्य प्रज्ञा प्रतिष्ठिता॥",
+      "transliteration": "yaḥ sarvatrānabhisnehas tat tat prāpya śubhāśubham | nābhinandati na dveṣṭi tasya prajñā pratiṣṭhitā",
+      "meaning": "One who is without clinging attachment everywhere, who neither rejoices at good fortune nor resents adversity, has established firm wisdom.",
+      "explanation": "Clinging creates fragility. Meeting good news with humility and bad news with patience keeps wisdom steady and rooted.",
+      "practical_guidance": "When something goes unusually well or poorly today, observe it with quiet dignity without dramatic emotional overreaction.",
+      "source": "Bhagavad Gita 2.57"
+    },
+    {
+      "chapter": 2,
+      "verse_number": 70,
+      "verse": "आपूर्यमाणमचलप्रतिष्ठं समुद्रमापः प्रविशन्ति यद्वत्। तद्वत्कामा यं प्रविशन्ति सर्वे स शान्तिमाप्नोति न कामकामी॥",
+      "transliteration": "āpūryamāṇam acala-pratiṣṭhaṁ samudram āpaḥ praviśanti yadvat | tadvat kāmā yaṁ praviśanti sarve sa śāntim āpnoti na kāma-kāmī",
+      "meaning": "As the ocean remains calm and undisturbed while rivers continually flow into it, so the person into whom desires enter without disturbance attains peace, not the craver of desires.",
+      "explanation": "Just as the ocean absorbs rushing rivers without overflowing, a grounded person witnesses impulses without being destabilized.",
+      "practical_guidance": "Envision yourself as a vast, steady ocean: external thoughts and demands may ripple the surface, but your depth remains unmoved.",
+      "source": "Bhagavad Gita 2.70"
+    },
+    {
+      "chapter": 4,
+      "verse_number": 22,
+      "verse": "यदृच्छालाभसन्तुष्टो द्वन्द्वातीतो विमत्सरः। समः सिद्धावसिद्धौ च कृत्वापि न निबध्यते॥",
+      "transliteration": "yadṛcchā-lābha-santuṣṭo dvandvātīto vimatsaraḥ | samaḥ siddhāv asiddhau ca kṛtvāpi na nibadhyate",
+      "meaning": "Content with whatever gain comes naturally, rising above the pairs of opposites, free from jealousy, and balanced in both success and failure, one is never bound even when acting.",
+      "explanation": "Comparing your timeline or rewards with others breeds bitter envy. Delighting in what arrives naturally frees you from the exhaustion of comparison.",
+      "practical_guidance": "Eliminate jealousy and comparison with peers today; work with quiet dedication and delight in whatever progress unfolds.",
+      "source": "Bhagavad Gita 4.22"
+    },
+    {
+      "chapter": 5,
+      "verse_number": 18,
+      "verse": "विद्याविनयसम्पन्ने ब्राह्मणे गवि हस्तिनि। शुनि चैव श्वपाके च पण्डिताः समदर्शिनः॥",
+      "transliteration": "vidyā-vinaya-sampanne brāhmaṇe gavi hastini | śuni caiva śva-pāke ca paṇḍitāḥ sama-darśinaḥ",
+      "meaning": "The humble sages, by virtue of true knowledge, see with equal vision a learned scholar, a cow, an elephant, a dog, and an outcast.",
+      "explanation": "Seeing the identical spark of consciousness in every being dissolves prejudice, arrogance, and social resentment.",
+      "practical_guidance": "Treat every person you encounter today with identical respect and kindness, regardless of status or background.",
+      "source": "Bhagavad Gita 5.18"
+    },
+    {
+      "chapter": 6,
+      "verse_number": 19,
+      "verse": "यथा दीपो निवातस्थो नेङ्गते सोपमा स्मृता। योगिनो यतचित्तस्य युञ्जतो योगमात्मनः॥",
+      "transliteration": "yathā dīpo nivāta-stho neṅgate sopamā smṛtā | yogino yata-cittasya yuñjato yogam ātmanaḥ",
+      "meaning": "As a flame in a windless place does not flicker, this is the traditional illustration for the disciplined yogi whose mind is absorbed in steady contemplation.",
+      "explanation": "A mind sheltered from the winds of rumor, comparison, and sensory agitation burns with clear, steady luminosity.",
+      "practical_guidance": "Protect your focus from the winds of unnecessary distraction; give one single task your full, unhurried presence.",
+      "source": "Bhagavad Gita 6.19"
+    },
+    {
+      "chapter": 12,
+      "verse_number": 13,
+      "verse": "अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च। निर्ममो निरहङ्कारः समदुःखसुखः क्षमी॥",
+      "transliteration": "adveṣṭā sarva-bhūtānāṁ maitraḥ karuṇa eva ca | nirmamo nirahaṅkāraḥ sama-duḥkha-sukhaḥ kṣamī",
+      "meaning": "One who is not envious of any being, who is friendly and compassionate, free from possessiveness and ego, balanced in joy and sorrow, and patient and forgiving.",
+      "explanation": "Harboring resentment and malice corrodes our own well-being. True spiritual strength reveals itself as kindness, forgiveness, and freedom from hostility.",
+      "practical_guidance": "Let go of grudges today. Practice goodwill toward even those whose opinions differ from yours.",
+      "source": "Bhagavad Gita 12.13"
+    },
+    {
+      "chapter": 12,
+      "verse_number": 14,
+      "verse": "सन्तुष्टः सततं योगी यतात्मा दृढनिश्चयः। मय्यर्पितमनोबुद्धिर्यो मद्भक्तः स मे प्रियः॥",
+      "transliteration": "santuṣṭaḥ satataṁ yogī yatātmā dṛḍha-niścayaḥ | mayy arpita-mano-buddhir yo mad-bhaktaḥ sa me priyaḥ",
+      "meaning": "That yogi who is always content, self-restrained, resolute in determination, with mind and intellect dedicated to truth—such a person is very dear to Me.",
+      "explanation": "Contentment is not passive complacency; it is the unwavering serenity of a resolute heart that cannot be bought or bribed by fleeting circumstance.",
+      "practical_guidance": "Cultivate quiet contentment with present conditions; steady determination achieves far more than restless ambition.",
+      "source": "Bhagavad Gita 12.14"
+    },
+    {
+      "chapter": 12,
+      "verse_number": 16,
+      "verse": "अनपेक्षः शुचिर्दक्ष उदासीनो गतव्यथः। सर्वारम्भपरित्यागी यो मद्भक्तः स मे प्रियः॥",
+      "transliteration": "anapekṣaḥ śucir dakṣa udāsīno gata-vyathaḥ | sarvārambha-parityāgī yo mad-bhaktaḥ sa me priyaḥ",
+      "meaning": "One who is free from selfish expectation, pure, capable, impartial, free from anxiety, and relinquishing selfish enterprise—that devotee is very dear to Me.",
+      "explanation": "Freedom from anxious agitation (gata-vyatha) comes from approaching life with high capability paired with zero selfish expectation.",
+      "practical_guidance": "Clear your desk of clutter, complete your duty capably, and remain unruffled by petty workplace or social politics.",
+      "source": "Bhagavad Gita 12.16"
     }
   ]
 }

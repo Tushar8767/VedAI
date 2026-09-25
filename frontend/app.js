@@ -539,32 +539,43 @@ function toggleVerseAudio() {
     if (window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel();
         isSpeechPlaying = false;
-        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '🔊 Listen / Chant';
+        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '🔊 Text-to-Speech Pronunciation';
         return;
     }
 
+    const sanskrit = shlokaSanskrit.textContent.trim();
     const translit = shlokaTranslit.textContent.trim();
     const meaning = shlokaMeaning.textContent.trim();
     const source = shlokaSource.textContent.trim();
 
-    const textToSpeak = `${source}. ${translit}. Meaning: ${meaning}`;
+    const textToSpeak = `${source}. ${translit || sanskrit}. Meaning: ${meaning}`;
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.rate = 0.82; // Calming, meditative pace
     utterance.pitch = 0.95;
 
+    // Check for Sanskrit / Hindi / Indian regional voices
+    const voices = window.speechSynthesis.getVoices();
+    const bestVoice = voices.find(v => v.lang.startsWith('hi') || v.lang.startsWith('sa'))
+                   || voices.find(v => v.lang.includes('IN'))
+                   || null;
+    if (bestVoice) {
+        utterance.voice = bestVoice;
+        utterance.lang = bestVoice.lang;
+    }
+
     utterance.onstart = () => {
         isSpeechPlaying = true;
-        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '⏸ Pause Audio';
+        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '⏸ Pause Speech';
     };
 
     utterance.onend = () => {
         isSpeechPlaying = false;
-        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '🔊 Listen / Chant';
+        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '🔊 Text-to-Speech Pronunciation';
     };
 
     utterance.onerror = () => {
         isSpeechPlaying = false;
-        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '🔊 Listen / Chant';
+        if (playShlokaAudioBtn) playShlokaAudioBtn.textContent = '🔊 Text-to-Speech Pronunciation';
     };
 
     window.speechSynthesis.speak(utterance);
@@ -661,33 +672,130 @@ function renderRevelation(res) {
         text: userInput.value.trim()
     });
 
-    // Modality Pill & Multimodal Breakdown Telemetry
+    // Modality Pill & Multimodal Transparency Telemetry (Phase 1 & Phase 2)
     const multimodalBreakdownCard = document.getElementById('multimodalBreakdownCard');
+    const telemetryRatioPill = document.getElementById('telemetryRatioPill');
     const breakdownTextEmotion = document.getElementById('breakdownTextEmotion');
     const breakdownTextConf = document.getElementById('breakdownTextConf');
+    const breakdownTextModel = document.getElementById('breakdownTextModel');
+    const breakdownTextWeight = document.getElementById('breakdownTextWeight');
+    const breakdownTextProbs = document.getElementById('breakdownTextProbs');
+
+    const faceActiveContent = document.getElementById('faceActiveContent');
+    const faceFallbackContent = document.getElementById('faceFallbackContent');
     const breakdownFaceEmotion = document.getElementById('breakdownFaceEmotion');
     const breakdownFaceConf = document.getElementById('breakdownFaceConf');
+    const faceDetectStatus = document.getElementById('faceDetectStatus');
+    const faceCountTag = document.getElementById('faceCountTag');
+    const faceQualityTag = document.getElementById('faceQualityTag');
+    const breakdownFaceWeight = document.getElementById('breakdownFaceWeight');
+    const breakdownFaceReason = document.getElementById('breakdownFaceReason');
+    const breakdownFaceProbs = document.getElementById('breakdownFaceProbs');
+
     const breakdownFusedEmotion = document.getElementById('breakdownFusedEmotion');
     const breakdownFusedConf = document.getElementById('breakdownFusedConf');
+    const breakdownAgreementTag = document.getElementById('breakdownAgreementTag');
+    const breakdownFusionSummary = document.getElementById('breakdownFusionSummary');
+    const breakdownModalityMode = document.getElementById('breakdownModalityMode');
 
-    if (res.face_prediction?.face_detected) {
-        modalityPill.textContent = 'Multimodal (Text 60% + Face 40%)';
-        modalityPill.style.color = '#10B981';
+    const compTextVal = document.getElementById('compTextVal');
+    const compFaceVal = document.getElementById('compFaceVal');
+    const compAgreementVal = document.getElementById('compAgreementVal');
+    const compExplanationVal = document.getElementById('compExplanationVal');
 
-        if (multimodalBreakdownCard) {
-            multimodalBreakdownCard.classList.remove('hidden');
-            if (breakdownTextEmotion) breakdownTextEmotion.textContent = (res.text_prediction?.emotion || 'neutral').toUpperCase();
-            if (breakdownTextConf) breakdownTextConf.textContent = `${Math.round((res.text_prediction?.confidence || 0) * 100)}% Conf`;
-            if (breakdownFaceEmotion) breakdownFaceEmotion.textContent = (res.face_prediction?.emotion || 'neutral').toUpperCase();
-            if (breakdownFaceConf) breakdownFaceConf.textContent = `${Math.round((res.face_prediction?.confidence || 0) * 100)}% Conf`;
-            if (breakdownFusedEmotion) breakdownFusedEmotion.textContent = (res.emotion || 'neutral').toUpperCase();
-            if (breakdownFusedConf) breakdownFusedConf.textContent = `${Math.round((res.confidence || 0) * 100)}% Conf`;
+    if (multimodalBreakdownCard) {
+        multimodalBreakdownCard.classList.remove('hidden');
+
+        // Populate Text Model
+        const tPred = res.text_prediction || {};
+        const tEmo = (tPred.emotion || res.emotion || 'neutral').toUpperCase();
+        const tConf = Math.round((tPred.confidence || res.confidence || 0.65) * 100);
+        if (breakdownTextEmotion) breakdownTextEmotion.textContent = tEmo;
+        if (breakdownTextConf) breakdownTextConf.textContent = `${tConf}% Conf`;
+        if (breakdownTextModel) breakdownTextModel.textContent = tPred.model || res.model || 'DistilRoBERTa-v2.0';
+        if (breakdownTextWeight) breakdownTextWeight.textContent = res.fusion?.weights?.text ? `${Math.round(res.fusion.weights.text * 100)}%` : '65%';
+        if (breakdownTextProbs) renderMiniProbBars(breakdownTextProbs, tPred.probabilities || res.probabilities || {});
+
+        // Populate Face Model
+        const fPred = res.face_prediction;
+        const faceDetected = Boolean(fPred && fPred.face_detected !== false && fPred.emotion);
+
+        if (faceDetected) {
+            if (faceActiveContent) faceActiveContent.classList.remove('hidden');
+            if (faceFallbackContent) faceFallbackContent.classList.add('hidden');
+
+            const fEmo = (fPred.emotion || 'neutral').toUpperCase();
+            const fConf = Math.round((fPred.confidence || 0) * 100);
+            if (breakdownFaceEmotion) breakdownFaceEmotion.textContent = fEmo;
+            if (breakdownFaceConf) breakdownFaceConf.textContent = `${fConf}% Conf`;
+            if (faceDetectStatus) faceDetectStatus.textContent = 'Face: Detected';
+            if (faceCountTag) faceCountTag.textContent = `Faces: ${fPred.number_of_faces || 1}`;
+            if (faceQualityTag) faceQualityTag.textContent = `Quality: ${fPred.quality_status || 'Good'}`;
+            if (breakdownFaceWeight) breakdownFaceWeight.textContent = res.fusion?.weights?.face ? `${Math.round(res.fusion.weights.face * 100)}%` : '35%';
+            if (breakdownFaceProbs) renderMiniProbBars(breakdownFaceProbs, fPred.probabilities || {});
+
+            if (modalityPill) {
+                modalityPill.textContent = 'Multimodal (Text 65% + Face 35%)';
+                modalityPill.style.color = '#10B981';
+            }
+            if (telemetryRatioPill) telemetryRatioPill.textContent = 'Text: 65% · Face: 35%';
+        } else {
+            if (faceActiveContent) faceActiveContent.classList.add('hidden');
+            if (faceFallbackContent) faceFallbackContent.classList.remove('hidden');
+
+            const reasonMsg = fPred?.reason || (cameraToggle?.checked ? 'No human face detected in frame.' : 'Camera not enabled (text stream only).');
+            if (breakdownFaceReason) breakdownFaceReason.textContent = `Reason: ${reasonMsg}`;
+            if (breakdownFaceWeight) breakdownFaceWeight.textContent = '0% (Bypassed)';
+
+            if (modalityPill) {
+                modalityPill.textContent = 'Text Stream Only';
+                modalityPill.style.color = '#60A5FA';
+            }
+            if (telemetryRatioPill) telemetryRatioPill.textContent = 'Text: 100% · Face: 0%';
         }
-    } else {
-        modalityPill.textContent = 'Text Stream Only';
-        modalityPill.style.color = '#60A5FA';
-        if (multimodalBreakdownCard) {
-            multimodalBreakdownCard.classList.add('hidden');
+
+        // Populate Fused Result
+        const fusedEmo = (res.emotion || 'neutral').toUpperCase();
+        const fusedConf = Math.round((res.confidence || 0) * 100);
+        if (breakdownFusedEmotion) breakdownFusedEmotion.textContent = fusedEmo;
+        if (breakdownFusedConf) breakdownFusedConf.textContent = `${fusedConf}% Conf`;
+
+        const isAgreement = res.fusion?.agreement;
+        if (breakdownAgreementTag) {
+            if (faceDetected) {
+                breakdownAgreementTag.textContent = isAgreement ? '✓ Modality Agreement: YES' : '⚠ Modality Agreement: NO (Divergence)';
+                breakdownAgreementTag.className = isAgreement ? 'meta-tag tag-agreement-yes' : 'meta-tag tag-agreement-no';
+            } else {
+                breakdownAgreementTag.textContent = 'Modality Agreement: N/A (Single Modality)';
+                breakdownAgreementTag.className = 'meta-tag';
+            }
+        }
+
+        if (breakdownFusionSummary) {
+            if (faceDetected) {
+                breakdownFusionSummary.textContent = isAgreement
+                    ? `Both text and facial expressions concordantly identify ${fusedEmo}.`
+                    : `Late fusion balanced text (${tEmo}) at 65% and face (${(fPred.emotion || '').toUpperCase()}) at 35% -> ${fusedEmo}.`;
+            } else {
+                breakdownFusionSummary.textContent = 'Single-modality inference active. No facial probabilities were fabricated.';
+            }
+        }
+
+        if (breakdownModalityMode) {
+            breakdownModalityMode.textContent = faceDetected ? 'Weighted Late Fusion (65/35)' : 'Text Semantic Stream';
+        }
+
+        // Modality Comparison Bar
+        if (compTextVal) compTextVal.textContent = `${tEmo} (${tConf}%)`;
+        if (compFaceVal) compFaceVal.textContent = faceDetected ? `${(fPred.emotion || '').toUpperCase()} (${Math.round((fPred.confidence || 0) * 100)}%)` : 'None (Offline / Not Detected)';
+        if (compAgreementVal) compAgreementVal.textContent = faceDetected ? (isAgreement ? 'YES' : 'NO') : 'N/A';
+        if (compExplanationVal) {
+            if (faceDetected) {
+                compExplanationVal.textContent = res.fusion?.modality_comparison?.comparison_summary ||
+                    (isAgreement ? `Both channels identify ${fusedEmo}.` : `Text expresses ${tEmo} while facial features indicate ${(fPred.emotion || '').toUpperCase()}.`);
+            } else {
+                compExplanationVal.textContent = `Facial analysis not available: ${fPred?.reason || 'camera disabled'}. Fallback to text analysis active.`;
+            }
         }
     }
     modelPill.textContent = res.model || 'DistilRoBERTa v2.0';
@@ -767,6 +875,30 @@ function renderSpectrumBars(probs) {
             </div>
         `;
         spectrumBars.appendChild(div);
+    });
+}
+
+function renderMiniProbBars(container, probs) {
+    if (!container) return;
+    container.innerHTML = '';
+    const entries = Object.entries(probs || {});
+    if (entries.length === 0) {
+        container.innerHTML = '<span class="mini-prob-empty">No probability distribution</span>';
+        return;
+    }
+    const sorted = entries.sort((a, b) => b[1] - a[1]);
+    sorted.forEach(([label, val]) => {
+        const pct = Math.round(Number(val || 0) * 100);
+        const row = document.createElement('div');
+        row.className = 'mini-prob-row';
+        row.innerHTML = `
+            <span class="mini-prob-label">${label.slice(0, 4)}</span>
+            <div class="mini-prob-track">
+                <div class="mini-prob-fill" style="width: ${pct}%;"></div>
+            </div>
+            <span class="mini-prob-val">${pct}%</span>
+        `;
+        container.appendChild(row);
     });
 }
 
