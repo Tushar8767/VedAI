@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AuthProvider } from './context/AuthContext';
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { AuthModal } from './components/AuthModal';
@@ -16,6 +16,7 @@ import { SettingsPage } from './pages/SettingsPage';
 import { GamesHomePage } from './features/games/GamesHomePage';
 
 function AppContent() {
+  const { isDark } = useTheme();
   const [currentTab, setTab] = useState('home');
   const [initialPrompt, setInitialPrompt] = useState('');
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -51,7 +52,10 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#FAF8F5] dark:bg-[#161412] text-[#2C241B] dark:text-[#F7F4EE] transition-colors duration-200">
+    <div 
+      style={{ backgroundColor: isDark ? '#161412' : '#FAF8F5' }}
+      className="min-h-screen flex flex-col justify-between text-[#2C241B] dark:text-[#F7F4EE] transition-colors duration-200"
+    >
       <div>
         <Navbar
           currentTab={currentTab}

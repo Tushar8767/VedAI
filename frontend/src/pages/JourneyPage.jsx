@@ -57,10 +57,10 @@ export const JourneyPage = ({ onOpenAuth }) => {
       
       {/* Header */}
       <div className="space-y-1">
-        <h1 className="font-serif text-3xl font-bold text-stone-900">
+        <h1 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">
           My Personal Journey
         </h1>
-        <p className="text-xs text-stone-500">
+        <p className="text-xs text-stone-600 dark:text-stone-300">
           A factual record of your mindful reflections and practices.
         </p>
       </div>

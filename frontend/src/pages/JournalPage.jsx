@@ -65,10 +65,10 @@ export const JournalPage = ({ onOpenAuth }) => {
         <div className="w-16 h-16 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center mx-auto text-2xl">
           📖
         </div>
-        <h2 className="font-serif text-2xl font-bold text-stone-900">
+        <h2 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100">
           Private Personal Journal
         </h2>
-        <p className="text-xs text-stone-600 leading-relaxed max-w-md mx-auto">
+        <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed max-w-md mx-auto">
           Your journal is an encrypted, private sanctuary for your reflections and thoughts. Sign in or create an account to begin saving entries.
         </p>
         <button
@@ -87,10 +87,10 @@ export const JournalPage = ({ onOpenAuth }) => {
       {/* Header & Export */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif text-3xl font-bold text-stone-900">
+          <h1 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">
             My Private Journal
           </h1>
-          <p className="text-xs text-stone-500">
+          <p className="text-xs text-stone-600 dark:text-stone-300">
             {entries.length} reflections saved &bull; Encrypted &amp; private
           </p>
         </div>

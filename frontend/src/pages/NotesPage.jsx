@@ -105,10 +105,10 @@ export const NotesPage = ({ onOpenAuth }) => {
         <div className="w-16 h-16 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center mx-auto text-2xl font-serif">
           📝
         </div>
-        <h2 className="font-serif text-2xl font-bold text-stone-900">
+        <h2 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100">
           Personal Wisdom Notes
         </h2>
-        <p className="text-xs text-stone-600 leading-relaxed max-w-md mx-auto">
+        <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed max-w-md mx-auto">
           Capture insights attached to Gita verses, mindfulness practices, or personal reflections. Sign in or create an account to start taking persistent notes.
         </p>
         <button
@@ -127,10 +127,10 @@ export const NotesPage = ({ onOpenAuth }) => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif text-3xl font-bold text-stone-900">
+          <h1 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">
             Personal Notes
           </h1>
-          <p className="text-xs text-stone-500">
+          <p className="text-xs text-stone-600 dark:text-stone-300">
             {notes.length} notes saved &bull; Private &amp; attached to your reflections
           </p>
         </div>

@@ -35,7 +35,10 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF8F5]/95 dark:bg-[#191715]/95 backdrop-blur-md border-b border-[#E8E1D5] dark:border-[#383127] transition-colors duration-200">
+    <header 
+      style={{ backgroundColor: isDark ? 'rgba(25, 23, 21, 0.98)' : 'rgba(250, 248, 245, 0.98)' }}
+      className="sticky top-0 z-40 backdrop-blur-md border-b border-[#E8E1D5] dark:border-[#383127] transition-colors duration-200"
+    >
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         
         {/* Brand */}
@@ -134,7 +137,10 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
       </div>
 
       {/* Mobile Navigation bar */}
-      <div className="md:hidden flex items-center justify-around border-t border-[#E8E1D5] dark:border-[#383127] py-2 px-1 bg-[#FAF8F5] dark:bg-[#191715]">
+      <div 
+        style={{ backgroundColor: isDark ? '#191715' : '#FAF8F5' }}
+        className="md:hidden flex items-center justify-around border-t border-[#E8E1D5] dark:border-[#383127] py-2 px-1"
+      >
         {navItems.slice(0, 5).map((item) => {
           const Icon = item.icon;
           const isActive = currentTab === item.id;

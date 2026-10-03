@@ -30,10 +30,10 @@ export const ResourcesPage = () => {
       
       {/* Header */}
       <div className="space-y-1">
-        <h1 className="font-serif text-3xl font-bold text-stone-900">
+        <h1 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">
           Wisdom &amp; Mindfulness Resources
         </h1>
-        <p className="text-xs text-stone-500">
+        <p className="text-xs text-stone-600 dark:text-stone-300">
           Curated lectures, guided breathing, and philosophical explorations hosted on YouTube.
         </p>
       </div>

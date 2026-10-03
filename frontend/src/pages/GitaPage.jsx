@@ -71,10 +71,10 @@ export const GitaPage = () => {
       <div className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 className="font-serif text-3xl font-bold text-stone-900">
+            <h1 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">
               Bhagavad Gita Wisdom Library
             </h1>
-            <p className="text-sm text-stone-500">
+            <p className="text-sm text-stone-600 dark:text-stone-300">
               Explore 18 chapters and authentic verses in Sanskrit, transliteration, and verified translations.
             </p>
           </div>

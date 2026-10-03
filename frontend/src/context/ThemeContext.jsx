@@ -26,12 +26,16 @@ export const ThemeProvider = ({ children }) => {
       body.classList.add('dark');
       body.classList.remove('light');
       root.style.colorScheme = 'dark';
+      root.style.backgroundColor = '#161412';
+      body.style.backgroundColor = '#161412';
     } else {
       root.classList.remove('dark');
       root.classList.add('light');
       body.classList.remove('dark');
       body.classList.add('light');
-      root.style.colorScheme = 'light';
+      root.style.colorScheme = 'only light';
+      root.style.backgroundColor = '#FAF8F5';
+      body.style.backgroundColor = '#FAF8F5';
     }
 
     try {

@@ -187,10 +187,10 @@ export const PracticePage = ({ onOpenAuth }) => {
       
       {/* Page Header */}
       <div className="text-center space-y-2">
-        <h1 className="font-serif text-3xl font-bold text-stone-900">
+        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100">
           Daily Mindful Practice
         </h1>
-        <p className="text-sm text-stone-500 max-w-lg mx-auto">
+        <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 max-w-lg mx-auto">
           Seven grounded mindfulness exercises to cultivate steady presence. Factual effort without scores or rankings.
         </p>
       </div>
