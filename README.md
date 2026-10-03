@@ -1,5 +1,9 @@
 # VedAI: A Framework for AI-Driven Mental Well-being Using Scriptural Wisdom and Natural Language Processing
 
+[![Live Demo](https://img.shields.io/badge/Live%20Deployment-vedai--2--0.onrender.com-success?style=for-the-badge&logo=render&logoColor=white)](https://vedai-2-0.onrender.com/)
+
+🌐 **Live Deployed Application:** **[VedAI 2.0 — Personal Reflection & Wisdom Workspace](https://vedai-2-0.onrender.com/)**
+
 [![Status](https://img.shields.io/badge/Status-Phase%203%20Verified%20%26%20Synchronized-emerald.svg)](https://github.com/Tushar8767/VedAI)
 [![Version](https://img.shields.io/badge/Version-2.0.0-amber.svg)](https://github.com/Tushar8767/VedAI)
 [![Tests](https://img.shields.io/badge/Backend%20Tests-163%20Passing-brightgreen.svg)](https://github.com/Tushar8767/VedAI)
@@ -175,7 +179,11 @@ VedAI/
 
 ## 🚀 Quick Start Guide
 
-### Prerequisites
+### 🌐 Live Deployment
+The framework is deployed live and fully functional on Render:  
+👉 **[VedAI 2.0 — Personal Reflection & Wisdom Workspace](https://vedai-2-0.onrender.com/)**
+
+### Local Prerequisites
 - **Node.js** `>= 18.x`
 - **npm** `>= 9.x`
 - **Python** `>= 3.10` (for optional ML microservices)

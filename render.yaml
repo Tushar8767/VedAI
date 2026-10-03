@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: vedai
+    name: vedai-2-0
     env: node
     plan: free
     region: oregon
@@ -26,4 +26,4 @@ services:
       - key: LLM_MODEL
         value: gemini-1.5-flash
       - key: CLIENT_URL
-        value: https://vedai.onrender.com
+        value: https://vedai-2-0.onrender.com
