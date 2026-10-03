@@ -55,7 +55,7 @@ export const HomePage = ({ setTab, setInitialPrompt }) => {
         <div className="max-w-2xl mx-auto pt-4">
           <form 
             onSubmit={handleStartReflection}
-            className="glass-panel p-3 sm:p-4 rounded-2xl shadow-sm hover:shadow-md transition-all border border-stone-300/80 dark:border-stone-700/80 bg-white/95 dark:bg-stone-900/90 text-left"
+            className="p-4 sm:p-5 rounded-3xl shadow-sm hover:shadow-md transition-all border border-stone-200/90 dark:border-stone-800 bg-white dark:bg-[#1E1B18] text-left"
           >
             <div className="relative">
               <textarea

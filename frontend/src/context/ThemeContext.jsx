@@ -21,10 +21,10 @@ export const ThemeProvider = ({ children }) => {
     const body = document.body;
 
     if (theme === 'dark') {
-      root.classList.add('dark');
       root.classList.remove('light');
-      body.classList.add('dark');
+      root.classList.add('dark');
       body.classList.remove('light');
+      body.classList.add('dark');
       root.style.colorScheme = 'dark';
       root.style.backgroundColor = '#161412';
       body.style.backgroundColor = '#161412';
@@ -33,7 +33,7 @@ export const ThemeProvider = ({ children }) => {
       root.classList.add('light');
       body.classList.remove('dark');
       body.classList.add('light');
-      root.style.colorScheme = 'only light';
+      root.style.colorScheme = 'light';
       root.style.backgroundColor = '#FAF8F5';
       body.style.backgroundColor = '#FAF8F5';
     }
