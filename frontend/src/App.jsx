@@ -51,7 +51,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#FCFAF7] dark:bg-[#121110] text-[#1C1917] dark:text-[#F5F5F4] transition-colors duration-250">
+    <div className="min-h-screen flex flex-col justify-between bg-[#FAF8F5] dark:bg-[#161412] text-[#2C241B] dark:text-[#F7F4EE] transition-colors duration-200">
       <div>
         <Navbar
           currentTab={currentTab}

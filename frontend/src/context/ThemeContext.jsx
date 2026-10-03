@@ -9,29 +9,35 @@ export const ThemeProvider = ({ children }) => {
       if (saved === 'dark' || saved === 'light') {
         return saved;
       }
-      if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      }
     } catch {
       // Fallback
     }
+    // Default strictly to bright screen (light mode)
     return 'light';
   });
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
+
     if (theme === 'dark') {
       root.classList.add('dark');
       root.classList.remove('light');
+      body.classList.add('dark');
+      body.classList.remove('light');
+      root.style.colorScheme = 'dark';
     } else {
       root.classList.remove('dark');
       root.classList.add('light');
+      body.classList.remove('dark');
+      body.classList.add('light');
+      root.style.colorScheme = 'light';
     }
 
     try {
       localStorage.setItem('vedai_theme', theme);
     } catch {
-      // Ignore storage errors
+      // Ignore
     }
   }, [theme]);
 

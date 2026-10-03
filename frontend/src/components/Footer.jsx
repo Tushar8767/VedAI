@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer = () => {
   return (
-    <footer className="mt-16 border-t border-[#E8E1D5] dark:border-[#2E2822] bg-[#F5F2EB]/60 dark:bg-[#161412]/80 py-8 px-4 text-center text-xs text-stone-600 dark:text-stone-400 transition-colors duration-200">
+    <footer className="mt-16 border-t border-[#E8E1D5] dark:border-[#383127] bg-[#F5F2EB]/60 dark:bg-[#191715]/80 py-8 px-4 text-center text-xs text-stone-600 dark:text-stone-400 transition-colors duration-200">
       <div className="max-w-4xl mx-auto space-y-3">
         <p className="font-semibold text-stone-800 dark:text-stone-200 tracking-wide">
           “AI suggests. Evidence explains. The user decides.”

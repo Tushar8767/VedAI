@@ -229,16 +229,16 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
       
       {/* Page Header */}
       <div className="text-center space-y-2">
-        <h1 className="font-serif text-3xl font-bold text-stone-900">
+        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
           Self-Reflection Workspace
         </h1>
-        <p className="text-sm text-stone-500 max-w-lg mx-auto">
+        <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 max-w-lg mx-auto font-normal">
           AI suggests. Evidence explains. You decide. A private sanctuary to untangle your thoughts.
         </p>
       </div>
 
       {/* Reflection Modes Bar */}
-      <div className="flex justify-center gap-2 p-1.5 bg-[#F5F2EB] rounded-2xl max-w-md mx-auto border border-[#E8E1D5]">
+      <div className="flex justify-center gap-2 p-1.5 bg-[#F5F2EB] dark:bg-[#1E1B18] rounded-2xl max-w-md mx-auto border border-[#E8E1D5] dark:border-[#383127]">
         {[
           { id: 'GUIDED', label: 'Guided Reflection' },
           { id: 'FREE', label: 'Free Reflection' },
@@ -254,8 +254,8 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
             }}
             className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-semibold transition ${
               reflectionMode === m.id
-                ? 'bg-amber-800 text-white shadow-sm'
-                : 'text-stone-600 hover:text-stone-900'
+                ? 'bg-amber-800 dark:bg-amber-600 text-white shadow-sm'
+                : 'text-stone-700 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white'
             }`}
           >
             {m.label}
@@ -265,7 +265,7 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
 
       {/* Reflection Space Chips */}
       <div className="space-y-2">
-        <label className="text-[11px] font-bold uppercase tracking-wider text-stone-400 block text-center">
+        <label className="text-[11px] font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 block text-center">
           Choose a Reflection Theme
         </label>
         <div className="flex flex-wrap justify-center gap-2">
@@ -273,10 +273,10 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
             <button
               key={space.id}
               onClick={() => handleSpaceSelect(space)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition ${
                 selectedSpace === space.id
-                  ? 'bg-amber-100 text-amber-900 border border-amber-300 font-semibold shadow-xs'
-                  : 'bg-white border border-stone-200 text-stone-600 hover:bg-stone-50'
+                  ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 border border-amber-300 dark:border-amber-600 font-semibold shadow-xs'
+                  : 'bg-white dark:bg-[#201D1A] border border-stone-200 dark:border-[#383127] text-stone-700 dark:text-stone-200 hover:bg-stone-50 dark:hover:bg-[#2A2621]'
               }`}
             >
               {space.label}
@@ -286,9 +286,9 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
       </div>
 
       {/* EXPRESS YOUR THOUGHT (STEP 1) */}
-      <div className="bg-white rounded-3xl p-6 border border-[#E8E1D5] shadow-sm space-y-4">
+      <div className="bg-white dark:bg-[#201D1A] rounded-3xl p-6 border border-[#E8E1D5] dark:border-[#383127] shadow-sm space-y-4">
         <div className="flex items-center justify-between">
-          <label className="text-xs font-bold uppercase tracking-wider text-stone-500">
+          <label className="text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300">
             {reflectionMode === 'FREE' ? 'Your Private Thoughts' : 'Step 1 • Express Your Thought'}
           </label>
           
@@ -345,11 +345,11 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
           onChange={(e) => setUserInput(e.target.value)}
           placeholder={activePlaceholder}
           rows={5}
-          className="w-full p-4 rounded-2xl border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-amber-700 resize-none text-base leading-relaxed bg-[#FAF8F5]/50"
+          className="w-full p-4 rounded-2xl border border-stone-200 dark:border-[#42392D] text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-stone-500 focus:outline-none focus:border-amber-700 dark:focus:border-amber-500 resize-none text-base leading-relaxed bg-white dark:bg-[#26221E]"
         />
 
         <div className="flex items-center justify-between pt-2">
-          <span className="text-xs text-stone-400">
+          <span className="text-xs text-stone-500 dark:text-stone-400">
             Accepts English, Hindi, Marathi, Hinglish, typos &amp; slang
           </span>
 
@@ -357,7 +357,7 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
             <button
               onClick={handleSaveToJournal}
               disabled={!userInput.trim()}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-stone-900 text-white font-medium text-xs hover:bg-black transition disabled:opacity-50"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-black dark:bg-amber-600 dark:hover:bg-amber-500 text-white font-semibold text-xs transition disabled:opacity-50"
             >
               <Save size={14} />
               <span>{isGuest ? 'Sign In to Save' : 'Save Directly to Journal'}</span>
@@ -366,7 +366,7 @@ export const ReflectPage = ({ initialPrompt = '', setTab, onOpenAuth }) => {
             <button
               onClick={() => handleOrchestrate()}
               disabled={loading || !userInput.trim()}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-700 text-white font-medium text-sm hover:bg-amber-800 transition disabled:opacity-50 shadow-sm"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-700 hover:bg-amber-800 dark:bg-amber-600 dark:hover:bg-amber-500 text-white font-semibold text-sm transition disabled:opacity-50 shadow-sm"
             >
               {loading ? <RefreshCw size={16} className="animate-spin" /> : <Send size={16} />}
               <span>{loading ? 'Reflecting...' : 'Explore Reflection'}</span>
