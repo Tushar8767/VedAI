@@ -1,22 +1,25 @@
 {
   "name": "vedai-frontend",
-  "version": "1.0.0",
-  "description": "VedAI emotion-aware mental well-being support system frontend",
-  "main": "index.js",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "start": "live-server --port=3000 --open=/index.html",
-    "dev": "live-server --port=3000 --open=/index.html --watch=."
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "vedai",
-    "frontend"
-  ],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.0"
+    "lucide-react": "^0.475.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.1.0"
   }
 }

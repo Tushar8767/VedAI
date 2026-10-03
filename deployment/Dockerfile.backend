@@ -1,0 +1,44 @@
+# ==========================================
+# VedAI 2.0 - Backend Orchestrator Dockerfile
+# ==========================================
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy root and backend package definitions
+COPY package*.json ./
+COPY backend/package*.json ./backend/
+
+WORKDIR /app/backend
+RUN npm ci --only=production
+
+WORKDIR /app
+COPY backend/ ./backend/
+COPY knowledge-base/ ./knowledge-base/
+
+# Final production runner
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=5000
+
+# Install dumb-init for proper PID 1 signal forwarding
+RUN apk add --no-cache dumb-init curl
+
+# Create non-root unprivileged user
+RUN addgroup -g 1001 -S vedai && adduser -u 1001 -S vedai -G vedai
+
+COPY --chown=vedai:vedai --from=builder /app/backend /app/backend
+COPY --chown=vedai:vedai --from=builder /app/knowledge-base /app/knowledge-base
+
+USER vedai
+WORKDIR /app/backend
+
+EXPOSE 5000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost:5000/api/health || exit 1
+
+ENTRYPOINT ["dumb-init", "--"]
+CMD ["node", "src/server.js"]

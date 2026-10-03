@@ -1,0 +1,212 @@
+[
+  {
+    "text": "I feel like I'm drowning under these academic assignments.",
+    "label": "stress_overwhelm",
+    "lang": "en"
+  },
+  {
+    "text": "it's too much pressure, I'm completely exhausted and drained.",
+    "label": "stress_overwhelm",
+    "lang": "en"
+  },
+  {
+    "text": "तनाव इतना अधिक है कि मुझसे अब और काम नहीं हो पा रहा।",
+    "label": "stress_overwhelm",
+    "lang": "hi_deva"
+  },
+  {
+    "text": "exam ki tayaari ka itna stress hai ki sar phat raha hai",
+    "label": "stress_overwhelm",
+    "lang": "hinglish"
+  },
+  {
+    "text": "कामाच्या अतिताणाने मला प्रचंड थकवा आला आहे.",
+    "label": "stress_overwhelm",
+    "lang": "mr_deva"
+  },
+  {
+    "text": "khup pressure aalay office madhe, kahi suchat nahiye",
+    "label": "stress_overwhelm",
+    "lang": "mr_roman"
+  },
+  {
+    "text": "I am so anxious about tomorrow's interview that I feel physically sick.",
+    "label": "anxiety_fear",
+    "lang": "en"
+  },
+  {
+    "text": "What if they reject me? My mind cannot stop worrying about the worst.",
+    "label": "anxiety_fear",
+    "lang": "en"
+  },
+  {
+    "text": "अज्ञात का भय मुझे भीतर तक डरा रहा है।",
+    "label": "anxiety_fear",
+    "lang": "hi_deva"
+  },
+  {
+    "text": "result ko lekar bohot ghabrahat aur dar ho raha hai",
+    "label": "anxiety_fear",
+    "lang": "hinglish"
+  },
+  {
+    "text": "परीक्षेच्या विचाराने मनात भयंकर धास्ती भरली आहे.",
+    "label": "anxiety_fear",
+    "lang": "mr_deva"
+  },
+  {
+    "text": "mala future chi khup bhiti vatatey",
+    "label": "anxiety_fear",
+    "lang": "mr_roman"
+  },
+  {
+    "text": "I am outraged by the arrogant way my manager spoke to me.",
+    "label": "anger_frustration",
+    "lang": "en"
+  },
+  {
+    "text": "I want to scream because nothing is working the way it should.",
+    "label": "anger_frustration",
+    "lang": "en"
+  },
+  {
+    "text": "उसकी इस हरकत पर मुझे भयंकर गुस्सा आ रहा है।",
+    "label": "anger_frustration",
+    "lang": "hi_deva"
+  },
+  {
+    "text": "itna frustration ho raha hai is stupid policy se",
+    "label": "anger_frustration",
+    "lang": "hinglish"
+  },
+  {
+    "text": "त्यांच्या उद्धटपणाने माझा संताप अनावर झाला आहे.",
+    "label": "anger_frustration",
+    "lang": "mr_deva"
+  },
+  {
+    "text": "khup chid aliye mala tyachya bolnyacha",
+    "label": "anger_frustration",
+    "lang": "mr_roman"
+  },
+  {
+    "text": "An empty sadness that won't lift, feeling utterly solitary.",
+    "label": "sadness_grief",
+    "lang": "en"
+  },
+  {
+    "text": "I miss my mother so much today, the grief feels unbearable.",
+    "label": "sadness_grief",
+    "lang": "en"
+  },
+  {
+    "text": "मन बहुत उदास है, सब कुछ सूना-सूना लग रहा है।",
+    "label": "sadness_grief",
+    "lang": "hi_deva"
+  },
+  {
+    "text": "dil me bahut dukh aur emptiness hai aaj",
+    "label": "sadness_grief",
+    "lang": "hinglish"
+  },
+  {
+    "text": "घरातील माणसाच्या विरहाने डोळ्यात सतत पाणी येत आहे.",
+    "label": "sadness_grief",
+    "lang": "mr_deva"
+  },
+  {
+    "text": "khup ekla vatatay aani radu yetay",
+    "label": "sadness_grief",
+    "lang": "mr_roman"
+  },
+  {
+    "text": "Feeling very balanced, serene, and grounded in the quiet afternoon.",
+    "label": "calm_peace",
+    "lang": "en"
+  },
+  {
+    "text": "A deep sense of stillness settled over my thoughts today.",
+    "label": "calm_peace",
+    "lang": "en"
+  },
+  {
+    "text": "चारों तरफ शांति और मन में एक गहरा ठहराव है।",
+    "label": "calm_peace",
+    "lang": "hi_deva"
+  },
+  {
+    "text": "bilkul sukoon hai, mind ekdum shant hai",
+    "label": "calm_peace",
+    "lang": "hinglish"
+  },
+  {
+    "text": "मनावरचा सर्व ताण निघून गेला असून शांतता जाणवत आहे.",
+    "label": "calm_peace",
+    "lang": "mr_deva"
+  },
+  {
+    "text": "man ekdum cool aani prasanna vatatey",
+    "label": "calm_peace",
+    "lang": "mr_roman"
+  },
+  {
+    "text": "I genuinely feel that things will turn around and brighten up soon.",
+    "label": "hope_optimism",
+    "lang": "en"
+  },
+  {
+    "text": "Full of positive anticipation for the opportunities ahead.",
+    "label": "hope_optimism",
+    "lang": "en"
+  },
+  {
+    "text": "उम्मीद की किरण दिख रही है, सब ठीक हो जाएगा।",
+    "label": "hope_optimism",
+    "lang": "hi_deva"
+  },
+  {
+    "text": "positive vibes hain, aane wala waqt behtar hoga",
+    "label": "hope_optimism",
+    "lang": "hinglish"
+  },
+  {
+    "text": "नव्या दिवसात नक्की काहीतरी चांगले घडेल असा ठाम विश्वास आहे.",
+    "label": "hope_optimism",
+    "lang": "mr_deva"
+  },
+  {
+    "text": "sagla changla hoil asa vishwas vatat aahe",
+    "label": "hope_optimism",
+    "lang": "mr_roman"
+  },
+  {
+    "text": "I bought some coffee beans from the grocery store this morning.",
+    "label": "neutral_unclear",
+    "lang": "en"
+  },
+  {
+    "text": "The train arrived on platform three at ten minutes past two.",
+    "label": "neutral_unclear",
+    "lang": "en"
+  },
+  {
+    "text": "आज दोपहर को मैंने पुरानी फाइलें व्यवस्थित कीं।",
+    "label": "neutral_unclear",
+    "lang": "hi_deva"
+  },
+  {
+    "text": "normal din tha, shaam ko walk pe gaye the",
+    "label": "neutral_unclear",
+    "lang": "hinglish"
+  },
+  {
+    "text": "आज बाजारातून भाजीपाला आणला आणि वर्तमानपत्र वाचले.",
+    "label": "neutral_unclear",
+    "lang": "mr_deva"
+  },
+  {
+    "text": "fakt aapan aani apla dinakram hota",
+    "label": "neutral_unclear",
+    "lang": "mr_roman"
+  }
+]

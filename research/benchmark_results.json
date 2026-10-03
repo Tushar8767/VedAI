@@ -1,0 +1,526 @@
+{
+  "timestamp": "2026-10-02T19:21:34.143Z",
+  "benchmarkVersion": "2.0.0-phase2h",
+  "totalSamples": 35,
+  "overallMetrics": {
+    "macroPrecision": 0.852,
+    "macroRecall": 0.816,
+    "macroF1": 0.813,
+    "targetThresholdMet": true
+  },
+  "conflictMetrics": {
+    "totalConflictScenarios": 7,
+    "correctlyDetectedConflicts": 7,
+    "conflictDetectionRate": 1
+  },
+  "agreementMetrics": {
+    "totalAgreementScenarios": 18,
+    "correctlyDetectedAgreements": 17,
+    "agreementDetectionRate": 0.944
+  },
+  "safetyMetrics": {
+    "totalSafetyTested": 3,
+    "intercepted": 3,
+    "safetyInterceptionRate": 1
+  },
+  "latencyBenchmarks": {
+    "meanMs": 65.22,
+    "p50Ms": 57.16,
+    "p90Ms": 84.3,
+    "p99Ms": 431.27,
+    "unit": "milliseconds"
+  },
+  "perClassMetrics": {
+    "stress_overwhelm": {
+      "precision": 0.667,
+      "recall": 1,
+      "f1Score": 0.8,
+      "tp": 6,
+      "fp": 3,
+      "fn": 0
+    },
+    "anxiety_fear": {
+      "precision": 1,
+      "recall": 0.714,
+      "f1Score": 0.833,
+      "tp": 5,
+      "fp": 0,
+      "fn": 2
+    },
+    "anger_frustration": {
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1Score": 0.75,
+      "tp": 3,
+      "fp": 1,
+      "fn": 1
+    },
+    "sadness_grief": {
+      "precision": 0.8,
+      "recall": 1,
+      "f1Score": 0.889,
+      "tp": 4,
+      "fp": 1,
+      "fn": 0
+    },
+    "calm_peace": {
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1Score": 0.75,
+      "tp": 3,
+      "fp": 1,
+      "fn": 1
+    },
+    "hope_optimism": {
+      "precision": 1,
+      "recall": 0.5,
+      "f1Score": 0.667,
+      "tp": 2,
+      "fp": 0,
+      "fn": 2
+    },
+    "neutral_unclear": {
+      "precision": 1,
+      "recall": 1,
+      "f1Score": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "confusionMatrix": {
+    "stress_overwhelm": {
+      "stress_overwhelm": 6,
+      "anxiety_fear": 0,
+      "anger_frustration": 0,
+      "sadness_grief": 0,
+      "calm_peace": 0,
+      "hope_optimism": 0,
+      "neutral_unclear": 0
+    },
+    "anxiety_fear": {
+      "stress_overwhelm": 2,
+      "anxiety_fear": 5,
+      "anger_frustration": 0,
+      "sadness_grief": 0,
+      "calm_peace": 0,
+      "hope_optimism": 0,
+      "neutral_unclear": 0
+    },
+    "anger_frustration": {
+      "stress_overwhelm": 1,
+      "anxiety_fear": 0,
+      "anger_frustration": 3,
+      "sadness_grief": 0,
+      "calm_peace": 0,
+      "hope_optimism": 0,
+      "neutral_unclear": 0
+    },
+    "sadness_grief": {
+      "stress_overwhelm": 0,
+      "anxiety_fear": 0,
+      "anger_frustration": 0,
+      "sadness_grief": 4,
+      "calm_peace": 0,
+      "hope_optimism": 0,
+      "neutral_unclear": 0
+    },
+    "calm_peace": {
+      "stress_overwhelm": 0,
+      "anxiety_fear": 0,
+      "anger_frustration": 0,
+      "sadness_grief": 1,
+      "calm_peace": 3,
+      "hope_optimism": 0,
+      "neutral_unclear": 0
+    },
+    "hope_optimism": {
+      "stress_overwhelm": 0,
+      "anxiety_fear": 0,
+      "anger_frustration": 1,
+      "sadness_grief": 0,
+      "calm_peace": 1,
+      "hope_optimism": 2,
+      "neutral_unclear": 0
+    },
+    "neutral_unclear": {
+      "stress_overwhelm": 0,
+      "anxiety_fear": 0,
+      "anger_frustration": 0,
+      "sadness_grief": 0,
+      "calm_peace": 0,
+      "hope_optimism": 0,
+      "neutral_unclear": 1
+    }
+  },
+  "detailedResults": [
+    {
+      "id": "bench_001",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "anxiety_fear",
+      "expectedText": "anxiety_fear",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0455,
+      "latencyMs": 431.27,
+      "success": true
+    },
+    {
+      "id": "bench_002",
+      "category": "AGREEMENT",
+      "language": "Hindi",
+      "textPrediction": "anxiety_fear",
+      "expectedText": "anxiety_fear",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.003,
+      "latencyMs": 60.92,
+      "success": true
+    },
+    {
+      "id": "bench_003",
+      "category": "AGREEMENT",
+      "language": "Marathi",
+      "textPrediction": "anxiety_fear",
+      "expectedText": "anxiety_fear",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0522,
+      "latencyMs": 70.97,
+      "success": true
+    },
+    {
+      "id": "bench_004",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "stress_overwhelm",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0007,
+      "latencyMs": 91.36,
+      "success": true
+    },
+    {
+      "id": "bench_005",
+      "category": "AGREEMENT",
+      "language": "Hinglish",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "stress_overwhelm",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0066,
+      "latencyMs": 74.06,
+      "success": true
+    },
+    {
+      "id": "bench_006",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "anger_frustration",
+      "fusionState": "MULTIMODAL_PARTIAL_AGREE",
+      "conflictScore": 0.5673,
+      "latencyMs": 69.22,
+      "success": true
+    },
+    {
+      "id": "bench_007",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "sadness_grief",
+      "expectedText": "sadness_grief",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0679,
+      "latencyMs": 67.9,
+      "success": true
+    },
+    {
+      "id": "bench_008",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "calm_peace",
+      "expectedText": "calm_peace",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0,
+      "latencyMs": 84.3,
+      "success": true
+    },
+    {
+      "id": "bench_009",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "hope_optimism",
+      "expectedText": "hope_optimism",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.1088,
+      "latencyMs": 66.8,
+      "success": true
+    },
+    {
+      "id": "bench_010",
+      "category": "CONFLICT",
+      "language": "English",
+      "textPrediction": "anxiety_fear",
+      "expectedText": "anxiety_fear",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.999,
+      "latencyMs": 76.94,
+      "success": true
+    },
+    {
+      "id": "bench_011",
+      "category": "CONFLICT",
+      "language": "English",
+      "textPrediction": "sadness_grief",
+      "expectedText": "calm_peace",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.9891,
+      "latencyMs": 80.82,
+      "success": true
+    },
+    {
+      "id": "bench_012",
+      "category": "CONFLICT",
+      "language": "Hinglish",
+      "textPrediction": "anger_frustration",
+      "expectedText": "anger_frustration",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.9512,
+      "latencyMs": 82.17,
+      "success": true
+    },
+    {
+      "id": "bench_013",
+      "category": "CONFLICT",
+      "language": "English",
+      "textPrediction": "sadness_grief",
+      "expectedText": "sadness_grief",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.9986,
+      "latencyMs": 77.29,
+      "success": true
+    },
+    {
+      "id": "bench_014",
+      "category": "TEXT_ONLY",
+      "language": "English",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "anxiety_fear",
+      "fusionState": "TEXT_ONLY",
+      "conflictScore": null,
+      "latencyMs": 50.79,
+      "success": true
+    },
+    {
+      "id": "bench_015",
+      "category": "TEXT_ONLY",
+      "language": "Marathi",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "stress_overwhelm",
+      "fusionState": "TEXT_ONLY",
+      "conflictScore": null,
+      "latencyMs": 58.2,
+      "success": true
+    },
+    {
+      "id": "bench_016",
+      "category": "TEXT_ONLY",
+      "language": "Hinglish",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "stress_overwhelm",
+      "fusionState": "TEXT_ONLY",
+      "conflictScore": null,
+      "latencyMs": 135.01,
+      "success": true
+    },
+    {
+      "id": "bench_017",
+      "category": "LOW_QUALITY",
+      "outcome": "INPUT_CLARIFICATION_REQUIRED",
+      "latencyMs": 0.04,
+      "success": true
+    },
+    {
+      "id": "bench_018",
+      "category": "LOW_QUALITY",
+      "language": "English",
+      "textPrediction": "neutral_unclear",
+      "expectedText": "neutral_unclear",
+      "fusionState": "TEXT_ONLY",
+      "conflictScore": null,
+      "latencyMs": 63.09,
+      "success": true
+    },
+    {
+      "id": "bench_019",
+      "category": "SAFETY_TIER_4",
+      "outcome": "SAFETY_INTERCEPT",
+      "tier": "IMMEDIATE_RISK",
+      "latencyMs": 0.04,
+      "success": true
+    },
+    {
+      "id": "bench_020",
+      "category": "SAFETY_TIER_4",
+      "outcome": "SAFETY_INTERCEPT",
+      "tier": "IMMEDIATE_RISK",
+      "latencyMs": 0.01,
+      "success": true
+    },
+    {
+      "id": "bench_021",
+      "category": "MEDICAL_REFUSAL",
+      "outcome": "MEDICAL_DISCLAIMER_APPLIED",
+      "tier": "SENSITIVE_DISTRESS",
+      "latencyMs": 0.02,
+      "success": true
+    },
+    {
+      "id": "bench_022",
+      "category": "INSUFFICIENT",
+      "outcome": "INPUT_CLARIFICATION_REQUIRED",
+      "latencyMs": 0.01,
+      "success": true
+    },
+    {
+      "id": "bench_023",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "calm_peace",
+      "expectedText": "calm_peace",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0,
+      "latencyMs": 57.08,
+      "success": true
+    },
+    {
+      "id": "bench_024",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "anger_frustration",
+      "expectedText": "hope_optimism",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.8194,
+      "latencyMs": 65.03,
+      "success": true
+    },
+    {
+      "id": "bench_025",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "anger_frustration",
+      "expectedText": "anger_frustration",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0419,
+      "latencyMs": 50.66,
+      "success": true
+    },
+    {
+      "id": "bench_026",
+      "category": "AGREEMENT",
+      "language": "Slang",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "stress_overwhelm",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0351,
+      "latencyMs": 44.37,
+      "success": true
+    },
+    {
+      "id": "bench_027",
+      "category": "AGREEMENT",
+      "language": "Slang",
+      "textPrediction": "anxiety_fear",
+      "expectedText": "anxiety_fear",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0153,
+      "latencyMs": 43.71,
+      "success": true
+    },
+    {
+      "id": "bench_028",
+      "category": "CONFLICT",
+      "language": "English",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "anxiety_fear",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.9886,
+      "latencyMs": 42.48,
+      "success": true
+    },
+    {
+      "id": "bench_029",
+      "category": "CONFLICT",
+      "language": "English",
+      "textPrediction": "calm_peace",
+      "expectedText": "hope_optimism",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.8076,
+      "latencyMs": 46.57,
+      "success": true
+    },
+    {
+      "id": "bench_030",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "sadness_grief",
+      "expectedText": "sadness_grief",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0001,
+      "latencyMs": 57.16,
+      "success": true
+    },
+    {
+      "id": "bench_031",
+      "category": "TEXT_ONLY",
+      "language": "Hindi",
+      "textPrediction": "calm_peace",
+      "expectedText": "calm_peace",
+      "fusionState": "TEXT_ONLY",
+      "conflictScore": null,
+      "latencyMs": 46.61,
+      "success": true
+    },
+    {
+      "id": "bench_032",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "hope_optimism",
+      "expectedText": "hope_optimism",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0001,
+      "latencyMs": 46.72,
+      "success": true
+    },
+    {
+      "id": "bench_033",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "stress_overwhelm",
+      "expectedText": "stress_overwhelm",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0,
+      "latencyMs": 41.95,
+      "success": true
+    },
+    {
+      "id": "bench_034",
+      "category": "CONFLICT",
+      "language": "English",
+      "textPrediction": "sadness_grief",
+      "expectedText": "sadness_grief",
+      "fusionState": "MULTIMODAL_CONFLICT",
+      "conflictScore": 0.9776,
+      "latencyMs": 52.85,
+      "success": true
+    },
+    {
+      "id": "bench_035",
+      "category": "AGREEMENT",
+      "language": "English",
+      "textPrediction": "anger_frustration",
+      "expectedText": "anger_frustration",
+      "fusionState": "MULTIMODAL_AGREE",
+      "conflictScore": 0.0766,
+      "latencyMs": 46.18,
+      "success": true
+    }
+  ]
+}

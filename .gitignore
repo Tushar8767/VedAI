@@ -1,40 +1,83 @@
-# Node
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Testing & Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# Production Build
+build/
+dist/
+
+# Environment Variables & Secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+!.env.production.example
+!**/.env.production.example
+*.pem
+*.key
+
+# Local File Database / Test Data
+backend/data/*.json
+!backend/data/.gitkeep
+
+# Python / ML artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+*.onnx
+*.pt
+*.bin
+*.h5
+
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-#frontend
-frontend/node_modules/
-#backend
-backend/node_modules/
+pnpm-debug.log*
 
-# Environment variables & local fallback DB
-.env
-backend/.env
-backend/data/*.json
-!backend/data/canonicalGitaData.json
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env/
-
-# ML artifacts (optional)
-ml_model/__pycache__/
-ml_model/.env
-
-# OS
+# Editor directories and files
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 .DS_Store
 Thumbs.db
-
-# Audit & Generated Reports (Keep strictly local)
-docs/CAMERA_MULTIMODAL_VALIDATION.md
-docs/CONTROLLED_VALIDATION_MATRIX.md
-docs/FINAL_CLAIM_AUDIT.md
-docs/GITA_CORPUS_AUDIT.md
-docs/MODULE_AND_TOOL_EXPLANATION.md
-docs/RAG_TFIDF_EXPLANATION.md
-docs/SAFETY_VALIDATION.md
-docs/VOICE_PRONUNCIATION_AUDIT.md

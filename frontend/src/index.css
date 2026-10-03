@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FAF8F5] text-[#2C2724] font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom serene styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 222, 212, 0.7);
+}
+
+.sanskrit-text {
+  font-family: 'Noto Sans Devanagari', 'Mangal', 'Georgia', serif;
+  line-height: 1.8;
+}
