@@ -3,20 +3,124 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg-page: #FCFAF7;
+    --text-primary: #1C1917;
+    --text-secondary: #44403C;
+    --text-muted: #78716C;
+    --card-bg: rgba(255, 255, 255, 0.96);
+    --border-color: #E7E0D3;
+  }
+
+  .dark {
+    --bg-page: #121110;
+    --text-primary: #F5F5F4;
+    --text-secondary: #D6D3D1;
+    --text-muted: #A8A29E;
+    --card-bg: rgba(28, 25, 23, 0.96);
+    --border-color: #332D26;
+  }
+
   body {
-    @apply bg-[#FAF8F5] text-[#2C2724] font-sans;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Custom serene styling */
+/* Custom serene styling - Light & Night Mode */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(229, 222, 212, 0.7);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 218, 205, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(180, 83, 9, 0.04);
 }
 
+.dark .glass-panel {
+  background: rgba(28, 25, 23, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(68, 62, 54, 0.75);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6);
+}
+
+/* Sanskrit font rendering */
 .sanskrit-text {
   font-family: 'Noto Sans Devanagari', 'Mangal', 'Georgia', serif;
   line-height: 1.8;
+}
+
+/* Supportive Card & Background Transitions in Night Mode */
+.dark .bg-white {
+  background-color: #1C1917 !important;
+}
+
+.dark .bg-white\/70,
+.dark .bg-white\/80,
+.dark .bg-white\/90 {
+  background-color: rgba(28, 25, 23, 0.85) !important;
+}
+
+.dark .bg-\[\#FAF8F5\],
+.dark .bg-\[\#FCFAF7\],
+.dark .bg-\[\#F5F2EB\]\/60 {
+  background-color: #121110 !important;
+}
+
+.dark .text-stone-900,
+.dark .text-stone-800,
+.dark .text-\[\#2C2724\],
+.dark .text-\[\#3A3026\] {
+  color: #F5F5F4 !important;
+}
+
+.dark .text-stone-700,
+.dark .text-stone-600 {
+  color: #D6D3D1 !important;
+}
+
+.dark .text-stone-500 {
+  color: #A8A29E !important;
+}
+
+.dark .border-stone-200,
+.dark .border-stone-200\/80,
+.dark .border-\[\#E8E1D5\] {
+  border-color: #332D26 !important;
+}
+
+/* Dark mode inputs and textareas */
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+.dark textarea,
+.dark select {
+  background-color: #1C1917;
+  color: #F5F5F4;
+  border-color: #38332E;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #78716C;
+}
+
+/* Smooth scrollbar in dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #141211;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #38332E;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4A443D;
 }

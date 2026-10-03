@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import { 
   Compass, 
   BookOpen, 
@@ -11,11 +12,14 @@ import {
   Settings, 
   User, 
   LogIn,
-  Gamepad2
+  Gamepad2,
+  Moon,
+  Sun
 } from 'lucide-react';
 
 export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
   const { user, isGuest, logout } = useAuth();
+  const { theme, toggleTheme, isDark } = useTheme();
 
   const navItems = [
     { id: 'home', label: 'Home', icon: Compass },
@@ -31,7 +35,7 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E8E1D5]">
+    <header className="sticky top-0 z-40 bg-[#FCFAF7]/95 dark:bg-[#161412]/95 backdrop-blur-md border-b border-[#E8E1D5] dark:border-[#2E2822] transition-colors duration-200">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         
         {/* Brand */}
@@ -39,14 +43,14 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
           onClick={() => setTab('home')}
           className="flex items-center gap-2.5 text-left focus:outline-none group"
         >
-          <div className="w-9 h-9 rounded-xl bg-amber-700/10 flex items-center justify-center text-amber-800 font-serif text-xl group-hover:bg-amber-700/20 transition">
+          <div className="w-9 h-9 rounded-xl bg-amber-700/10 dark:bg-amber-500/20 flex items-center justify-center text-amber-800 dark:text-amber-400 font-serif text-xl group-hover:bg-amber-700/20 transition">
             🕉️
           </div>
           <div>
-            <span className="font-serif font-semibold text-lg tracking-wide text-[#3A3026]">
-              Ved<span className="text-amber-700 font-normal">AI</span>
+            <span className="font-serif font-semibold text-lg tracking-wide text-[#2C241B] dark:text-[#F5F5F4]">
+              Ved<span className="text-amber-700 dark:text-amber-400 font-normal">AI</span>
             </span>
-            <span className="hidden sm:inline-block ml-2 text-xs text-amber-900/60 uppercase tracking-widest font-mono">
+            <span className="hidden sm:inline-block ml-2 text-xs text-amber-900/60 dark:text-amber-400/80 uppercase tracking-widest font-mono">
               2.0
             </span>
           </div>
@@ -63,27 +67,49 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
                 onClick={() => setTab(item.id)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition ${
                   isActive
-                    ? 'bg-amber-800/10 text-amber-900 font-semibold'
-                    : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/50'
+                    ? 'bg-amber-800/10 dark:bg-amber-500/20 text-amber-900 dark:text-amber-300 font-semibold shadow-xs'
+                    : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white hover:bg-stone-200/50 dark:hover:bg-stone-800/60'
                 }`}
               >
-                <Icon size={16} className={isActive ? 'text-amber-800' : 'text-stone-400'} />
+                <Icon size={16} className={isActive ? 'text-amber-800 dark:text-amber-400' : 'text-stone-400 dark:text-stone-500'} />
                 {item.label}
               </button>
             );
           })}
         </nav>
 
-        {/* User / Guest Status */}
-        <div className="flex items-center gap-3">
+        {/* Theme Toggle & User Status */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          
+          {/* Night / Bright Mode Switcher */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={isDark ? "Switch to Bright Screen" : "Switch to Night Mode"}
+            title={isDark ? "Switch to Bright Screen" : "Switch to Night Mode"}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-stone-200 dark:border-stone-700/80 bg-stone-100/90 dark:bg-stone-800/80 text-stone-700 dark:text-amber-300 hover:bg-stone-200/80 dark:hover:bg-stone-700/80 transition-all text-xs font-medium shadow-xs"
+          >
+            {isDark ? (
+              <>
+                <Sun size={15} className="text-amber-400 transition-transform hover:rotate-45" />
+                <span className="hidden sm:inline text-amber-300">Bright</span>
+              </>
+            ) : (
+              <>
+                <Moon size={15} className="text-stone-600 hover:text-amber-800 transition-transform hover:-rotate-12" />
+                <span className="hidden sm:inline text-stone-700">Night</span>
+              </>
+            )}
+          </button>
+
           {isGuest ? (
             <div className="flex items-center gap-2">
-              <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-stone-200/70 text-stone-600">
-                Guest Mode
+              <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-stone-200/80 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-300/40 dark:border-stone-700">
+                Guest
               </span>
               <button
                 onClick={onOpenAuth}
-                className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-700 text-white hover:bg-amber-800 transition shadow-sm"
+                className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-800 dark:bg-amber-600 dark:hover:bg-amber-500 text-white transition shadow-sm"
               >
                 <LogIn size={14} />
                 Sign In
@@ -91,13 +117,13 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <span className="text-xs font-medium text-stone-700 flex items-center gap-1">
-                <User size={14} className="text-amber-700" />
+              <span className="text-xs font-medium text-stone-800 dark:text-stone-200 flex items-center gap-1">
+                <User size={14} className="text-amber-700 dark:text-amber-400" />
                 {user?.name?.split(' ')[0] || 'Traveler'}
               </span>
               <button
                 onClick={logout}
-                className="text-xs text-stone-500 hover:text-stone-800 ml-2 hover:underline"
+                className="text-xs text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 ml-2 hover:underline"
               >
                 Sign out
               </button>
@@ -108,7 +134,7 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
       </div>
 
       {/* Mobile Navigation bar */}
-      <div className="md:hidden flex items-center justify-around border-t border-[#E8E1D5] py-2 px-1 bg-[#FAF8F5]">
+      <div className="md:hidden flex items-center justify-around border-t border-[#E8E1D5] dark:border-[#2E2822] py-2 px-1 bg-[#FCFAF7] dark:bg-[#161412]">
         {navItems.slice(0, 5).map((item) => {
           const Icon = item.icon;
           const isActive = currentTab === item.id;
@@ -117,7 +143,7 @@ export const Navbar = ({ currentTab, setTab, onOpenAuth }) => {
               key={item.id}
               onClick={() => setTab(item.id)}
               className={`flex flex-col items-center gap-0.5 text-xs p-1 ${
-                isActive ? 'text-amber-800 font-bold' : 'text-stone-500'
+                isActive ? 'text-amber-800 dark:text-amber-400 font-bold' : 'text-stone-500 dark:text-stone-400'
               }`}
             >
               <Icon size={18} />

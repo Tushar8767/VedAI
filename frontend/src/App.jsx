@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { AuthModal } from './components/AuthModal';
@@ -50,7 +51,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#FAF8F5]">
+    <div className="min-h-screen flex flex-col justify-between bg-[#FCFAF7] dark:bg-[#121110] text-[#1C1917] dark:text-[#F5F5F4] transition-colors duration-250">
       <div>
         <Navbar
           currentTab={currentTab}
@@ -116,8 +117,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <AppContent />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }

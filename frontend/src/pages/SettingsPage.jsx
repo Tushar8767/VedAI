@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import { api } from '../services/api';
 import { 
   Settings, 
@@ -14,11 +15,15 @@ import {
   Lock, 
   Info, 
   Eye, 
-  AlertTriangle 
+  AlertTriangle,
+  Sun,
+  Moon,
+  SunMedium
 } from 'lucide-react';
 
 export const SettingsPage = ({ onOpenAuth }) => {
   const { user, isGuest, logout } = useAuth();
+  const { theme, setTheme } = useTheme();
   
   // Settings State
   const [language, setLanguage] = useState('en');
@@ -239,7 +244,56 @@ export const SettingsPage = ({ onOpenAuth }) => {
         )}
       </div>
 
-      {/* 3. Language & Localization */}
+      {/* 3. Display & Appearance Theme */}
+      <div className="bg-white rounded-3xl p-6 border border-[#E8E1D5] shadow-sm space-y-4">
+        <h3 className="text-sm font-bold text-stone-900 flex items-center gap-2">
+          <SunMedium size={16} className="text-amber-800" />
+          <span>Display &amp; Screen Appearance</span>
+        </h3>
+        <p className="text-xs text-stone-500">
+          Toggle between an uplifting bright screen with supportive contrast and backgrounds, or a calming nocturnal night mode.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <button
+            type="button"
+            onClick={() => setTheme('light')}
+            className={`p-4 rounded-2xl border text-left flex items-center gap-3.5 transition ${
+              theme === 'light'
+                ? 'border-amber-700 bg-amber-50/70 text-amber-900 ring-2 ring-amber-700/20 shadow-xs'
+                : 'border-stone-200 hover:bg-stone-50 text-stone-700'
+            }`}
+          >
+            <div className="p-2.5 rounded-xl bg-amber-100 text-amber-800">
+              <Sun size={20} />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-stone-900">Bright Screen (Day Mode)</div>
+              <div className="text-[11px] text-stone-500">Warm ivory backdrop &amp; clear supportive text</div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setTheme('dark')}
+            className={`p-4 rounded-2xl border text-left flex items-center gap-3.5 transition ${
+              theme === 'dark'
+                ? 'border-amber-600 bg-stone-800/90 text-amber-300 ring-2 ring-amber-500/20 shadow-xs'
+                : 'border-stone-200 hover:bg-stone-50 text-stone-700'
+            }`}
+          >
+            <div className="p-2.5 rounded-xl bg-stone-800 text-amber-400">
+              <Moon size={20} />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-stone-900 dark:text-stone-100">Night Mode (Nocturnal)</div>
+              <div className="text-[11px] text-stone-500 dark:text-stone-400">Soothing charcoal surfaces &amp; glowing accents</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      {/* 4. Language & Localization */}
       <div className="bg-white rounded-3xl p-6 border border-[#E8E1D5] shadow-sm space-y-4">
         <h3 className="text-sm font-bold text-stone-900 flex items-center gap-2">
           <Globe size={16} className="text-amber-800" />
