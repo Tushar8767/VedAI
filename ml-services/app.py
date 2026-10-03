@@ -75,6 +75,14 @@ class PredictResponse(BaseModel):
     modelVersion: str
     disclaimer: str
 
+class EmbedRequest(BaseModel):
+    text: str
+
+class EmbedResponse(BaseModel):
+    embedding: List[float]
+    dimension: int
+    model: str
+
 # Model State
 MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "model")
 CLASSIFIER_PATH = os.path.join(MODEL_DIR, "emotion_classifier.joblib")
@@ -139,6 +147,17 @@ def health():
         "classes": classifier.classes_.tolist() if classifier else [],
         "device": "cpu"
     }
+
+@app.post("/embed", response_model=EmbedResponse)
+def get_dense_embedding(req: EmbedRequest):
+    if not req.text or not req.text.strip():
+        raise HTTPException(status_code=400, detail="Empty text cannot be embedded")
+    emb = compute_embedding(req.text.strip())[0].tolist()
+    return EmbedResponse(
+        embedding=[round(float(x), 5) for x in emb],
+        dimension=len(emb),
+        model=MODEL_NAME
+    )
 
 @app.post("/predict", response_model=PredictResponse)
 def predict(req: PredictRequest):
